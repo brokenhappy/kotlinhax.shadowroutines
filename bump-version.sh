@@ -9,9 +9,9 @@ set -efu
 # * no ' char in names
 files="
 README.md
-kotlinx-coroutines-core/README.md
-kotlinx-coroutines-debug/README.md
-kotlinx-coroutines-test/README.md
+kotlinhax-shadowroutines-core/README.md
+kotlinhax-shadowroutines-debug/README.md
+kotlinhax-shadowroutines-test/README.md
 ui/coroutines-guide-ui.md
 gradle.properties
 integration-testing/gradle.properties
@@ -81,7 +81,7 @@ set +e
 version_mentions=$(
     find . -type f \( -iname '*.properties' -o -iname '*.md' \) \
     -not -iname CHANGES.md -not -iname CHANGES_UP_TO_1.7.md \
-    -not -path ./integration/kotlinx-coroutines-jdk8/README.md \
+    -not -path ./integration/kotlinhax-shadowroutines-jdk8/README.md \
     -exec git grep --fixed-strings --word "$old_version" {} +
     )
 set -e

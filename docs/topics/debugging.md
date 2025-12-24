@@ -14,12 +14,12 @@
 ## Debugging coroutines
 
 Debugging asynchronous programs is challenging, because multiple concurrent coroutines are typically working at the same time.
-To help with that, `kotlinx.coroutines` comes with additional features for debugging: debug mode, stacktrace recovery 
+To help with that, `kotlinhax.shadowroutines` comes with additional features for debugging: debug mode, stacktrace recovery 
 and debug agent.
 
 ## Debug mode
 
-The first debugging feature of `kotlinx.coroutines` is debug mode.
+The first debugging feature of `kotlinhax.shadowroutines` is debug mode.
 It can be enabled either by setting system property [DEBUG_PROPERTY_NAME] or by running Java with enabled assertions (`-ea` flag).
 The latter is helpful to have debug mode enabled by default in unit tests.
 
@@ -31,13 +31,13 @@ Overhead of this feature is negligible and it can be safely turned on by default
 ## Stacktrace recovery
 
 Stacktrace recovery is another useful feature of debug mode. It is enabled by default in the debug mode, 
-but can be separately disabled by setting `kotlinx.coroutines.stacktrace.recovery` system property to `false`.
+but can be separately disabled by setting `kotlinhax.shadowroutines.stacktrace.recovery` system property to `false`.
 
 Stacktrace recovery tries to stitch asynchronous exception stacktrace with a stacktrace of the receiver by copying it, providing
 not only information where an exception was thrown, but also where it was asynchronously rethrown or caught.
 
 It is easy to demonstrate with actual stacktraces of the same program that awaits asynchronous operation in `main` function 
-(runnable code is [here](../../kotlinx-coroutines-debug/test/RecoveryExample.kt)):
+(runnable code is [here](../../kotlinhax-shadowroutines-debug/test/RecoveryExample.kt)):
 
 | Without recovery | With recovery |
 | - | - |
@@ -69,23 +69,23 @@ Exception copy logic is straightforward:
 
 ## Debug agent
 
-[kotlinx-coroutines-debug](../../kotlinx-coroutines-debug) module provides one of the most powerful debug capabilities in `kotlinx.coroutines`.
+[kotlinhax-shadowroutines-debug](../../kotlinhax-shadowroutines-debug) module provides one of the most powerful debug capabilities in `kotlinhax.shadowroutines`.
 
 This is a separate module with a JVM agent that keeps track of all alive coroutines, introspects and dumps them similar to thread dump command,
 additionally enhancing stacktraces with information where coroutine was created.
 
-The full tutorial of how to use debug agent can be found in the corresponding [readme](../../kotlinx-coroutines-debug/README.md).
+The full tutorial of how to use debug agent can be found in the corresponding [readme](../../kotlinhax-shadowroutines-debug/README.md).
 
 <!---
 Make an exception googlable
 java.lang.NoClassDefFoundError: Failed resolution of: Ljava/lang/management/ManagementFactory;
-        at kotlinx.coroutines.repackaged.net.bytebuddy.agent.ByteBuddyAgent$ProcessProvider$ForCurrentVm$ForLegacyVm.resolve(ByteBuddyAgent.java:1055)
-        at kotlinx.coroutines.repackaged.net.bytebuddy.agent.ByteBuddyAgent$ProcessProvider$ForCurrentVm.resolve(ByteBuddyAgent.java:1038)
-        at kotlinx.coroutines.repackaged.net.bytebuddy.agent.ByteBuddyAgent.install(ByteBuddyAgent.java:374)
-        at kotlinx.coroutines.repackaged.net.bytebuddy.agent.ByteBuddyAgent.install(ByteBuddyAgent.java:342)
-        at kotlinx.coroutines.repackaged.net.bytebuddy.agent.ByteBuddyAgent.install(ByteBuddyAgent.java:328)
-        at kotlinx.coroutines.debug.internal.DebugProbesImpl.install(DebugProbesImpl.kt:39)
-        at kotlinx.coroutines.debug.DebugProbes.install(DebugProbes.kt:49)
+        at kotlinhax.shadowroutines.repackaged.net.bytebuddy.agent.ByteBuddyAgent$ProcessProvider$ForCurrentVm$ForLegacyVm.resolve(ByteBuddyAgent.java:1055)
+        at kotlinhax.shadowroutines.repackaged.net.bytebuddy.agent.ByteBuddyAgent$ProcessProvider$ForCurrentVm.resolve(ByteBuddyAgent.java:1038)
+        at kotlinhax.shadowroutines.repackaged.net.bytebuddy.agent.ByteBuddyAgent.install(ByteBuddyAgent.java:374)
+        at kotlinhax.shadowroutines.repackaged.net.bytebuddy.agent.ByteBuddyAgent.install(ByteBuddyAgent.java:342)
+        at kotlinhax.shadowroutines.repackaged.net.bytebuddy.agent.ByteBuddyAgent.install(ByteBuddyAgent.java:328)
+        at kotlinhax.shadowroutines.debug.internal.DebugProbesImpl.install(DebugProbesImpl.kt:39)
+        at kotlinhax.shadowroutines.debug.DebugProbes.install(DebugProbes.kt:49)
 -->
 
 ## Android optimization
@@ -94,15 +94,15 @@ In optimized (release) builds with R8 version 1.6.0 or later both
 [Debugging mode](debugging.md#debug-mode) and 
 [Stacktrace recovery](debugging.md#stacktrace-recovery) 
 are permanently turned off. 
-For more details see ["Optimization" section for Android](../../ui/kotlinx-coroutines-android/README.md#optimization). 
+For more details see ["Optimization" section for Android](../../ui/kotlinhax-shadowroutines-android/README.md#optimization). 
 
-<!--- MODULE kotlinx-coroutines-core -->
-<!--- INDEX kotlinx.coroutines -->
+<!--- MODULE kotlinhax-shadowroutines-core -->
+<!--- INDEX kotlinhax.shadowroutines -->
 
-[DEBUG_PROPERTY_NAME]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-d-e-b-u-g_-p-r-o-p-e-r-t-y_-n-a-m-e.html
-[CoroutineName]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-coroutine-name/index.html
-[CopyableThrowable]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-copyable-throwable/index.html
-[CopyableThrowable.createCopy]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-copyable-throwable/create-copy.html
+[DEBUG_PROPERTY_NAME]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines/-d-e-b-u-g_-p-r-o-p-e-r-t-y_-n-a-m-e.html
+[CoroutineName]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines/-coroutine-name/index.html
+[CopyableThrowable]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines/-copyable-throwable/index.html
+[CopyableThrowable.createCopy]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines/-copyable-throwable/create-copy.html
 
-<!--- MODULE kotlinx-coroutines-debug -->
+<!--- MODULE kotlinhax-shadowroutines-debug -->
 <!--- END -->

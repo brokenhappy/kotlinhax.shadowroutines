@@ -37,14 +37,14 @@ kotlin {
         commonMain {
             dependencies {
                 implementation(kotlin("stdlib-common"))
-                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion")
+                implementation("org.jetbrains.kotlinx:kotlinhax-shadowroutines-core:$coroutinesVersion")
             }
         }
         commonTest {
             dependencies {
                 implementation(kotlin("test-common"))
                 implementation(kotlin("test-annotations-common"))
-                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutinesVersion")
+                implementation("org.jetbrains.kotlinx:kotlinhax-shadowroutines-test:$coroutinesVersion")
             }
         }
         jsTest {

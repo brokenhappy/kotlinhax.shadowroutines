@@ -1,7 +1,7 @@
 package benchmarks.scheduler
 
 import benchmarks.akka.*
-import kotlinx.coroutines.*
+import kotlinhax.shadowroutines.*
 import org.openjdk.jmh.annotations.*
 import org.openjdk.jmh.annotations.State
 import java.lang.Thread.*

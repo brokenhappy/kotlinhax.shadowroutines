@@ -1,11 +1,11 @@
-package kotlinx.coroutines
+package kotlinhax.shadowroutines
 
-import kotlinx.coroutines.future.*
+import kotlinhax.shadowroutines.future.*
 import org.junit.Test
 import kotlin.test.*
 
 /*
- * Integration test that ensures signatures from both the jdk8 and the core source sets of the kotlinx-coroutines-core subproject are used.
+ * Integration test that ensures signatures from both the jdk8 and the core source sets of the kotlinhax-shadowroutines-core subproject are used.
  */
 class Jdk8InCoreIntegration {
 

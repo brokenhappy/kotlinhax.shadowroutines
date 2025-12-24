@@ -1,8 +1,8 @@
 package benchmarks.scheduler
 
 import benchmarks.*
-import kotlinx.coroutines.*
-import kotlinx.coroutines.channels.*
+import kotlinhax.shadowroutines.*
+import kotlinhax.shadowroutines.channels.*
 import org.openjdk.jmh.annotations.*
 import java.util.concurrent.*
 

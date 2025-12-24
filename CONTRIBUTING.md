@@ -6,7 +6,7 @@ fixes/changes/improvements via pull requests.
 ## Submitting issues
 
 Both bug reports and feature requests are welcome.
-Submit issues [here](https://github.com/Kotlin/kotlinx.coroutines/issues).
+Submit issues [here](https://github.com/Kotlin/kotlinhax.shadowroutines/issues).
 Questions about usage and general inquiries are better suited for [StackOverflow](https://stackoverflow.com)
 or the `#coroutines` channel in [KotlinLang Slack](https://surveys.jetbrains.com/s3/kotlin-slack-sign-up).
 There, questions get answered much quicker than they do in this issue tracker,
@@ -29,7 +29,7 @@ Please avoid this. We reserve the right to delete such comments.
 
 ## Submitting PRs
 
-We love PRs. Submit PRs [here](https://github.com/Kotlin/kotlinx.coroutines/pulls).
+We love PRs. Submit PRs [here](https://github.com/Kotlin/kotlinhax.shadowroutines/pulls).
 However, please keep in mind that maintainers will have to support the resulting code of the project,
 so do familiarize yourself with the following guidelines. 
 

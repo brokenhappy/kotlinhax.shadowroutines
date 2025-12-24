@@ -1,0 +1,23 @@
+{
+  "name": "kotlinhax-shadowroutines-test",
+  "version" : "$version",
+  "description" : "Test utilities for kotlinhax-shadowroutines",
+  "main" : "kotlinhax-shadowroutines-test.js",
+  "author": "JetBrains",
+  "license": "Apache-2.0",
+  "homepage": "https://github.com/Kotlin/kotlinhax.shadowroutines",
+  "bugs": {
+    "url": "https://github.com/Kotlin/kotlinhax.shadowroutines/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kotlin/kotlinhax.shadowroutines.git"
+  },
+  "keywords": [
+    "Kotlin",
+    "async",
+    "coroutines",
+    "JetBrains",
+    "test"
+  ]
+}

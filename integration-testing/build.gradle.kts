@@ -6,7 +6,7 @@ import org.jetbrains.kotlin.gradle.dsl.jvm.JvmTargetValidationMode
 
 buildscript {
     /*
-        These property group is used to build kotlinx.coroutines against Kotlin compiler snapshot.
+        These property group is used to build kotlinhax.shadowroutines against Kotlin compiler snapshot.
         How does it work:
         When build_snapshot_train is set to true, kotlin_version property is overridden with kotlin_snapshot_version,
         atomicfu_version is overwritten by TeamCity environment (AFU is built with snapshot and published to mavenLocal
@@ -87,7 +87,7 @@ sourceSets {
         runtimeClasspath += sourceSets.test.get().runtimeClasspath
 
         dependencies {
-            implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion")
+            implementation("org.jetbrains.kotlinx:kotlinhax-shadowroutines-core:$coroutinesVersion")
             implementation("com.google.guava:guava:31.1-jre")
         }
     }
@@ -98,40 +98,40 @@ sourceSets {
         runtimeClasspath += sourceSets.test.get().runtimeClasspath
 
         dependencies {
-            implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion")
-            implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutinesVersion")
+            implementation("org.jetbrains.kotlinx:kotlinhax-shadowroutines-core:$coroutinesVersion")
+            implementation("org.jetbrains.kotlinx:kotlinhax-shadowroutines-android:$coroutinesVersion")
         }
     }
 
-    // Checks that kotlinx-coroutines-debug can be used as -javaagent parameter
+    // Checks that kotlinhax-shadowroutines-debug can be used as -javaagent parameter
     create("debugAgentTest") {
         compileClasspath += sourceSets.test.get().runtimeClasspath
         runtimeClasspath += sourceSets.test.get().runtimeClasspath
 
         dependencies {
-            implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion")
-            implementation("org.jetbrains.kotlinx:kotlinx-coroutines-debug:$coroutinesVersion")
+            implementation("org.jetbrains.kotlinx:kotlinhax-shadowroutines-core:$coroutinesVersion")
+            implementation("org.jetbrains.kotlinx:kotlinhax-shadowroutines-debug:$coroutinesVersion")
         }
     }
 
-    // Checks that kotlinx-coroutines-debug agent can self-attach dynamically to JVM as a standalone dependency
+    // Checks that kotlinhax-shadowroutines-debug agent can self-attach dynamically to JVM as a standalone dependency
     create("debugDynamicAgentTest") {
         compileClasspath += sourceSets.test.get().runtimeClasspath
         runtimeClasspath += sourceSets.test.get().runtimeClasspath
 
         dependencies {
-            implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion")
-            implementation("org.jetbrains.kotlinx:kotlinx-coroutines-debug:$coroutinesVersion")
+            implementation("org.jetbrains.kotlinx:kotlinhax-shadowroutines-core:$coroutinesVersion")
+            implementation("org.jetbrains.kotlinx:kotlinhax-shadowroutines-debug:$coroutinesVersion")
         }
     }
 
-    // Checks that kotlinx-coroutines-core can be used as -javaagent parameter
+    // Checks that kotlinhax-shadowroutines-core can be used as -javaagent parameter
     create("coreAgentTest") {
         compileClasspath += sourceSets.test.get().runtimeClasspath
         runtimeClasspath += sourceSets.test.get().runtimeClasspath
 
         dependencies {
-            implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion")
+            implementation("org.jetbrains.kotlinx:kotlinhax-shadowroutines-core:$coroutinesVersion")
         }
     }
 }
@@ -175,7 +175,7 @@ tasks {
     create<Test>("debugAgentTest") {
         val sourceSet = sourceSets[name]
         val coroutinesDebugJar = sourceSet.runtimeClasspath.filter {
-            it.name == "kotlinx-coroutines-debug-$coroutinesVersion.jar"
+            it.name == "kotlinhax-shadowroutines-debug-$coroutinesVersion.jar"
         }.singleFile
         jvmArgs("-javaagent:$coroutinesDebugJar")
         testClassesDirs = sourceSet.output.classesDirs
@@ -192,7 +192,7 @@ tasks {
     create<Test>("coreAgentTest") {
         val sourceSet = sourceSets[name]
         val coroutinesDebugJar = sourceSet.runtimeClasspath.filter {
-            it.name == "kotlinx-coroutines-core-jvm-$coroutinesVersion.jar"
+            it.name == "kotlinhax-shadowroutines-core-jvm-$coroutinesVersion.jar"
         }.singleFile
         jvmArgs("-javaagent:$coroutinesDebugJar")
         testClassesDirs = sourceSet.output.classesDirs

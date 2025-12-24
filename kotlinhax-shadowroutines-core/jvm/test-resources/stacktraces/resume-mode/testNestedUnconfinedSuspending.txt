@@ -1,0 +1,11 @@
+kotlinhax.shadowroutines.testing.RecoverableTestException
+	at kotlinhax.shadowroutines.exceptions.StackTraceRecoveryResumeModeTest$testResumeModeSuspending$2.invokeSuspend(StackTraceRecoveryResumeModeTest.kt:128)
+	at _COROUTINE._BOUNDARY._(CoroutineDebugging.kt)
+	at kotlinhax.shadowroutines.exceptions.StackTraceRecoveryResumeModeTest$withContext$4.invokeSuspend(StackTraceRecoveryResumeModeTest.kt:148)
+	at kotlinhax.shadowroutines.exceptions.StackTraceRecoveryResumeModeTest.doSuspendingPath(StackTraceRecoveryResumeModeTest.kt:140)
+	at kotlinhax.shadowroutines.exceptions.StackTraceRecoveryResumeModeTest.testResumeModeSuspending(StackTraceRecoveryResumeModeTest.kt:130)
+	at kotlinhax.shadowroutines.exceptions.StackTraceRecoveryResumeModeTest$testNestedUnconfinedSuspending$1$1.invokeSuspend(StackTraceRecoveryResumeModeTest.kt:88)
+	at kotlinhax.shadowroutines.exceptions.StackTraceRecoveryResumeModeTest$testNestedUnconfinedSuspending$1.invokeSuspend(StackTraceRecoveryResumeModeTest.kt:87)
+Caused by: kotlinhax.shadowroutines.testing.RecoverableTestException
+	at kotlinhax.shadowroutines.exceptions.StackTraceRecoveryResumeModeTest$testResumeModeSuspending$2.invokeSuspend(StackTraceRecoveryResumeModeTest.kt:128)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)

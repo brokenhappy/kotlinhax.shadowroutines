@@ -1,4 +1,4 @@
-import kotlinx.coroutines.*
+import kotlinhax.shadowroutines.*
 
 suspend fun doWorld() = coroutineScope {
     launch {

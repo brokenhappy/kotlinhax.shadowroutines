@@ -1,0 +1,107 @@
+// Klib ABI Dump
+// Targets: [androidNativeArm32, androidNativeArm64, androidNativeX64, androidNativeX86, iosArm64, iosSimulatorArm64, iosX64, js, linuxArm64, linuxX64, macosArm64, macosX64, mingwX64, tvosArm64, tvosSimulatorArm64, tvosX64, wasmJs, wasmWasi, watchosArm32, watchosArm64, watchosDeviceArm64, watchosSimulatorArm64, watchosX64]
+// Alias: native => [androidNativeArm32, androidNativeArm64, androidNativeX64, androidNativeX86, iosArm64, iosSimulatorArm64, iosX64, linuxArm64, linuxX64, macosArm64, macosX64, mingwX64, tvosArm64, tvosSimulatorArm64, tvosX64, watchosArm32, watchosArm64, watchosDeviceArm64, watchosSimulatorArm64, watchosX64]
+// Rendering settings:
+// - Signature version: 2
+// - Show manifest properties: true
+// - Show declarations: true
+
+// Library unique name: <org.jetbrains.kotlinx:kotlinhax-shadowroutines-test>
+sealed interface kotlinhax.shadowroutines.test/TestScope : kotlinhax.shadowroutines/CoroutineScope { // kotlinhax.shadowroutines.test/TestScope|null[0]
+    abstract val backgroundScope // kotlinhax.shadowroutines.test/TestScope.backgroundScope|{}backgroundScope[0]
+        abstract fun <get-backgroundScope>(): kotlinhax.shadowroutines/CoroutineScope // kotlinhax.shadowroutines.test/TestScope.backgroundScope.<get-backgroundScope>|<get-backgroundScope>(){}[0]
+    abstract val testScheduler // kotlinhax.shadowroutines.test/TestScope.testScheduler|{}testScheduler[0]
+        abstract fun <get-testScheduler>(): kotlinhax.shadowroutines.test/TestCoroutineScheduler // kotlinhax.shadowroutines.test/TestScope.testScheduler.<get-testScheduler>|<get-testScheduler>(){}[0]
+}
+
+abstract class kotlinhax.shadowroutines.test/TestDispatcher : kotlinhax.shadowroutines/CoroutineDispatcher, kotlinhax.shadowroutines/Delay, kotlinhax.shadowroutines/DelayWithTimeoutDiagnostics { // kotlinhax.shadowroutines.test/TestDispatcher|null[0]
+    abstract val scheduler // kotlinhax.shadowroutines.test/TestDispatcher.scheduler|{}scheduler[0]
+        abstract fun <get-scheduler>(): kotlinhax.shadowroutines.test/TestCoroutineScheduler // kotlinhax.shadowroutines.test/TestDispatcher.scheduler.<get-scheduler>|<get-scheduler>(){}[0]
+
+    open fun invokeOnTimeout(kotlin/Long, kotlinhax.shadowroutines/Runnable, kotlin.coroutines/CoroutineContext): kotlinhax.shadowroutines/DisposableHandle // kotlinhax.shadowroutines.test/TestDispatcher.invokeOnTimeout|invokeOnTimeout(kotlin.Long;kotlinhax.shadowroutines.Runnable;kotlin.coroutines.CoroutineContext){}[0]
+    open fun scheduleResumeAfterDelay(kotlin/Long, kotlinhax.shadowroutines/CancellableContinuation<kotlin/Unit>) // kotlinhax.shadowroutines.test/TestDispatcher.scheduleResumeAfterDelay|scheduleResumeAfterDelay(kotlin.Long;kotlinhax.shadowroutines.CancellableContinuation<kotlin.Unit>){}[0]
+    open fun timeoutMessage(kotlin.time/Duration): kotlin/String // kotlinhax.shadowroutines.test/TestDispatcher.timeoutMessage|timeoutMessage(kotlin.time.Duration){}[0]
+}
+
+final class kotlinhax.shadowroutines.test/TestCoroutineScheduler : kotlin.coroutines/AbstractCoroutineContextElement, kotlin.coroutines/CoroutineContext.Element { // kotlinhax.shadowroutines.test/TestCoroutineScheduler|null[0]
+    constructor <init>() // kotlinhax.shadowroutines.test/TestCoroutineScheduler.<init>|<init>(){}[0]
+
+    final val timeSource // kotlinhax.shadowroutines.test/TestCoroutineScheduler.timeSource|{}timeSource[0]
+        final fun <get-timeSource>(): kotlin.time/TimeSource.WithComparableMarks // kotlinhax.shadowroutines.test/TestCoroutineScheduler.timeSource.<get-timeSource>|<get-timeSource>(){}[0]
+
+    final var currentTime // kotlinhax.shadowroutines.test/TestCoroutineScheduler.currentTime|{}currentTime[0]
+        final fun <get-currentTime>(): kotlin/Long // kotlinhax.shadowroutines.test/TestCoroutineScheduler.currentTime.<get-currentTime>|<get-currentTime>(){}[0]
+
+    final fun advanceTimeBy(kotlin.time/Duration) // kotlinhax.shadowroutines.test/TestCoroutineScheduler.advanceTimeBy|advanceTimeBy(kotlin.time.Duration){}[0]
+    final fun advanceTimeBy(kotlin/Long) // kotlinhax.shadowroutines.test/TestCoroutineScheduler.advanceTimeBy|advanceTimeBy(kotlin.Long){}[0]
+    final fun advanceUntilIdle() // kotlinhax.shadowroutines.test/TestCoroutineScheduler.advanceUntilIdle|advanceUntilIdle(){}[0]
+    final fun runCurrent() // kotlinhax.shadowroutines.test/TestCoroutineScheduler.runCurrent|runCurrent(){}[0]
+
+    final object Key : kotlin.coroutines/CoroutineContext.Key<kotlinhax.shadowroutines.test/TestCoroutineScheduler> // kotlinhax.shadowroutines.test/TestCoroutineScheduler.Key|null[0]
+}
+
+final val kotlinhax.shadowroutines.test/currentTime // kotlinhax.shadowroutines.test/currentTime|@kotlinhax.shadowroutines.test.TestScope{}currentTime[0]
+    final fun (kotlinhax.shadowroutines.test/TestScope).<get-currentTime>(): kotlin/Long // kotlinhax.shadowroutines.test/currentTime.<get-currentTime>|<get-currentTime>@kotlinhax.shadowroutines.test.TestScope(){}[0]
+final val kotlinhax.shadowroutines.test/testTimeSource // kotlinhax.shadowroutines.test/testTimeSource|@kotlinhax.shadowroutines.test.TestScope{}testTimeSource[0]
+    final fun (kotlinhax.shadowroutines.test/TestScope).<get-testTimeSource>(): kotlin.time/TimeSource.WithComparableMarks // kotlinhax.shadowroutines.test/testTimeSource.<get-testTimeSource>|<get-testTimeSource>@kotlinhax.shadowroutines.test.TestScope(){}[0]
+
+final var kotlinhax.shadowroutines.test/catchNonTestRelatedExceptions // kotlinhax.shadowroutines.test/catchNonTestRelatedExceptions|{}catchNonTestRelatedExceptions[0]
+    final fun <get-catchNonTestRelatedExceptions>(): kotlin/Boolean // kotlinhax.shadowroutines.test/catchNonTestRelatedExceptions.<get-catchNonTestRelatedExceptions>|<get-catchNonTestRelatedExceptions>(){}[0]
+    final fun <set-catchNonTestRelatedExceptions>(kotlin/Boolean) // kotlinhax.shadowroutines.test/catchNonTestRelatedExceptions.<set-catchNonTestRelatedExceptions>|<set-catchNonTestRelatedExceptions>(kotlin.Boolean){}[0]
+
+final fun (kotlinhax.shadowroutines.test/TestScope).kotlinhax.shadowroutines.test/advanceTimeBy(kotlin.time/Duration) // kotlinhax.shadowroutines.test/advanceTimeBy|advanceTimeBy@kotlinhax.shadowroutines.test.TestScope(kotlin.time.Duration){}[0]
+final fun (kotlinhax.shadowroutines.test/TestScope).kotlinhax.shadowroutines.test/advanceTimeBy(kotlin/Long) // kotlinhax.shadowroutines.test/advanceTimeBy|advanceTimeBy@kotlinhax.shadowroutines.test.TestScope(kotlin.Long){}[0]
+final fun (kotlinhax.shadowroutines.test/TestScope).kotlinhax.shadowroutines.test/advanceUntilIdle() // kotlinhax.shadowroutines.test/advanceUntilIdle|advanceUntilIdle@kotlinhax.shadowroutines.test.TestScope(){}[0]
+final fun (kotlinhax.shadowroutines.test/TestScope).kotlinhax.shadowroutines.test/runCurrent() // kotlinhax.shadowroutines.test/runCurrent|runCurrent@kotlinhax.shadowroutines.test.TestScope(){}[0]
+final fun (kotlinhax.shadowroutines/Dispatchers).kotlinhax.shadowroutines.test/resetMain() // kotlinhax.shadowroutines.test/resetMain|resetMain@kotlinhax.shadowroutines.Dispatchers(){}[0]
+final fun (kotlinhax.shadowroutines/Dispatchers).kotlinhax.shadowroutines.test/setMain(kotlinhax.shadowroutines/CoroutineDispatcher) // kotlinhax.shadowroutines.test/setMain|setMain@kotlinhax.shadowroutines.Dispatchers(kotlinhax.shadowroutines.CoroutineDispatcher){}[0]
+final fun kotlinhax.shadowroutines.test/StandardTestDispatcher(kotlinhax.shadowroutines.test/TestCoroutineScheduler? = ..., kotlin/String? = ...): kotlinhax.shadowroutines.test/TestDispatcher // kotlinhax.shadowroutines.test/StandardTestDispatcher|StandardTestDispatcher(kotlinhax.shadowroutines.test.TestCoroutineScheduler?;kotlin.String?){}[0]
+final fun kotlinhax.shadowroutines.test/TestScope(kotlin.coroutines/CoroutineContext = ...): kotlinhax.shadowroutines.test/TestScope // kotlinhax.shadowroutines.test/TestScope|TestScope(kotlin.coroutines.CoroutineContext){}[0]
+final fun kotlinhax.shadowroutines.test/UnconfinedTestDispatcher(kotlinhax.shadowroutines.test/TestCoroutineScheduler? = ..., kotlin/String? = ...): kotlinhax.shadowroutines.test/TestDispatcher // kotlinhax.shadowroutines.test/UnconfinedTestDispatcher|UnconfinedTestDispatcher(kotlinhax.shadowroutines.test.TestCoroutineScheduler?;kotlin.String?){}[0]
+
+// Targets: [native, wasmWasi]
+final fun (kotlinhax.shadowroutines.test/TestScope).kotlinhax.shadowroutines.test/runTest(kotlin.time/Duration = ..., kotlin.coroutines/SuspendFunction1<kotlinhax.shadowroutines.test/TestScope, kotlin/Unit>) // kotlinhax.shadowroutines.test/runTest|runTest@kotlinhax.shadowroutines.test.TestScope(kotlin.time.Duration;kotlin.coroutines.SuspendFunction1<kotlinhax.shadowroutines.test.TestScope,kotlin.Unit>){}[0]
+
+// Targets: [native, wasmWasi]
+final fun (kotlinhax.shadowroutines.test/TestScope).kotlinhax.shadowroutines.test/runTest(kotlin/Long, kotlin.coroutines/SuspendFunction1<kotlinhax.shadowroutines.test/TestScope, kotlin/Unit>) // kotlinhax.shadowroutines.test/runTest|runTest@kotlinhax.shadowroutines.test.TestScope(kotlin.Long;kotlin.coroutines.SuspendFunction1<kotlinhax.shadowroutines.test.TestScope,kotlin.Unit>){}[0]
+
+// Targets: [native, wasmWasi]
+final fun (kotlinhax.shadowroutines.test/TestScope).kotlinhax.shadowroutines.test/runTestLegacy(kotlin/Long, kotlin.coroutines/SuspendFunction1<kotlinhax.shadowroutines.test/TestScope, kotlin/Unit>, kotlin/Int, kotlin/Any?) // kotlinhax.shadowroutines.test/runTestLegacy|runTestLegacy@kotlinhax.shadowroutines.test.TestScope(kotlin.Long;kotlin.coroutines.SuspendFunction1<kotlinhax.shadowroutines.test.TestScope,kotlin.Unit>;kotlin.Int;kotlin.Any?){}[0]
+
+// Targets: [native, wasmWasi]
+final fun kotlinhax.shadowroutines.test/runTest(kotlin.coroutines/CoroutineContext = ..., kotlin.time/Duration = ..., kotlin.coroutines/SuspendFunction1<kotlinhax.shadowroutines.test/TestScope, kotlin/Unit>) // kotlinhax.shadowroutines.test/runTest|runTest(kotlin.coroutines.CoroutineContext;kotlin.time.Duration;kotlin.coroutines.SuspendFunction1<kotlinhax.shadowroutines.test.TestScope,kotlin.Unit>){}[0]
+
+// Targets: [native, wasmWasi]
+final fun kotlinhax.shadowroutines.test/runTest(kotlin.coroutines/CoroutineContext = ..., kotlin/Long, kotlin.coroutines/SuspendFunction1<kotlinhax.shadowroutines.test/TestScope, kotlin/Unit>) // kotlinhax.shadowroutines.test/runTest|runTest(kotlin.coroutines.CoroutineContext;kotlin.Long;kotlin.coroutines.SuspendFunction1<kotlinhax.shadowroutines.test.TestScope,kotlin.Unit>){}[0]
+
+// Targets: [js, wasmJs]
+final class kotlinhax.shadowroutines.test.internal/JsPromiseInterfaceForTesting { // kotlinhax.shadowroutines.test.internal/JsPromiseInterfaceForTesting|null[0]
+    constructor <init>() // kotlinhax.shadowroutines.test.internal/JsPromiseInterfaceForTesting.<init>|<init>(){}[0]
+
+    // Targets: [js]
+    final fun then(kotlin/Function1<kotlin/Unit, kotlin/Unit>): kotlinhax.shadowroutines.test.internal/JsPromiseInterfaceForTesting // kotlinhax.shadowroutines.test.internal/JsPromiseInterfaceForTesting.then|then(kotlin.Function1<kotlin.Unit,kotlin.Unit>){}[0]
+
+    // Targets: [js]
+    final fun then(kotlin/Function1<kotlin/Unit, kotlin/Unit>, kotlin/Function1<kotlin/Throwable, kotlin/Unit>): kotlinhax.shadowroutines.test.internal/JsPromiseInterfaceForTesting // kotlinhax.shadowroutines.test.internal/JsPromiseInterfaceForTesting.then|then(kotlin.Function1<kotlin.Unit,kotlin.Unit>;kotlin.Function1<kotlin.Throwable,kotlin.Unit>){}[0]
+
+    // Targets: [wasmJs]
+    final fun then(kotlin/Function1<kotlin.js/JsAny, kotlin/Unit>): kotlinhax.shadowroutines.test.internal/JsPromiseInterfaceForTesting // kotlinhax.shadowroutines.test.internal/JsPromiseInterfaceForTesting.then|then(kotlin.Function1<kotlin.js.JsAny,kotlin.Unit>){}[0]
+
+    // Targets: [wasmJs]
+    final fun then(kotlin/Function1<kotlin.js/JsAny, kotlin/Unit>, kotlin/Function1<kotlin.js/JsAny, kotlin/Unit>): kotlinhax.shadowroutines.test.internal/JsPromiseInterfaceForTesting // kotlinhax.shadowroutines.test.internal/JsPromiseInterfaceForTesting.then|then(kotlin.Function1<kotlin.js.JsAny,kotlin.Unit>;kotlin.Function1<kotlin.js.JsAny,kotlin.Unit>){}[0]
+}
+
+// Targets: [js, wasmJs]
+final fun (kotlinhax.shadowroutines.test/TestScope).kotlinhax.shadowroutines.test/runTest(kotlin.time/Duration = ..., kotlin.coroutines/SuspendFunction1<kotlinhax.shadowroutines.test/TestScope, kotlin/Unit>): kotlinhax.shadowroutines.test.internal/JsPromiseInterfaceForTesting // kotlinhax.shadowroutines.test/runTest|runTest@kotlinhax.shadowroutines.test.TestScope(kotlin.time.Duration;kotlin.coroutines.SuspendFunction1<kotlinhax.shadowroutines.test.TestScope,kotlin.Unit>){}[0]
+
+// Targets: [js, wasmJs]
+final fun (kotlinhax.shadowroutines.test/TestScope).kotlinhax.shadowroutines.test/runTest(kotlin/Long, kotlin.coroutines/SuspendFunction1<kotlinhax.shadowroutines.test/TestScope, kotlin/Unit>): kotlinhax.shadowroutines.test.internal/JsPromiseInterfaceForTesting // kotlinhax.shadowroutines.test/runTest|runTest@kotlinhax.shadowroutines.test.TestScope(kotlin.Long;kotlin.coroutines.SuspendFunction1<kotlinhax.shadowroutines.test.TestScope,kotlin.Unit>){}[0]
+
+// Targets: [js, wasmJs]
+final fun (kotlinhax.shadowroutines.test/TestScope).kotlinhax.shadowroutines.test/runTestLegacy(kotlin/Long, kotlin.coroutines/SuspendFunction1<kotlinhax.shadowroutines.test/TestScope, kotlin/Unit>, kotlin/Int, kotlin/Any?): kotlinhax.shadowroutines.test.internal/JsPromiseInterfaceForTesting // kotlinhax.shadowroutines.test/runTestLegacy|runTestLegacy@kotlinhax.shadowroutines.test.TestScope(kotlin.Long;kotlin.coroutines.SuspendFunction1<kotlinhax.shadowroutines.test.TestScope,kotlin.Unit>;kotlin.Int;kotlin.Any?){}[0]
+
+// Targets: [js, wasmJs]
+final fun kotlinhax.shadowroutines.test/runTest(kotlin.coroutines/CoroutineContext = ..., kotlin.time/Duration = ..., kotlin.coroutines/SuspendFunction1<kotlinhax.shadowroutines.test/TestScope, kotlin/Unit>): kotlinhax.shadowroutines.test.internal/JsPromiseInterfaceForTesting // kotlinhax.shadowroutines.test/runTest|runTest(kotlin.coroutines.CoroutineContext;kotlin.time.Duration;kotlin.coroutines.SuspendFunction1<kotlinhax.shadowroutines.test.TestScope,kotlin.Unit>){}[0]
+
+// Targets: [js, wasmJs]
+final fun kotlinhax.shadowroutines.test/runTest(kotlin.coroutines/CoroutineContext = ..., kotlin/Long, kotlin.coroutines/SuspendFunction1<kotlinhax.shadowroutines.test/TestScope, kotlin/Unit>): kotlinhax.shadowroutines.test.internal/JsPromiseInterfaceForTesting // kotlinhax.shadowroutines.test/runTest|runTest(kotlin.coroutines.CoroutineContext;kotlin.Long;kotlin.coroutines.SuspendFunction1<kotlinhax.shadowroutines.test.TestScope,kotlin.Unit>){}[0]

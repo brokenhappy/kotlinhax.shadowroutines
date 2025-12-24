@@ -1,0 +1,9 @@
+kotlinhax.shadowroutines.testing.RecoverableTestException
+	at kotlinhax.shadowroutines.channels.BufferedChannel.receive$suspendImpl(BufferedChannel.kt)
+	at kotlinhax.shadowroutines.channels.BufferedChannel.receive(BufferedChannel.kt)
+	at kotlinhax.shadowroutines.exceptions.StackTraceRecoveryChannelsTest.channelReceive(StackTraceRecoveryChannelsTest.kt)
+	at kotlinhax.shadowroutines.exceptions.StackTraceRecoveryChannelsTest.access$channelReceive(StackTraceRecoveryChannelsTest.kt)
+	at kotlinhax.shadowroutines.exceptions.StackTraceRecoveryChannelsTest$channelReceive$1.invokeSuspend(StackTraceRecoveryChannelsTest.kt)
+Caused by: kotlinhax.shadowroutines.testing.RecoverableTestException
+	at kotlinhax.shadowroutines.exceptions.StackTraceRecoveryChannelsTest$testReceiveFromChannel$1$job$1.invokeSuspend(StackTraceRecoveryChannelsTest.kt)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt)

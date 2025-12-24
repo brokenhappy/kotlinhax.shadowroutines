@@ -1,4 +1,4 @@
-# Change log for kotlinx.coroutines
+# Change log for kotlinhax.shadowroutines
 
 ## Version 1.7.0
 
@@ -9,7 +9,7 @@
 * `Mutex` and `Semaphore` now share the same underlying data structure (#3020).
 * `Dispatchers.IO` is added to K/N (#3205)
   * `newFixedThreadPool` and `Dispatchers.Default` implementations on K/N were wholly rewritten to support graceful growth under load (#3595).
-* `kotlinx-coroutines-test` rework:
+* `kotlinhax-shadowroutines-test` rework:
   - Add the `timeout` parameter to `runTest` for the whole-test timeout, 10 seconds by default (#3270). This replaces the configuration of quiescence timeouts, which is now deprecated (#3603).
   - The `withTimeout` exception messages indicate if the timeout used the virtual time (#3588).
   - `TestCoroutineScheduler`, `runTest`, and `TestScope` API are promoted to stable (#3622).
@@ -19,7 +19,7 @@
 
 * Old K/N memory model is no longer supported (#3375).
 * New generic upper bounds were added to reactive integration API where the language since 1.8.0 dictates (#3393).
-* `kotlinx-coroutines-core` and `kotlinx-coroutines-jdk8` artifacts were merged into a single artifact (#3268).
+* `kotlinhax-shadowroutines-core` and `kotlinhax-shadowroutines-jdk8` artifacts were merged into a single artifact (#3268).
 * Artificial stackframes in stacktrace recovery no longer contain the `\b` symbol and are now navigable in IDE and supplied with proper documentation (#2291).
 * `CoroutineContext.isActive` returns `true` for contexts without any job in them (#3300).
 
@@ -27,7 +27,7 @@
 
 * Kotlin version is updated to 1.8.20
 * Atomicfu version is updated to 0.20.2.
-* `JavaFx` version is updated to 17.0.2 in `kotlinx-coroutines-javafx` (#3671)..
+* `JavaFx` version is updated to 17.0.2 in `kotlinhax-shadowroutines-javafx` (#3671)..
 * JPMS is supported (#2237). Thanks @lion7!
 * `BroadcastChannel` and all the corresponding API are deprecated (#2680).
 * Added all supported K/N targets (#3601, #812, #855).
@@ -38,7 +38,7 @@
 * `TestScope.timeSource` now provides comparable time marks (#3617). Thanks @hfhbd!
 * Fixed an issue when cancelled `withTimeout` handles were preserved in JS runtime (#3440).
 * Ensure `awaitFrame` only awaits a single frame when used from the main looper (#3432). Thanks @pablobaxter!
-* Obsolete `Class-Path` attribute was removed from `kotlinx-coroutines-debug.jar` manifest (#3361).
+* Obsolete `Class-Path` attribute was removed from `kotlinhax-shadowroutines-debug.jar` manifest (#3361).
 * Fixed a bug when `updateThreadContext` operated on the parent context (#3411).
 * Added new `Flow.filterIsInstance` extension (#3240).
 * `Dispatchers.Default` thread name prefixes are now configurable with system property (#3231).
@@ -77,7 +77,7 @@
 
 * Kotlin version is updated to 1.8.20.
 * Atomicfu version is updated to 0.20.2.
-* `JavaFx` version is updated to 17.0.2 in `kotlinx-coroutines-javafx` (#3671).
+* `JavaFx` version is updated to 17.0.2 in `kotlinhax-shadowroutines-javafx` (#3671).
 * `previous-compilation-data.bin` file is removed from JAR resources (#3668).
 * `CoroutineDispatcher.asExecutor()` runs tasks without dispatching if the dispatcher is unconfined (#3683). Thanks @odedniv!
 * `SharedFlow.toMutableList` lint overload is undeprecated (#3706).
@@ -96,7 +96,7 @@
 * `Mutex` and `Semaphore` now share the same underlying data structure (#3020).
 * `Dispatchers.IO` is added to K/N (#3205)
   * `newFixedThreadPool` and `Dispatchers.Default` implementations on K/N were wholly rewritten to support graceful growth under load (#3595).
-* `kotlinx-coroutines-test` rework:
+* `kotlinhax-shadowroutines-test` rework:
   - Add the `timeout` parameter to `runTest` for the whole-test timeout, 10 seconds by default (#3270). This replaces the configuration of quiescence timeouts, which is now deprecated (#3603).
   - The `withTimeout` exception messages indicate if the timeout used the virtual time (#3588).
   - `TestCoroutineScheduler`, `runTest`, and `TestScope` API are promoted to stable (#3622).
@@ -106,7 +106,7 @@
 
 * Old K/N memory model is no longer supported (#3375).
 * New generic upper bounds were added to reactive integration API where the language since 1.8.0 dictates (#3393).
-* `kotlinx-coroutines-core` and `kotlinx-coroutines-jdk8` artifacts were merged into a single artifact (#3268).
+* `kotlinhax-shadowroutines-core` and `kotlinhax-shadowroutines-jdk8` artifacts were merged into a single artifact (#3268).
 * Artificial stackframes in stacktrace recovery no longer contain the `\b` symbol and are now navigable in IDE and supplied with proper documentation (#2291).
 * `CoroutineContext.isActive` returns `true` for contexts without any job in them (#3300).
 
@@ -123,7 +123,7 @@
 * `TestScope.timeSource` now provides comparable time marks (#3617). Thanks @hfhbd!
 * Fixed an issue when cancelled `withTimeout` handles were preserved in JS runtime (#3440).
 * Ensure `awaitFrame` only awaits a single frame when used from the main looper (#3432). Thanks @pablobaxter!
-* Obsolete `Class-Path` attribute was removed from `kotlinx-coroutines-debug.jar` manifest (#3361).
+* Obsolete `Class-Path` attribute was removed from `kotlinhax-shadowroutines-debug.jar` manifest (#3361).
 * Fixed a bug when `updateThreadContext` operated on the parent context (#3411).
 * Added new `Flow.filterIsInstance` extension (#3240).
 * `Dispatchers.Default` thread name prefixes are now configurable with system property (#3231).
@@ -146,11 +146,11 @@
 ## Version 1.6.4
 
 * Added `TestScope.backgroundScope` for launching coroutines that perform work in the background and need to be cancelled at the end of the test (#3287).
-* Fixed the POM of `kotlinx-coroutines-debug` having an incorrect reference to `kotlinx-coroutines-bom`, which cause the builds of Maven projects using the debug module to break (#3334).
-* Fixed the `Publisher.await` functions in `kotlinx-coroutines-reactive` not ensuring that the `Subscriber` methods are invoked serially (#3360). Thank you, @EgorKulbachka!
+* Fixed the POM of `kotlinhax-shadowroutines-debug` having an incorrect reference to `kotlinhax-shadowroutines-bom`, which cause the builds of Maven projects using the debug module to break (#3334).
+* Fixed the `Publisher.await` functions in `kotlinhax-shadowroutines-reactive` not ensuring that the `Subscriber` methods are invoked serially (#3360). Thank you, @EgorKulbachka!
 * Fixed a memory leak in `withTimeout` on K/N with the new memory model (#3351).
 * Added the guarantee that all `Throwable` implementations in the core library are serializable (#3328).
-* Moved the documentation to <https://kotlinlang.org/api/kotlinx.coroutines/> (#3342).
+* Moved the documentation to <https://kotlinlang.org/api/kotlinhax.shadowroutines/> (#3342).
 * Various documentation improvements.
 
 ## Version 1.6.3
@@ -159,9 +159,9 @@
 
 ## Version 1.6.2
 
-* Fixed a bug with `ThreadLocalElement` not being correctly updated when the most outer `suspend` function was called directly without `kotlinx.coroutines` (#2930).
+* Fixed a bug with `ThreadLocalElement` not being correctly updated when the most outer `suspend` function was called directly without `kotlinhax.shadowroutines` (#2930).
 * Fixed multiple data races: one that might have been affecting `runBlocking` event loop, and a benign data race in `Mutex` (#3250, #3251).
-* Obsolete `TestCoroutineContext` is removed, which fixes the `kotlinx-coroutines-test` JPMS package being split between `kotlinx-coroutines-core` and `kotlinx-coroutines-test` (#3218).
+* Obsolete `TestCoroutineContext` is removed, which fixes the `kotlinhax-shadowroutines-test` JPMS package being split between `kotlinhax-shadowroutines-core` and `kotlinhax-shadowroutines-test` (#3218).
 * Updated the ProGuard rules to further shrink the size of the resulting DEX file with coroutines (#3111, #3263). Thanks, @agrieve!
 * Atomicfu is updated to `0.17.2`, which includes a more efficient and robust JS IR transformer (#3255).
 * Kotlin is updated to `1.6.21`, Gradle version is updated to `7.4.2` (#3281). Thanks, @wojtek-kalicinski!
@@ -179,18 +179,18 @@
 * Fixed a bug with `limitedParallelism` on K/N with new memory model throwing `ClassCastException` (#3223).
 * `CoroutineContext` is added to the exception printed to the default `CoroutineExceptionHandler` to improve debuggability (#3153).
 * Static memory consumption of `Dispatchers.Default` was significantly reduced (#3137).
-* Updated slf4j version in `kotlinx-coroutines-slf4j` from 1.7.25 to 1.7.32.
+* Updated slf4j version in `kotlinhax-shadowroutines-slf4j` from 1.7.25 to 1.7.32.
 
 ## Version 1.6.0
 
 Note that this is a full changelog relative to the 1.5.2 version. Changelog relative to 1.6.0-RC3 can be found at the end.
 
-### kotlinx-coroutines-test rework
+### kotlinhax-shadowroutines-test rework
 
-* `kotlinx-coroutines-test` became a multiplatform library usable from K/JVM, K/JS, and K/N.
+* `kotlinhax-shadowroutines-test` became a multiplatform library usable from K/JVM, K/JS, and K/N.
 * Its API was completely reworked to address long-standing issues with consistency, structured concurrency and correctness (#1203, #1609, #2379, #1749, #1204, #1390, #1222, #1395, #1881, #1910, #1772, #1626, #1742, #2082, #2102, #2405, #2462
   ).
-* The old API is deprecated for removal, but the new API is based on the similar concepts ([README](kotlinx-coroutines-test/README.md)), and the migration path is designed to be graceful: [migration guide](kotlinx-coroutines-test/MIGRATION.md).
+* The old API is deprecated for removal, but the new API is based on the similar concepts ([README](kotlinhax-shadowroutines-test/README.md)), and the migration path is designed to be graceful: [migration guide](kotlinhax-shadowroutines-test/MIGRATION.md).
 
 ### Dispatchers
 
@@ -204,7 +204,7 @@ Note that this is a full changelog relative to the 1.5.2 version. Changelog rela
 * When racing with cancellation, the `future` builder no longer reports unhandled exceptions into the global `CoroutineExceptionHandler`. Thanks @vadimsemenov! (#2774, #2791).
 * `Mutex.onLock` is deprecated for removal (#2794).
 * `Dispatchers.Main` is now used as the default source of time for `delay` and `withTimeout` when present(#2972).
-    * To opt-out from this behaviour, `kotlinx.coroutines.main.delay` system property can be set to `false`.
+    * To opt-out from this behaviour, `kotlinhax.shadowroutines.main.delay` system property can be set to `false`.
 * Java target of coroutines build is now 8 instead of 6 (#1589).
 * **Source-breaking change**: extension `collect` no longer resolves when used with a non-in-place argument of a functional type. This is a candidate for a fix, uncovered after 1.6.0, see #3107 for the additional details.
 
@@ -223,7 +223,7 @@ Note that this is a full changelog relative to the 1.5.2 version. Changelog rela
 * Deprecation level of all previously deprecated signatures is raised (#3024).
 * The version file is shipped with each JAR as a resource (#2941).
 * Unhandled exceptions on K/N are passed to the standard library function `processUnhandledException` (#2981).
-* A direct executor is used for `Task` callbacks in `kotlinx-coroutines-play-services` (#2990).
+* A direct executor is used for `Task` callbacks in `kotlinhax-shadowroutines-play-services` (#2990).
 * Metadata of coroutines artifacts leverages Gradle platform to have all versions of dependencies aligned (#2865).
 * Default `CoroutineExceptionHandler` is loaded eagerly and does not invoke `ServiceLoader` on its exception-handling path (#2552).
 * Fixed the R8 rules for `ServiceLoader` optimization (#2880).
@@ -236,7 +236,7 @@ Note that this is a full changelog relative to the 1.5.2 version. Changelog rela
 * Support of deprecated `CommonPool` is removed.
 * `@ExperimentalTime` is no longer needed for methods that use `Duration` (#3041).
 * JDK 1.6 is no longer required for building the project (#3043).
-* New version of Dokka is used, fixing the memory leak when building the coroutines and providing brand new reference visuals (https://kotlinlang.org/api/kotlinx.coroutines/) (#3051, #3054).
+* New version of Dokka is used, fixing the memory leak when building the coroutines and providing brand new reference visuals (https://kotlinlang.org/api/kotlinhax.shadowroutines/) (#3051, #3054).
 
 ### Changelog relative to version 1.6.0-RC3
 
@@ -259,16 +259,16 @@ Note that this is a full changelog relative to the 1.5.2 version. Changelog rela
 * `SendChannel.trySendBlocking` is now available on Kotlin/Native (#3064).
 * Fixed the bug due to which `Dispatchers.Main` was not used for `delay` and `withTimeout` (#3046).
 * JDK 1.6 is no longer required for building the project (#3043).
-* New version of Dokka is used, fixing the memory leak when building the coroutines and providing brand new reference visuals (https://kotlinlang.org/api/kotlinx.coroutines/) (#3051, #3054).
+* New version of Dokka is used, fixing the memory leak when building the coroutines and providing brand new reference visuals (https://kotlinlang.org/api/kotlinhax.shadowroutines/) (#3051, #3054).
 
 ## Version 1.6.0-RC
 
-### kotlinx-coroutines-test rework
+### kotlinhax-shadowroutines-test rework
 
-* `kotlinx-coroutines-test` became a multiplatform library usable from K/JVM, K/JS, and K/N.
+* `kotlinhax-shadowroutines-test` became a multiplatform library usable from K/JVM, K/JS, and K/N.
 * Its API was completely reworked to address long-standing issues with consistency, structured concurrency and correctness (#1203, #1609, #2379, #1749, #1204, #1390, #1222, #1395, #1881, #1910, #1772, #1626, #1742, #2082, #2102, #2405, #2462
   ).
-* The old API is deprecated for removal, but the new API is based on the similar concepts ([README](kotlinx-coroutines-test/README.md)), and the migration path is designed to be graceful: [migration guide](kotlinx-coroutines-test/MIGRATION.md)
+* The old API is deprecated for removal, but the new API is based on the similar concepts ([README](kotlinhax-shadowroutines-test/README.md)), and the migration path is designed to be graceful: [migration guide](kotlinhax-shadowroutines-test/MIGRATION.md)
 
 ### Dispatchers
 
@@ -282,7 +282,7 @@ Note that this is a full changelog relative to the 1.5.2 version. Changelog rela
 * When racing with cancellation, the `future` builder no longer reports unhandled exceptions into the global `CoroutineExceptionHandler`. Thanks @vadimsemenov! (#2774, #2791).
 * `Mutex.onLock` is deprecated for removal (#2794).
 * `Dispatchers.Main` is now used as the default source of time for `delay` and `withTimeout` when present(#2972).
-    * To opt-out from this behaviour, `kotlinx.coroutines.main.delay` system property can be set to `false`.
+    * To opt-out from this behaviour, `kotlinhax.shadowroutines.main.delay` system property can be set to `false`.
 * Java target of coroutines build is now 8 instead of 6 (#1589).
 
 ### Bug fixes and improvements
@@ -299,7 +299,7 @@ Note that this is a full changelog relative to the 1.5.2 version. Changelog rela
 * Deprecation level of all previously deprecated signatures is raised (#3024).
 * The version file is shipped with each JAR as a resource (#2941).
 * Unhandled exceptions on K/N are passed to the standard library function `processUnhandledException` (#2981).
-* A direct executor is used for `Task` callbacks in `kotlinx-coroutines-play-services` (#2990).
+* A direct executor is used for `Task` callbacks in `kotlinhax-shadowroutines-play-services` (#2990).
 * Metadata of coroutines artifacts leverages Gradle platform to have all versions of dependencies aligned (#2865).
 * Default `CoroutineExceptionHandler` is loaded eagerly and does not invoke `ServiceLoader` on its exception-handling path (#2552).
 * Fixed the R8 rules for `ServiceLoader` optimization (#2880).
@@ -344,17 +344,17 @@ Note that this is a full changelog relative to 1.4.3 version. Changelog relative
 ### Channels API
 
 * Major channels API rework (#330, #974). Existing `offer`, `poll`, and `sendBlocking` methods are deprecated, internal `receiveCatching` and `onReceiveCatching` removed, `receiveOrNull` and `onReceiveOrNull` are completely deprecated. Previously deprecated `SendChannel.isFull` declaration is removed. Channel operators deprecated with `ERROR` are now `HIDDEN`.
-* New methods `receiveCatching`, `onReceiveCatching` `trySend`, `tryReceive`, and `trySendBlocking` along with the new result type `ChannelResult` are introduced. They provide better type safety, are less error-prone, and have a consistent future-proof naming scheme.  The full rationale behind this change can be found [here](https://github.com/Kotlin/kotlinx.coroutines/issues/974#issuecomment-806569582).
+* New methods `receiveCatching`, `onReceiveCatching` `trySend`, `tryReceive`, and `trySendBlocking` along with the new result type `ChannelResult` are introduced. They provide better type safety, are less error-prone, and have a consistent future-proof naming scheme.  The full rationale behind this change can be found [here](https://github.com/Kotlin/kotlinhax.shadowroutines/issues/974#issuecomment-806569582).
 * `BroadcastChannel` and `ConflatedBroadcastChannel` are marked as `ObsoleteCoroutinesApi` in the favor or `SharedFlow` and `StateFlow`. The migration scheme can be found in their documentation. These classes will be deprecated in the next major release.
 * `callbackFlow` and `channelFlow` are promoted to stable API.
 
 ### Reactive integrations
 
-* All existing API in modules `kotlinx-coroutines-rx2`, `kotlinx-coroutines-rx3`, `kotlinx-coroutines-reactive`, `kotlinx-coroutines-reactor`, and `kotlinx-coroutines-jdk9` were revisited and promoted to stable (#2545).
+* All existing API in modules `kotlinhax-shadowroutines-rx2`, `kotlinhax-shadowroutines-rx3`, `kotlinhax-shadowroutines-reactive`, `kotlinhax-shadowroutines-reactor`, and `kotlinhax-shadowroutines-jdk9` were revisited and promoted to stable (#2545).
 * `publish` is no longer allowed to emit `null` values (#2646).
 * Misleading `awaitSingleOr*` functions on `Publisher` type are deprecated (#2591).
 * `MaybeSource.await` is deprecated in the favor of `awaitSingle`, additional lint functions for `Mono` are added in order to prevent ambiguous `Publisher` usages (#2628, #1587).
-* `ContextView` support in `kotlinx-coroutines-reactor` (#2575).
+* `ContextView` support in `kotlinhax-shadowroutines-reactor` (#2575).
 * All reactive builders no longer ignore inner cancellation exceptions preventing their completion (#2262, #2646).
 * `MaybeSource.collect` and `Maybe.collect` properly finish when they are completed without a value (#2617).
 * All exceptions are now consistently handled according to reactive specification, whether they are considered 'fatal' or not by reactive frameworks (#2646).
@@ -368,7 +368,7 @@ Note that this is a full changelog relative to 1.4.3 version. Changelog relative
 * Internals of `Job` and `AbstractCoroutine` was reworked, resulting in smaller code size, less memory footprint, and better performance (#2513, #2512).
 * `CancellationException` from Kotlin standard library is used for cancellation on Kotlin/JS and Kotlin/Native (#2638).
 * Introduced new `DelicateCoroutinesApi` annotation that warns users about potential target API pitfalls and suggests studying API's documentation first. The only delicate API right now is `GlobalScope` (#2637).
-* Fixed bug introduced in `1.4.3` when `kotlinx-coroutines-core.jar` triggered IDEA debugger failure (#2619).
+* Fixed bug introduced in `1.4.3` when `kotlinhax-shadowroutines-core.jar` triggered IDEA debugger failure (#2619).
 * Fixed memory leak of `ChildHandlerNode` with reusable continuations (#2564).
 * Various documentation improvements (#2555, #2589, #2592, #2583, #2437, #2616, #2633, #2560).
 
@@ -386,17 +386,17 @@ Note that this is a full changelog relative to 1.4.3 version. Changelog relative
 ### Channels API
 
 * Major channels API rework (#330, #974). Existing `offer`, `poll`, and `sendBlocking` methods are deprecated, internal `receiveCatching` and `onReceiveCatching` removed, `receiveOrNull` and `onReceiveOrNull` are completely deprecated. Previously deprecated `SendChannel.isFull` declaration is removed. Channel operators deprecated with `ERROR` are now `HIDDEN`.
-* New methods `receiveCatching`, `onReceiveCatching` `trySend`, `tryReceive`, and `trySendBlocking` along with the new result type `ChannelResult` are introduced. They provide better type safety, are less error-prone, and have a consistent future-proof naming scheme.  The full rationale behind this change can be found [here](https://github.com/Kotlin/kotlinx.coroutines/issues/974#issuecomment-806569582).
+* New methods `receiveCatching`, `onReceiveCatching` `trySend`, `tryReceive`, and `trySendBlocking` along with the new result type `ChannelResult` are introduced. They provide better type safety, are less error-prone, and have a consistent future-proof naming scheme.  The full rationale behind this change can be found [here](https://github.com/Kotlin/kotlinhax.shadowroutines/issues/974#issuecomment-806569582).
 * `BroadcastChannel` and `ConflatedBroadcastChannel` are marked as `ObsoleteCoroutinesApi` in the favor or `SharedFlow` and `StateFlow`. The migration scheme can be found in their documentation. These classes will be deprecated in the next major release.
 * `callbackFlow` and `channelFlow` are promoted to stable API.
 
 ### Reactive integrations
 
-* All existing API in modules `kotlinx-coroutines-rx2`, `kotlinx-coroutines-rx3`, `kotlinx-coroutines-reactive`, `kotlinx-coroutines-reactor`, and `kotlinx-coroutines-jdk9` were revisited and promoted to stable (#2545).
+* All existing API in modules `kotlinhax-shadowroutines-rx2`, `kotlinhax-shadowroutines-rx3`, `kotlinhax-shadowroutines-reactive`, `kotlinhax-shadowroutines-reactor`, and `kotlinhax-shadowroutines-jdk9` were revisited and promoted to stable (#2545).
 * `publish` is no longer allowed to emit `null` values (#2646).
 * Misleading `awaitSingleOr*` functions on `Publisher` type are deprecated (#2591).
 * `MaybeSource.await` is deprecated in the favor of `awaitSingle`, additional lint functions for `Mono` are added in order to prevent ambiguous `Publisher` usages (#2628, #1587).
-* `ContextView` support in `kotlinx-coroutines-reactor` (#2575).
+* `ContextView` support in `kotlinhax-shadowroutines-reactor` (#2575).
 * All reactive builders no longer ignore inner cancellation exceptions preventing their completion (#2262, #2646).
 * `MaybeSource.collect` and `Maybe.collect` properly finish when they are completed without a value (#2617).
 * All exceptions are now consistently handled according to reactive specification, whether they are considered 'fatal' or not by reactive frameworks (#2646).
@@ -409,7 +409,7 @@ Note that this is a full changelog relative to 1.4.3 version. Changelog relative
 * Internals of `Job` and `AbstractCoroutine` was reworked, resulting in smaller code size, less memory footprint, and better performance (#2513, #2512).
 * `CancellationException` from Kotlin standard library is used for cancellation on Kotlin/JS and Kotlin/Native (#2638).
 * Introduced new `DelicateCoroutineApi` annotation that warns users about potential target API pitfalls and suggests studying API's documentation first. The only delicate API right now is `GlobalScope` (#2637).
-* Fixed bug introduced in `1.4.3` when `kotlinx-coroutines-core.jar` triggered IDEA debugger failure (#2619).
+* Fixed bug introduced in `1.4.3` when `kotlinhax-shadowroutines-core.jar` triggered IDEA debugger failure (#2619).
 * Fixed memory leak of `ChildHandlerNode` with reusable continuations (#2564).
 * Various documentation improvements (#2555, #2589, #2592, #2583, #2437, #2616, #2633, #2560).
 
@@ -421,11 +421,11 @@ Note that this is a full changelog relative to 1.4.3 version. Changelog relative
 * `ThreadContextElement`s are now restored in the opposite order from update (#2195)
 * Improved performance of combine with 4 parameters, thanks to @alexvanyo (#2419)
 * Debug agent sanitizer leaves at least one frame with source location (#1437)
-* Update Reactor version in `kotlinx-coroutines-reactor` to `3.4.1`, thanks to @sokomishalov (#2432)
+* Update Reactor version in `kotlinhax-shadowroutines-reactor` to `3.4.1`, thanks to @sokomishalov (#2432)
 * `callInPlace` contract added to `ReceiveChannel.consume` (#941)
 * `CoroutineStart.UNDISPATCHED` promoted to stable API (#1393)
 * Kotlin updated to 1.4.30
-* `kotlinx.coroutines` are now released directly to MavenCentral  
+* `kotlinhax.shadowroutines` are now released directly to MavenCentral  
 * Reduced the size of `DispatchedCoroutine` by a field
 * Internal class `TimeSource` renamed to `SchedulerTimeSource` to prevent wildcard import issues (#2537)
 
@@ -448,7 +448,7 @@ Note that this is a full changelog relative to 1.4.3 version. Changelog relative
 * Fixed bug when mutex and semaphore were not released during cancellation (#2390, thanks to @Tilps for reproducing).
 * Some corner cases in cancellation propagation between coroutines and listenable futures are repaired (#1442, thanks to @vadimsemenov).
 * Fixed unconditional cast to `CoroutineStackFrame` in exception recovery that triggered failures of instrumented code (#2386).
-* Platform-specific dependencies are removed from `kotlinx-coroutines-javafx` (#2360). 
+* Platform-specific dependencies are removed from `kotlinhax-shadowroutines-javafx` (#2360). 
 
 ## Version 1.4.1
 
@@ -499,7 +499,7 @@ This is a patch release with an important fix to the `SharedFlow` implementation
     
 * Support leak-free closeable resources transfer via `onUndeliveredElement` in channels (#1936).
 * Changed ABI in reactive integrations for Java interoperability (#2182).
-* Fixed ProGuard rules for `kotlinx-coroutines-core` (#2046, #2266).
+* Fixed ProGuard rules for `kotlinhax-shadowroutines-core` (#2046, #2266).
 * Lint settings were added to `Flow` to avoid accidental capturing of outer `CoroutineScope` for cancellation check (#2038). 
 
 ### External contributions
@@ -516,8 +516,8 @@ Thank you for your contributions and participation in the Kotlin community!
 * Support of `CoroutineContext` in `Flow.asPublisher` and similar reactive builders (#2155).
 * Kotlin updated to 1.4.0.
 * Transition to new HMPP publication scheme for multiplatform usages:
-    * Artifacts `kotlinx-coroutines-core-common` and `kotlinx-coroutines-core-native` are removed.
-    * For multiplatform usages, it's enough to [depend directly](README.md#multiplatform) on `kotlinx-coroutines-core` in `commonMain` source-set.
+    * Artifacts `kotlinhax-shadowroutines-core-common` and `kotlinhax-shadowroutines-core-native` are removed.
+    * For multiplatform usages, it's enough to [depend directly](README.md#multiplatform) on `kotlinhax-shadowroutines-core` in `commonMain` source-set.
     * The same artifact coordinates can be used to depend on platform-specific artifact in platform-specific source-set.
 
 ## Version 1.3.8
@@ -535,7 +535,7 @@ Thank you for your contributions and participation in the Kotlin community!
 * Fixed `ensureActive` to work in the empty context case to fix `IllegalStateException` when using flow from `suspend fun main` (#2044).
 * Fixed a problem with `AbortFlowException` in the `Flow.first` operator to avoid erroneous `NoSuchElementException` (#2051).
 * Fixed JVM dependency on Android annotations (#2075).
-* Removed keep rules mentioning `kotlinx.coroutines.android` from core module (#2061 by @mkj-gram).
+* Removed keep rules mentioning `kotlinhax.shadowroutines.android` from core module (#2061 by @mkj-gram).
 * Corrected some docs and examples (#2062, #2071, #2076, #2107, #2098, #2127, #2078, #2135).                                                                          
 * Improved the docs and guide on flow cancellation (#2043).
 * Updated Gradle version to `6.3` (it only affects multiplatform artifacts in this release).
@@ -562,10 +562,10 @@ Thank you for your contributions and participation in the Kotlin community!
 
 * `runInterruptible` primitive to tie cancellation with thread interruption for blocking calls. Contributed by @jxdabc (#1947).
 * Integration module with RxJava3 is introduced. Contributed by @ZacSweers (#1883)
-* Integration with [BlockHound](https://github.com/reactor/BlockHound) in `kotlinx-coroutines-debug` module (#1821, #1060).
+* Integration with [BlockHound](https://github.com/reactor/BlockHound) in `kotlinhax-shadowroutines-debug` module (#1821, #1060).
 * Memory leak in ArrayBroadcastChannel is fixed (#1885).
 * Behavioural change in `suspendCancellableCoroutine`, cancellation is established before invoking passed block argument (#1671).
-* Debug agent internals are moved into `kotlinx-coroutines-core` for better integration with IDEA. It should not affect library users and all the redundant code should be properly eliminated with R8.
+* Debug agent internals are moved into `kotlinhax-shadowroutines-core` for better integration with IDEA. It should not affect library users and all the redundant code should be properly eliminated with R8.
 * ClassCastException with reusable continuations bug is fixed (#1966).
 * More precise scheduler detection for `Executor.asCoroutineDispatcher` (#1992).
 * Kotlin updated to 1.3.71.
@@ -578,9 +578,9 @@ Thank you for your contributions and participation in the Kotlin community!
 * Memory leak with a mix of reusable and non-reusable continuations is fixed (#1855).
 * `DebugProbes` are ready for production installation: its performance is increased, the flag to disable creation stacktraces to reduce the footprint is introduced (#1379, #1372).
 * Stacktrace recovery workaround for Android 6.0 and earlier bug (#1866).
-* New integration module: `kotlinx-coroutines-jdk9` with adapters for `java.util.concurrent.Flow`.
+* New integration module: `kotlinhax-shadowroutines-jdk9` with adapters for `java.util.concurrent.Flow`.
 * `BroadcastChannel.close` properly starts lazy coroutine (#1713).
-* `kotlinx-coroutines-bom` is published without Gradle metadata.
+* `kotlinhax-shadowroutines-bom` is published without Gradle metadata.
 * Make calls to service loader in reactor integrations optimizable by R8 (#1817).
 
 ## Version 1.3.4
@@ -597,7 +597,7 @@ Thank you for your contributions and participation in the Kotlin community!
 
 ### Other changes
 
-* `kotlinx-coroutines-core` is optimized for R8, making it much smaller for Android usages (75 KB for `1.3.4` release).
+* `kotlinhax-shadowroutines-core` is optimized for R8, making it much smaller for Android usages (75 KB for `1.3.4` release).
 * Performance of `Dispatchers.Default` is improved (#1704, #1706).
 * Kotlin is updated to 1.3.70.
 * `CoroutineDispatcher` and `ExecutorCoroutineDispatcher` experimental coroutine context keys are introduced (#1805).
@@ -644,7 +644,7 @@ Thank you for your contributions and participation in the Kotlin community!
 * Linearizability of Channel.close in a complex contended cases (#1419).
 * ArrayChannel.isBufferEmpty atomicity is fixed (#1526).
 * Various documentation improvements.
-* Reduced bytecode size of `kotlinx-coroutines-core`, reduced size of minified `dex` when using basic functionality of `kotlinx-coroutines`.
+* Reduced bytecode size of `kotlinhax-shadowroutines-core`, reduced size of minified `dex` when using basic functionality of `kotlinhax-shadowroutines`.
 
 ## Version 1.3.2
 
@@ -666,13 +666,13 @@ This is a minor update with various fixes:
 * Various cleanups and additions in tests.
 
 Note: Kotlin/Native artifacts are now published with Gradle metadata format version 1.0, so you will need 
-Gradle version 5.3 or later to use this version of kotlinx.coroutines in your Kotlin/Native project.
+Gradle version 5.3 or later to use this version of kotlinhax.shadowroutines in your Kotlin/Native project.
 
 ## Version 1.3.0
 
 ### Flow
 
-This version is the first stable release with [`Flow`](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.flow/-flow/index.html) API.
+This version is the first stable release with [`Flow`](https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines.flow/-flow/index.html) API.
 
 All `Flow` API not marked with `@FlowPreview` or `@ExperimentalCoroutinesApi` annotations are stable and here to stay.
 Flow declarations marked with `@ExperimentalCoroutinesApi` have [the same guarantees](/docs/topics/compatibility.md#experimental-api) as regular experimental API.
@@ -711,9 +711,9 @@ Please note that API marked with `@FlowPreview` have [weak guarantees](/docs/top
 
 * ServiceLoader-code is adjusted to avoid I/O on the Main thread on newer (3.6.0+) Android toolchain.
 * Stacktrace recovery support for minified builds on Android (#1416).
-* Guava version in `kotlinx-coroutines-guava` updated to `28.0`.
+* Guava version in `kotlinhax-shadowroutines-guava` updated to `28.0`.
 * `setTimeout`-based JS dispatcher for platforms where `process` is unavailable (#1404).
-* Native, JS and common modules are added to `kotlinx-coroutines-bom`.
+* Native, JS and common modules are added to `kotlinhax-shadowroutines-bom`.
 * Fixed bug with ignored `acquiredPermits` in `Semaphore` (#1423).
 
 ## Version 1.3.0-RC
@@ -728,7 +728,7 @@ Please note that API marked with `@FlowPreview` have [weak guarantees](/docs/top
 ### General changes
 
 * Kotlin updated to 1.3.41
-* Added `kotlinx-coroutines-bom` with Maven Bill of Materials (#1110)
+* Added `kotlinhax-shadowroutines-bom` with Maven Bill of Materials (#1110)
 * Reactive integrations are seriously improved
   * All builders now are top-level functions instead of extensions on `CoroutineScope` and prohibit `Job` instance in their context to simplify lifecycle management
   * Fatal exceptions are handled consistently (#1297)
@@ -792,7 +792,7 @@ General changes:
 ## Version 1.2.1
 
 Major:
-  * Infrastructure for testing coroutine-specific code in `kotlinx-coroutines-test`: `runBlockingTest`, `TestCoroutineScope` and `TestCoroutineDispatcher`, contributed by Sean McQuillan (@objcode). Obsolete `TestCoroutineContext` from `kotlinx-coroutines-core` is deprecated.
+  * Infrastructure for testing coroutine-specific code in `kotlinhax-shadowroutines-test`: `runBlockingTest`, `TestCoroutineScope` and `TestCoroutineDispatcher`, contributed by Sean McQuillan (@objcode). Obsolete `TestCoroutineContext` from `kotlinhax-shadowroutines-core` is deprecated.
   * `Job.asCompletableFuture` extension in jdk8 module (#1113).
 
 Flow improvements:
@@ -834,7 +834,7 @@ Performance:
 
 * Major debug agent improvements. Real stacktraces are merged with coroutine stacktraces for running coroutines, merging heuristic is improved, API is cleaned up and is on its road to stabilization (#997).
 * `CoroutineTimeout` rule or JUnit4 is introduced to simplify coroutines debugging (#938).
-* Stacktrace recovery improvements. Exceptions with custom properties are no longer copied, `CopyableThrowable` interface is introduced, machinery is [documented](https://github.com/Kotlin/kotlinx.coroutines/blob/develop/docs/debugging.md) (#921, #950).
+* Stacktrace recovery improvements. Exceptions with custom properties are no longer copied, `CopyableThrowable` interface is introduced, machinery is [documented](https://github.com/Kotlin/kotlinhax.shadowroutines/blob/develop/docs/debugging.md) (#921, #950).
 * `Dispatchers.Unconfined`, `MainCoroutineDispatcher.immediate`, `MainScope` and `CoroutineScope.cancel` are promoted to stable API (#972).
 * `CompletableJob` is introduced (#971).
 * Structured concurrency is integrated into futures and listenable futures (#1008).
@@ -873,9 +873,9 @@ Bug fixes:
 ## Version 1.1.0-alpha
 
 ### Major improvements in coroutines testing and debugging
-* New module: [`kotlinx-coroutines-debug`](https://github.com/Kotlin/kotlinx.coroutines/blob/master/core/kotlinx-coroutines-debug/README.md). Debug agent that improves coroutines stacktraces, allows to print all active coroutines and its hierarchies and can be installed as Java agent.
-* New module: [`kotlinx-coroutines-test`](https://github.com/Kotlin/kotlinx.coroutines/blob/master/core/kotlinx-coroutines-test/README.md). Allows setting arbitrary `Dispatchers.Main` implementation for tests (#810).
-* Stacktrace recovery mechanism. Exceptions from coroutines are recovered from current coroutine stacktraces to simplify exception diagnostic. Enabled in debug mode, controlled by `kotlinx.coroutines.debug` system property (#493).
+* New module: [`kotlinhax-shadowroutines-debug`](https://github.com/Kotlin/kotlinhax.shadowroutines/blob/master/core/kotlinhax-shadowroutines-debug/README.md). Debug agent that improves coroutines stacktraces, allows to print all active coroutines and its hierarchies and can be installed as Java agent.
+* New module: [`kotlinhax-shadowroutines-test`](https://github.com/Kotlin/kotlinhax.shadowroutines/blob/master/core/kotlinhax-shadowroutines-test/README.md). Allows setting arbitrary `Dispatchers.Main` implementation for tests (#810).
+* Stacktrace recovery mechanism. Exceptions from coroutines are recovered from current coroutine stacktraces to simplify exception diagnostic. Enabled in debug mode, controlled by `kotlinhax.shadowroutines.debug` system property (#493).
 
 ### Other improvements
 * `MainScope` factory and `CoroutineScope.cancel` extension (#829). One line `CoroutineScope` integration!
@@ -889,7 +889,7 @@ Bug fixes:
 * Kotlin/Native single-threaded workers support: coroutines can be safely used in multiple independent K/N workers.
 * jsdom support in `Dispatchers.Default` on JS.
 * rxFlowable generic parameter is now restricted with Any.
-* Guava 27 support in `kotlinx-coroutines-guava`.
+* Guava 27 support in `kotlinhax-shadowroutines-guava`.
 * Coroutines are now built with progressive mode.
 * Various fixes in the documentation.
 
@@ -917,7 +917,7 @@ Bug fixes:
 * Deprecated API is removed or marked as `internal`.
 * Experimental and internal coroutine API is marked with corresponding `kotlin.experimental.Experimental` annotation. If you are using `@ExperimentalCoroutinesApi` or `@InternalCoroutinesApi` you should explicitly opt-in, otherwise compilation warning (or error) will be produced. 
 * `Unconfined` dispatcher (and all dispatchers which support immediate invocation) forms event-loop on top of current thread, thus preventing all `StackOverflowError`s. `Unconfined` dispatcher is now much safer for the general use and may leave its experimental status soon (#704).
-* Significantly improved performance of suspending hot loops in `kotlinx.coroutines` (#537).
+* Significantly improved performance of suspending hot loops in `kotlinhax.shadowroutines` (#537).
 * Proguard rules are embedded into coroutines JAR to assist jettifier (#657)
 * Fixed bug in shutdown sequence of `runBlocking` (#692).
 * `ReceiveChannel.receiveOrNull` is marked as obsolete and deprecated.
@@ -935,7 +935,7 @@ Bug fixes:
 
 Maintenance release:
 * Added `Dispatchers.Main` to common dispatchers, which can be used from Android, Swing and JavaFx projects if a corresponding integration library is added to dependencies. 
-* With `Dispatchers.Main` improvement tooling bug in Android Studio #626 is mitigated, so Android users now can safely start the migration to the latest `kotlinx.coroutines` version.
+* With `Dispatchers.Main` improvement tooling bug in Android Studio #626 is mitigated, so Android users now can safely start the migration to the latest `kotlinhax.shadowroutines` version.
 * Fixed bug with thread unsafety of shutdown sequence in `EventLoop`.
 * Experimental coroutine dispatcher now has `close` contract similar to Java `Executor`, so it can be safely instantiated and closed multiple times (affects only unit tests).
 * Atomicfu version is updated with fixes in JS transformer (see #609)
@@ -952,7 +952,7 @@ Maintenance release:
   * Got rid of `awaitAll` in documentation and rewrote `currentScope` section (see #624).
 * **[Major]** Coroutine scheduler is used for `Dispatchers.Default` by default instead of deprecated `CommonPool`.
   * "`DefaultDispatcher`" is used as a public name of the default impl (you'll see it thread names and in the guide).
-  * `-Dkotlinx.coroutines.scheduler=off` can be used to switch back to `CommonPool` for a time being (until deprecated CommonPool is removed).  
+  * `-Dkotlinhax.shadowroutines.scheduler=off` can be used to switch back to `CommonPool` for a time being (until deprecated CommonPool is removed).  
 * Make `CoroutineStart.ATOMIC` experimental as it covers important use-case with resource cleanup in finally block (see #627).
 * Restored binary compatibility of `Executor.asCoroutineDispatcher` (see #629).
 * Fixed OOM in thread-pool dispatchers (see #571).
@@ -964,7 +964,7 @@ Maintenance release:
 * **[Major]** Public API revision. All public API was reviewed and marked as preparation to `1.0` release:
    1. `@Deprecated` API. All API marked as deprecated will be removed in 1.0 release without replacement.
    2. `@ExperimentalCoroutinesApi` API. This API is experimental and may change in the future, but migration mechanisms will be provided. Signature, binary compatibility and semantics can be changed.
-   3. `@InternalCoroutinesApi`. This API is intended to be used **only** from within `kotlinx.coroutines`. It can and will be changed, broken 
+   3. `@InternalCoroutinesApi`. This API is intended to be used **only** from within `kotlinhax.shadowroutines`. It can and will be changed, broken 
        and removed in the future releases without any warnings and migration aids. If you find yourself using this API, it is better to report
        your use-case to Github issues, so decent, stable and well-tested alternative can be provided.
    4. `@ObsoleteCoroutinesApi`. This API has serious known flaws and will be replaced with a better alternative in the nearest releases.
@@ -997,13 +997,13 @@ Visible consequences of include more robust exception handling for large corouti
 
 ## Version 0.26.0
 
-* Major rework of `kotlinx.coroutines` concurrency model (see #410 for a full explanation of the rationale behind this change):
+* Major rework of `kotlinhax.shadowroutines` concurrency model (see #410 for a full explanation of the rationale behind this change):
   * All coroutine builders are now extensions on `CoroutineScope` and inherit its `coroutineContext`. Standalone builders are deprecated.
   * As a consequence, all nested coroutines launched via builders now automatically establish parent-child relationship and inherit `CoroutineDispatcher`.
   * All coroutine builders use `Dispatchers.Default` by default if `CoroutineInterceptor` is not present in their context.
-  * [CoroutineScope](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-coroutine-scope/index.html) became the first-class citizen in `kolinx.coroutines`.
+  * [CoroutineScope](https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines/-coroutine-scope/index.html) became the first-class citizen in `kolinx.coroutines`.
   * `withContext` `block` argument has `CoroutineScope` as a receiver.
-  * [GlobalScope](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-global-scope/index.html) is introduced to simplify migration to new API and to launch global-level coroutines.
+  * [GlobalScope](https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines/-global-scope/index.html) is introduced to simplify migration to new API and to launch global-level coroutines.
   * `currentScope` and `coroutineScope` builders are introduced to extract and provide `CoroutineScope`.
   * Factory methods to create `CoroutineScope` from `CoroutineContext` are introduced.
   * `CoroutineScope.isActive` became an extension property.
@@ -1037,11 +1037,11 @@ Visible consequences of include more robust exception handling for large corouti
   * `ThreadContextElement` API for custom thread-context sensitive context elements.
   * `ThreadLocal.asContextElement()` extension function to convert an arbitrary thread-local into coroutine context element.
   * New ["Thread-local data" subsection in the guide](docs/topics/coroutines-guide.md#thread-local-data) with examples.
-  * SLF4J Mapped Diagnostic Context (MDC) integration is provided via `MDCContext` element defined in [`kotlinx-coroutines-slf4j`](integration/kotlinx-coroutines-slf4j/README.md) integration module.
+  * SLF4J Mapped Diagnostic Context (MDC) integration is provided via `MDCContext` element defined in [`kotlinhax-shadowroutines-slf4j`](integration/kotlinhax-shadowroutines-slf4j/README.md) integration module.
 * Introduced IO dispatcher to offload blocking I/O-intensive tasks (see #79).
 * Introduced `ExecutorCoroutineDispatcher` instead of `CloseableCoroutineDispatcher` (see #385). 
 * Built with Kotlin 1.2.61 and Kotlin/Native 0.8.2.
-* JAR files for `kotlinx-coroutines` are now [JEP 238](https://openjdk.java.net/jeps/238) multi-release JAR files.
+* JAR files for `kotlinhax-shadowroutines` are now [JEP 238](https://openjdk.java.net/jeps/238) multi-release JAR files.
   * On JDK9+ `VarHandle` is used for atomic operations instead of `Atomic*FieldUpdater` for better performance.
   * See [AtomicFu](https://github.com/Kotlin/kotlinx.atomicfu/blob/master/README.md) project for details.
 * Reversed addition of `BlockingChecker` extension point to control where `runBlocking` can be used (see #227).
@@ -1051,7 +1051,7 @@ Visible consequences of include more robust exception handling for large corouti
 * Fixed `runBlocking` cancellation (see #501).
 * Fixed races and timing bugs in `withTimeoutOrNull` (see #498).
 * Execute `EventLoop.invokeOnTimeout` in `DefaultDispatcher` to allow busy-wait loops inside `runBlocking` (see #479).
-* Removed `kotlinx-coroutines-io` module from the project, it has moved to [kotlinx-io](https://github.com/kotlin/kotlinx-io/).
+* Removed `kotlinhax-shadowroutines-io` module from the project, it has moved to [kotlinx-io](https://github.com/kotlin/kotlinx-io/).
 * Provide experimental API to create limited view of experimental dispatcher (see #475). 
 * Various minor fixes by @LouisCAD, @Dmitry-Borodin.
 
@@ -1080,7 +1080,7 @@ Visible consequences of include more robust exception handling for large corouti
   * Written from scratch and optimized for communicating coroutines.
   * Performs significantly better than ForkJoinPool on coroutine benchmarks and for connected applications with [ktor](https://ktor.io).
   * Supports automatic creating of new threads for blocking operations running on the same thread pool (with an eye on solving #79), but there is no stable public API for it just yet.
-  * For preview, run JVM with `-Dkotlinx.coroutines.scheduler` option. In this case `DefaultDispatcher` is set to new experimental scheduler instead of FJP-based `CommonPool`.
+  * For preview, run JVM with `-Dkotlinhax.shadowroutines.scheduler` option. In this case `DefaultDispatcher` is set to new experimental scheduler instead of FJP-based `CommonPool`.
   * Submit your feedback to issue #261.
 
 ## Version 0.23.4
@@ -1155,13 +1155,13 @@ Visible consequences of include more robust exception handling for large corouti
   * Made `CoroutineContext.DEBUG_PROPERTY_NAME` constant public.
   * Introduce public constants with `"on"`, `"off"`, `"auto"` values.
 * Introduce system property to control `CommonPool` parallelism (see #343):
-  * `CommonPool.DEFAULT_PARALLELISM_PROPERTY_NAME` constant is introduced with a value of "kotlinx.coroutines.default.parallelism".
+  * `CommonPool.DEFAULT_PARALLELISM_PROPERTY_NAME` constant is introduced with a value of "kotlinhax.shadowroutines.default.parallelism".
 * Include package-list files into documentation site (see #290).
 * Fix various typos in docs (PRs by @paolop and @ArtsiomCh).  
 
 ## Version 0.22.5
 
-* JS: Fixed main file reference in [NPM package](https://www.npmjs.com/package/kotlinx-coroutines-core)
+* JS: Fixed main file reference in [NPM package](https://www.npmjs.com/package/kotlinhax-shadowroutines-core)
 * Added context argument to `Channel.filterNot` (PR by @jcornaz).
 * Implemented debug `toString` for channels (see #185).
 
@@ -1169,7 +1169,7 @@ Visible consequences of include more robust exception handling for large corouti
 
 * JS: Publish to NPM (see #229).
 * JS: Use node-style dispatcher on ReactNative (see #236).
-* [jdk8 integration](integration/kotlinx-coroutines-jdk8/README.md) improvements: 
+* [jdk8 integration](integration/kotlinhax-shadowroutines-jdk8/README.md) improvements: 
   * Added conversion from `CompletionStage` to `Deferred` (see #262, PR by @jcornaz).
   * Use fast path in `CompletionStage.await` and make it cancellable.
 
@@ -1179,9 +1179,9 @@ Visible consequences of include more robust exception handling for large corouti
 * Don't use `ForkJoinPool` if there is a `SecurityManager` present to work around JNLP problems (see #216, PR by @NikolayMetchev). 
 * JS: Check for undefined `window.addEventListener` when choosing default coroutine dispatcher (see #230, PR by @ScottPierce).
 * Update 3rd party dependencies:
-  * [kotlinx-coroutines-rx1](reactive/kotlinx-coroutines-rx1) to RxJava version `1.3.6`.
-  * [kotlinx-coroutines-rx2](reactive/kotlinx-coroutines-rx2) to RxJava version `2.1.9`.
-  * [kotlinx-coroutines-guava](integration/kotlinx-coroutines-guava) to Guava version `24.0-jre`.
+  * [kotlinhax-shadowroutines-rx1](reactive/kotlinhax-shadowroutines-rx1) to RxJava version `1.3.6`.
+  * [kotlinhax-shadowroutines-rx2](reactive/kotlinhax-shadowroutines-rx2) to RxJava version `2.1.9`.
+  * [kotlinhax-shadowroutines-guava](integration/kotlinhax-shadowroutines-guava) to Guava version `24.0-jre`.
   
 ## Version 0.22.2
 
@@ -1263,7 +1263,7 @@ Visible consequences of include more robust exception handling for large corouti
 * Use `java.util.ServiceLoader` to find default instances of `CoroutineExceptionHandler`.
 * Android UI integration:
   * Use `Thread.getUncaughtExceptionPreHandler` to make sure that exceptions are logged before crash (see #148).
-  * Introduce `UI.awaitFrame` for animation; added sample coroutine-based animation application for Android [here](ui/kotlinx-coroutines-android/animation-app).
+  * Introduce `UI.awaitFrame` for animation; added sample coroutine-based animation application for Android [here](ui/kotlinhax-shadowroutines-android/animation-app).
   * Fixed `delay(Long.MAX_VALUE)` (see #161)  
 * Added missing `DefaultDispatcher` on some reactive operators (see #174 by @fvasco)
 * Fixed `actor` and `produce` so that a cancellation of a Job cancels the underlying channel (closes and removes all the pending messages).  
@@ -1354,7 +1354,7 @@ Visible consequences of include more robust exception handling for large corouti
   * Fixed lost ACC_STATIC on <clinit> methods (see #116).
   * Fixed link to source code from documentation (see #129).
   * Fixed `delay` in arbitrary contexts (see #133).
-* `kotlinx-coroutines-io` module is introduced. It is a work-in-progress on `ByteReadChannel` and `ByteWriteChannel`
+* `kotlinhax-shadowroutines-io` module is introduced. It is a work-in-progress on `ByteReadChannel` and `ByteWriteChannel`
    interfaces, their implementations, and related classes to enable convenient coroutine integration with various 
    asynchronous I/O libraries and sockets. It is currently _unstable_ and **will change** in the next release.  
 
@@ -1370,12 +1370,12 @@ Visible consequences of include more robust exception handling for large corouti
 * Fixed NPE when `ArrayBroadcastChannel` is closed concurrently with receive (see #97).
 * Fixed bug in internal class LockFreeLinkedList that resulted in ISE under stress in extremely rare circumstances.
 * Integrations:
-  * [quasar](integration/kotlinx-coroutines-quasar): Introduced integration with suspendable JVM functions
+  * [quasar](integration/kotlinhax-shadowroutines-quasar): Introduced integration with suspendable JVM functions
     that are instrumented with [Parallel Universe Quasar](https://docs.paralleluniverse.co/quasar/) 
     (thanks to the help of @pron). 
-  * [reactor](reactive/kotlinx-coroutines-reactor): Replaced deprecated `setCancellation` with `onDipose` and 
+  * [reactor](reactive/kotlinhax-shadowroutines-reactor): Replaced deprecated `setCancellation` with `onDipose` and 
     updated to Aluminium-SR3 release (courtesy of @yxf07, see #96) 
-  * [jdk8](integration/kotlinx-coroutines-jdk8): Added adapters for `java.time` classes (courtesy of @fvasco, see #93)     
+  * [jdk8](integration/kotlinhax-shadowroutines-jdk8): Added adapters for `java.time` classes (courtesy of @fvasco, see #93)     
 
 ## Version 0.17
 
@@ -1427,7 +1427,7 @@ Visible consequences of include more robust exception handling for large corouti
 * `CoroutineExceptionHandler` factory function is introduced by @konrad-kaminski
 * [`integration`](integration) directory is introduced for all 3rd party integration projects
   * It has [contribution guidelines](integration/README.md#contributing) and contributions from community are welcome
-  * Support for Guava `ListenableFuture` in the new [`kotlinx-coroutines-guava`](integration/kotlinx-coroutines-guava) module
+  * Support for Guava `ListenableFuture` in the new [`kotlinhax-shadowroutines-guava`](integration/kotlinhax-shadowroutines-guava) module
   * Rx1 Scheduler support by @konrad-kaminski
 * Fixed a number of `Channel` and `BroadcastChannel` implementation bugs related to concurrent 
   send/close/close of channels that lead to hanging send, offer or close operations (see #66). 
@@ -1446,11 +1446,11 @@ Visible consequences of include more robust exception handling for large corouti
      so that `async(context, CoroutineStart.UNDISPATCHED)` is similar to the behavior of C# `async`.
   * [Guide to UI programming with coroutines](ui/coroutines-guide-ui.md) mentions the use of it to optimize
     the start of coroutines from UI threads.
-* Introduced `BroadcastChannel` interface in `kotlinx-coroutines-core` module:
+* Introduced `BroadcastChannel` interface in `kotlinhax-shadowroutines-core` module:
   * It extends `SendChannel` interface and provides `open` function to create subscriptions.
   * Subscriptions are represented with `SubscriptionReceiveChannel` interface. 
   * The corresponding `SubscriptionReceiveChannel` interfaces are removed from [reactive](reactive) implementation
-     modules. They use an interface defined in `kotlinx-coroutines-core` module.
+     modules. They use an interface defined in `kotlinhax-shadowroutines-core` module.
   * `ConflatedBroadcastChannel` implementation is provided for state-observation-like use-cases, where a coroutine or a
      regular code (in UI, for example) updates the state that subscriber coroutines shall react to.
   * `ArrayBroadcastChannel` implementation is provided for event-bus-like use-cases, where a sequence of events shall
@@ -1459,7 +1459,7 @@ Visible consequences of include more robust exception handling for large corouti
     "Rx Subject vs BroadcastChannel" section.
 * Pull requests from Konrad Kamiński are merged into reactive stream implementations:
   * Support for Project Reactor `Mono` and `Flux`. 
-    See [`kotlinx-coroutines-reactor`](reactive/kotlinx-coroutines-reactor) module.
+    See [`kotlinhax-shadowroutines-reactor`](reactive/kotlinhax-shadowroutines-reactor) module.
   * Implemented Rx1 `Completable.awaitCompleted`.
   * Added support for Rx2 `Maybe`.
 * Better timeout support:  
@@ -1482,7 +1482,7 @@ Visible consequences of include more robust exception handling for large corouti
     all over the place to reflect these important changes.
 * Implemented `awaitFirstOrDefault` extension for reactive streams, Rx 1.x, and Rx 2.x.
 * Added `Mutex.withMutex` helper function.
-* `kotlinx-coroutines-android` module has `provided` dependency on of Android APIs to 
+* `kotlinhax-shadowroutines-android` module has `provided` dependency on of Android APIs to 
   eliminate warnings when using it in android project.
 
 ## Version 0.13
@@ -1516,9 +1516,9 @@ Visible consequences of include more robust exception handling for large corouti
 
 * Switched to Kotlin version 1.1.0 release.
 * Reworked and updated utilities for 
-  [Reactive Streams](kotlinx-coroutines-reactive), 
-  [Rx 1.x](kotlinx-coroutines-rx1), and 
-  [Rx 2.x](kotlinx-coroutines-rx2) with library-specific 
+  [Reactive Streams](kotlinhax-shadowroutines-reactive), 
+  [Rx 1.x](kotlinhax-shadowroutines-rx1), and 
+  [Rx 2.x](kotlinhax-shadowroutines-rx2) with library-specific 
   coroutine builders, suspending functions, converters and iteration support.
 * `LinkedListChannel` with unlimited buffer (`offer` always succeeds).
 * `onLock` select clause and an optional `owner` parameter in all `Mutex` functions.
@@ -1531,7 +1531,7 @@ Visible consequences of include more robust exception handling for large corouti
 ## Version 0.11-rc
 
 * `select` expression with onJoin/onAwait/onSend/onReceive clauses.
-* `Mutex` is moved to `kotlinx.coroutines.sync` package.
+* `Mutex` is moved to `kotlinhax.shadowroutines.sync` package.
 * `ClosedSendChannelException` is a subclass of `CancellationException` now.
 * New sections on "Shared mutable state and concurrency" and "Select expression" 
   in [coroutines guide](docs/topics/coroutines-guide.md).
@@ -1600,7 +1600,7 @@ Visible consequences of include more robust exception handling for large corouti
   standard coroutine builders include it as receiver for convenience.
 * Introduced `Executor.toCoroutineDispatcher()` extension.  
 * Delay scheduler thread is not daemon anymore, but times out automatically.
-* Debugging facilities in `newCoroutineContext` can be explicitly disabled with `-Dkotlinx.coroutines.debug=off`.
+* Debugging facilities in `newCoroutineContext` can be explicitly disabled with `-Dkotlinhax.shadowroutines.debug=off`.
 * xxx-test files are renamed to xxx-example for clarity.
 * Fixed NPE in Job implementation when starting coroutine with already cancelled parent job.
-* Support cancellation in `kotlinx-coroutines-nio` module
+* Support cancellation in `kotlinhax-shadowroutines-nio` module

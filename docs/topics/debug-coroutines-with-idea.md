@@ -1,4 +1,4 @@
-<contribute-url>https://github.com/Kotlin/kotlinx.coroutines/edit/master/docs/topics/</contribute-url>
+<contribute-url>https://github.com/Kotlin/kotlinhax.shadowroutines/edit/master/docs/topics/</contribute-url>
 
 
 [//]: # (title: Debug coroutines using IntelliJ IDEA – tutorial)
@@ -10,14 +10,14 @@ The tutorial assumes you have prior knowledge of the [coroutines](coroutines-gui
 ## Create coroutines
 
 1. Open a Kotlin project in IntelliJ IDEA. If you don't have a project, [create one](jvm-get-started.md#create-a-project).
-2. To use the `kotlinx.coroutines` library in a Gradle project, add the following dependency to `build.gradle(.kts)`:
+2. To use the `kotlinhax.shadowroutines` library in a Gradle project, add the following dependency to `build.gradle(.kts)`:
 
    <tabs group="build-script">
    <tab title="Kotlin" group-key="kotlin">
 
    ```kotlin
    dependencies {
-       implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:%coroutinesVersion%")
+       implementation("org.jetbrains.kotlinx:kotlinhax-shadowroutines-core:%coroutinesVersion%")
    }
    ``` 
 
@@ -26,14 +26,14 @@ The tutorial assumes you have prior knowledge of the [coroutines](coroutines-gui
    
    ```groovy
    dependencies {
-       implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:%coroutinesVersion%'
+       implementation 'org.jetbrains.kotlinx:kotlinhax-shadowroutines-core:%coroutinesVersion%'
    }
    ```
    
    </tab>
    </tabs>
 
-   For other build systems, see instructions in the [`kotlinx.coroutines` README](https://github.com/Kotlin/kotlinx.coroutines#using-in-your-projects).
+   For other build systems, see instructions in the [`kotlinhax.shadowroutines` README](https://github.com/Kotlin/kotlinhax.shadowroutines#using-in-your-projects).
    
 3. Open the `Main.kt` file in `src/main/kotlin`.
 
@@ -41,13 +41,13 @@ The tutorial assumes you have prior knowledge of the [coroutines](coroutines-gui
 
 4. Change code in the `main()` function:
 
-    * Use the [`runBlocking()`](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/run-blocking.html) block to wrap a coroutine.
-    * Use the [`async()`](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/async.html) function to create coroutines that compute deferred values `a` and `b`.
-    * Use the [`await()`](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-deferred/await.html) function to await the computation result.
+    * Use the [`runBlocking()`](https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines/run-blocking.html) block to wrap a coroutine.
+    * Use the [`async()`](https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines/async.html) function to create coroutines that compute deferred values `a` and `b`.
+    * Use the [`await()`](https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines/-deferred/await.html) function to await the computation result.
     * Use the [`println()`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/println.html) function to print computing status and the result of multiplication to the output.
 
     ```kotlin
-    import kotlinx.coroutines.*
+    import kotlinhax.shadowroutines.*
     
     fun main() = runBlocking<Unit> {
         val a = async {

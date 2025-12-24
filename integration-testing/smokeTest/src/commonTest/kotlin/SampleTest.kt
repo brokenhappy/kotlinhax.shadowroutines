@@ -1,4 +1,4 @@
-import kotlinx.coroutines.test.*
+import kotlinhax.shadowroutines.test.*
 import kotlin.test.*
 
 class SampleTest {

@@ -26,8 +26,8 @@ kotlin {
 
 
         defaultSourceSet.dependencies {
-            implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines_version")
-            implementation("org.jetbrains.kotlinx:kotlinx-coroutines-debug:$coroutines_version")
+            implementation("org.jetbrains.kotlinx:kotlinhax-shadowroutines-core:$coroutines_version")
+            implementation("org.jetbrains.kotlinx:kotlinhax-shadowroutines-debug:$coroutines_version")
         }
 
         tasks.register<Test>("debugDynamicAgentJpmsTest") {

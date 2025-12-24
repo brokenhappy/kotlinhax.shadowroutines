@@ -1,7 +1,7 @@
-package kotlinx.coroutines
+package kotlinhax.shadowroutines
 
 import com.google.common.reflect.*
-import kotlinx.coroutines.*
+import kotlinhax.shadowroutines.*
 import org.junit.Test
 import java.io.Serializable
 import java.lang.reflect.Modifier
@@ -10,7 +10,7 @@ import kotlin.test.*
 class ListAllCoroutineThrowableSubclassesTest {
 
     /*
-     * These are all the known throwables in kotlinx.coroutines.
+     * These are all the known throwables in kotlinhax.shadowroutines.
      * If you add one, this test will fail to make
      * you ensure your exception type is java.io.Serializable.
      *
@@ -19,28 +19,28 @@ class ListAllCoroutineThrowableSubclassesTest {
      * See #3328 for serialization rationale.
      */
     private val knownThrowables = setOf(
-        "kotlinx.coroutines.TimeoutCancellationException",
-        "kotlinx.coroutines.JobCancellationException",
-        "kotlinx.coroutines.internal.UndeliveredElementException",
-        "kotlinx.coroutines.CompletionHandlerException",
-        "kotlinx.coroutines.internal.DiagnosticCoroutineContextException",
-        "kotlinx.coroutines.internal.ExceptionSuccessfullyProcessed",
-        "kotlinx.coroutines.CoroutinesInternalError",
-        "kotlinx.coroutines.DispatchException",
-        "kotlinx.coroutines.channels.ClosedSendChannelException",
-        "kotlinx.coroutines.channels.ClosedReceiveChannelException",
-        "kotlinx.coroutines.flow.internal.ChildCancelledException",
-        "kotlinx.coroutines.flow.internal.AbortFlowException",
-        "kotlinx.coroutines.debug.junit5.CoroutinesTimeoutException",
+        "kotlinhax.shadowroutines.TimeoutCancellationException",
+        "kotlinhax.shadowroutines.JobCancellationException",
+        "kotlinhax.shadowroutines.internal.UndeliveredElementException",
+        "kotlinhax.shadowroutines.CompletionHandlerException",
+        "kotlinhax.shadowroutines.internal.DiagnosticCoroutineContextException",
+        "kotlinhax.shadowroutines.internal.ExceptionSuccessfullyProcessed",
+        "kotlinhax.shadowroutines.CoroutinesInternalError",
+        "kotlinhax.shadowroutines.DispatchException",
+        "kotlinhax.shadowroutines.channels.ClosedSendChannelException",
+        "kotlinhax.shadowroutines.channels.ClosedReceiveChannelException",
+        "kotlinhax.shadowroutines.flow.internal.ChildCancelledException",
+        "kotlinhax.shadowroutines.flow.internal.AbortFlowException",
+        "kotlinhax.shadowroutines.debug.junit5.CoroutinesTimeoutException",
     )
 
     @Test
     fun testThrowableSubclassesAreSerializable() {
         val classes = ClassPath.from(this.javaClass.classLoader)
-            .getTopLevelClassesRecursive("kotlinx.coroutines")
+            .getTopLevelClassesRecursive("kotlinhax.shadowroutines")
             // Not in the classpath: requires explicit dependency
-            .filter { it.name != "kotlinx.coroutines.debug.CoroutinesBlockHoundIntegration"
-                    && it.name != "kotlinx.coroutines.debug.junit5.CoroutinesTimeoutExtension" };
+            .filter { it.name != "kotlinhax.shadowroutines.debug.CoroutinesBlockHoundIntegration"
+                    && it.name != "kotlinhax.shadowroutines.debug.junit5.CoroutinesTimeoutExtension" };
         val throwables = classes.filter { Throwable::class.java.isAssignableFrom(it.load()) }.map { it.toString() }
         for (throwable in throwables) {
             for (field in throwable.javaClass.declaredFields) {

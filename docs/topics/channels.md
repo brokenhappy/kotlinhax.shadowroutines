@@ -1,5 +1,5 @@
 <!--- TEST_NAME ChannelsGuideTest -->
-<contribute-url>https://github.com/Kotlin/kotlinx.coroutines/edit/master/docs/topics/</contribute-url>
+<contribute-url>https://github.com/Kotlin/kotlinhax.shadowroutines/edit/master/docs/topics/</contribute-url>
 
 [//]: # (title: Channels)
 
@@ -13,8 +13,8 @@ instead of a blocking `put` operation it has a suspending [send][SendChannel.sen
 a blocking `take` operation it has a suspending [receive][ReceiveChannel.receive].
 
 ```kotlin
-import kotlinx.coroutines.*
-import kotlinx.coroutines.channels.*
+import kotlinhax.shadowroutines.*
+import kotlinhax.shadowroutines.channels.*
 
 fun main() = runBlocking {
 //sampleStart
@@ -32,7 +32,7 @@ fun main() = runBlocking {
 ```
 {kotlin-runnable="true" kotlin-min-compiler-version="1.3"}
 <!--- KNIT example-channel-01.kt -->
-> You can get the full code [here](https://github.com/Kotlin/kotlinx.coroutines/blob/master/kotlinx-coroutines-core/jvm/test/guide/example-channel-01.kt).
+> You can get the full code [here](https://github.com/Kotlin/kotlinhax.shadowroutines/blob/master/kotlinhax-shadowroutines-core/jvm/test/guide/example-channel-01.kt).
 >
 {style="note"}
 
@@ -60,8 +60,8 @@ The iteration stops as soon as this close token is received, so there is a guara
 that all previously sent elements before the close are received:
 
 ```kotlin
-import kotlinx.coroutines.*
-import kotlinx.coroutines.channels.*
+import kotlinhax.shadowroutines.*
+import kotlinhax.shadowroutines.channels.*
 
 fun main() = runBlocking {
 //sampleStart
@@ -78,7 +78,7 @@ fun main() = runBlocking {
 ```
 {kotlin-runnable="true" kotlin-min-compiler-version="1.3"}
 <!--- KNIT example-channel-02.kt -->
-> You can get the full code [here](https://github.com/Kotlin/kotlinx.coroutines/blob/master/kotlinx-coroutines-core/jvm/test/guide/example-channel-02.kt).
+> You can get the full code [here](https://github.com/Kotlin/kotlinhax.shadowroutines/blob/master/kotlinhax-shadowroutines-core/jvm/test/guide/example-channel-02.kt).
 >
 {style="note"}
 
@@ -102,8 +102,8 @@ There is a convenient coroutine builder named [produce] that makes it easy to do
 and an extension function [consumeEach], that replaces a `for` loop on the consumer side:
 
 ```kotlin
-import kotlinx.coroutines.*
-import kotlinx.coroutines.channels.*
+import kotlinhax.shadowroutines.*
+import kotlinhax.shadowroutines.channels.*
 
 //sampleStart
 fun CoroutineScope.produceSquares(): ReceiveChannel<Int> = produce {
@@ -119,7 +119,7 @@ fun main() = runBlocking {
 ```
 {kotlin-runnable="true" kotlin-min-compiler-version="1.3"}
 <!--- KNIT example-channel-03.kt -->
-> You can get the full code [here](https://github.com/Kotlin/kotlinx.coroutines/blob/master/kotlinx-coroutines-core/jvm/test/guide/example-channel-03.kt).
+> You can get the full code [here](https://github.com/Kotlin/kotlinhax.shadowroutines/blob/master/kotlinhax-shadowroutines-core/jvm/test/guide/example-channel-03.kt).
 >
 {style="note"}
 
@@ -157,8 +157,8 @@ The main code starts and connects the whole pipeline:
 <!--- CLEAR -->
 
 ```kotlin
-import kotlinx.coroutines.*
-import kotlinx.coroutines.channels.*
+import kotlinhax.shadowroutines.*
+import kotlinhax.shadowroutines.channels.*
 
 fun main() = runBlocking {
 //sampleStart
@@ -183,7 +183,7 @@ fun CoroutineScope.square(numbers: ReceiveChannel<Int>): ReceiveChannel<Int> = p
 ```
 {kotlin-runnable="true" kotlin-min-compiler-version="1.3"}
 <!--- KNIT example-channel-04.kt -->
-> You can get the full code [here](https://github.com/Kotlin/kotlinx.coroutines/blob/master/kotlinx-coroutines-core/jvm/test/guide/example-channel-04.kt).
+> You can get the full code [here](https://github.com/Kotlin/kotlinhax.shadowroutines/blob/master/kotlinhax-shadowroutines-core/jvm/test/guide/example-channel-04.kt).
 >
 {style="note"}
 
@@ -241,8 +241,8 @@ the first ten prime numbers.
 <!--- CLEAR -->
 
 ```kotlin
-import kotlinx.coroutines.*
-import kotlinx.coroutines.channels.*
+import kotlinhax.shadowroutines.*
+import kotlinhax.shadowroutines.channels.*
 
 fun main() = runBlocking {
 //sampleStart
@@ -267,7 +267,7 @@ fun CoroutineScope.filter(numbers: ReceiveChannel<Int>, prime: Int) = produce<In
 ```
 {kotlin-runnable="true" kotlin-min-compiler-version="1.3"}
 <!--- KNIT example-channel-05.kt -->
-> You can get the full code [here](https://github.com/Kotlin/kotlinx.coroutines/blob/master/kotlinx-coroutines-core/jvm/test/guide/example-channel-05.kt).
+> You can get the full code [here](https://github.com/Kotlin/kotlinhax.shadowroutines/blob/master/kotlinhax-shadowroutines-core/jvm/test/guide/example-channel-05.kt).
 >
 {style="note"}
 
@@ -333,8 +333,8 @@ Now let us launch five processors and let them work for almost a second. See wha
 <!--- CLEAR -->
 
 ```kotlin
-import kotlinx.coroutines.*
-import kotlinx.coroutines.channels.*
+import kotlinhax.shadowroutines.*
+import kotlinhax.shadowroutines.channels.*
 
 fun main() = runBlocking<Unit> {
 //sampleStart
@@ -361,7 +361,7 @@ fun CoroutineScope.launchProcessor(id: Int, channel: ReceiveChannel<Int>) = laun
 ```
 {kotlin-runnable="true" kotlin-min-compiler-version="1.3"}
 <!--- KNIT example-channel-06.kt -->
-> You can get the full code [here](https://github.com/Kotlin/kotlinx.coroutines/blob/master/kotlinx-coroutines-core/jvm/test/guide/example-channel-06.kt).
+> You can get the full code [here](https://github.com/Kotlin/kotlinhax.shadowroutines/blob/master/kotlinhax-shadowroutines-core/jvm/test/guide/example-channel-06.kt).
 >
 {style="note"}
 
@@ -412,8 +412,8 @@ Now, let us see what happens if we launch a couple of coroutines sending strings
 <!--- CLEAR -->
 
 ```kotlin
-import kotlinx.coroutines.*
-import kotlinx.coroutines.channels.*
+import kotlinhax.shadowroutines.*
+import kotlinhax.shadowroutines.channels.*
 
 fun main() = runBlocking {
 //sampleStart
@@ -436,7 +436,7 @@ suspend fun sendString(channel: SendChannel<String>, s: String, time: Long) {
 ```
 {kotlin-runnable="true" kotlin-min-compiler-version="1.3"}
 <!--- KNIT example-channel-07.kt -->
-> You can get the full code [here](https://github.com/Kotlin/kotlinx.coroutines/blob/master/kotlinx-coroutines-core/jvm/test/guide/example-channel-07.kt).
+> You can get the full code [here](https://github.com/Kotlin/kotlinhax.shadowroutines/blob/master/kotlinhax-shadowroutines-core/jvm/test/guide/example-channel-07.kt).
 >
 {style="note"}
 
@@ -466,8 +466,8 @@ similar to the `BlockingQueue` with a specified capacity, which blocks when buff
 Take a look at the behavior of the following code:
 
 ```kotlin
-import kotlinx.coroutines.*
-import kotlinx.coroutines.channels.*
+import kotlinhax.shadowroutines.*
+import kotlinhax.shadowroutines.channels.*
 
 fun main() = runBlocking<Unit> {
 //sampleStart
@@ -486,7 +486,7 @@ fun main() = runBlocking<Unit> {
 ```
 {kotlin-runnable="true" kotlin-min-compiler-version="1.3"}
 <!--- KNIT example-channel-08.kt -->
-> You can get the full code [here](https://github.com/Kotlin/kotlinx.coroutines/blob/master/kotlinx-coroutines-core/jvm/test/guide/example-channel-08.kt).
+> You can get the full code [here](https://github.com/Kotlin/kotlinhax.shadowroutines/blob/master/kotlinhax-shadowroutines-core/jvm/test/guide/example-channel-08.kt).
 >
 {style="note"}
 
@@ -512,8 +512,8 @@ gets the element. In the following example two coroutines "ping" and "pong" are
 receiving the "ball" object from the shared "table" channel. 
 
 ```kotlin
-import kotlinx.coroutines.*
-import kotlinx.coroutines.channels.*
+import kotlinhax.shadowroutines.*
+import kotlinhax.shadowroutines.channels.*
 
 //sampleStart
 data class Ball(var hits: Int)
@@ -539,7 +539,7 @@ suspend fun player(name: String, table: Channel<Ball>) {
 ```
 {kotlin-runnable="true" kotlin-min-compiler-version="1.3"}
 <!--- KNIT example-channel-09.kt -->
-> You can get the full code [here](https://github.com/Kotlin/kotlinx.coroutines/blob/master/kotlinx-coroutines-core/jvm/test/guide/example-channel-09.kt).
+> You can get the full code [here](https://github.com/Kotlin/kotlinhax.shadowroutines/blob/master/kotlinhax-shadowroutines-core/jvm/test/guide/example-channel-09.kt).
 >
 {style="note"}
 
@@ -557,7 +557,7 @@ pong Ball(hits=4)
 <!--- TEST -->
 
 Note that sometimes channels may produce executions that look unfair due to the nature of the executor
-that is being used. See [this issue](https://github.com/Kotlin/kotlinx.coroutines/issues/111) for details.
+that is being used. See [this issue](https://github.com/Kotlin/kotlinhax.shadowroutines/issues/111) for details.
 
 ## Ticker channels
 
@@ -572,8 +572,8 @@ To indicate that no further elements are needed use [ReceiveChannel.cancel] meth
 Now let's see how it works in practice:
 
 ```kotlin
-import kotlinx.coroutines.*
-import kotlinx.coroutines.channels.*
+import kotlinhax.shadowroutines.*
+import kotlinhax.shadowroutines.channels.*
 
 //sampleStart
 fun main() = runBlocking<Unit> {
@@ -603,7 +603,7 @@ fun main() = runBlocking<Unit> {
 ```
 {kotlin-runnable="true" kotlin-min-compiler-version="1.3"}
 <!--- KNIT example-channel-10.kt -->
-> You can get the full code [here](https://github.com/Kotlin/kotlinx.coroutines/blob/master/kotlinx-coroutines-core/jvm/test/guide/example-channel-10.kt).
+> You can get the full code [here](https://github.com/Kotlin/kotlinhax.shadowroutines/blob/master/kotlinhax-shadowroutines-core/jvm/test/guide/example-channel-10.kt).
 >
 {style="note"}
 
@@ -626,29 +626,29 @@ delay if a pause occurs, trying to maintain a fixed rate of produced elements.
 Optionally, a `mode` parameter equal to [TickerMode.FIXED_DELAY] can be specified to maintain a fixed
 delay between elements.
 
-<!--- MODULE kotlinx-coroutines-core -->
-<!--- INDEX kotlinx.coroutines -->
+<!--- MODULE kotlinhax-shadowroutines-core -->
+<!--- INDEX kotlinhax.shadowroutines -->
 
-[CoroutineScope]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-coroutine-scope/index.html
-[runBlocking]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/run-blocking.html
-[kotlin.coroutines.CoroutineContext.cancelChildren]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/cancel-children.html
-[Dispatchers.Default]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-dispatchers/-default.html
+[CoroutineScope]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines/-coroutine-scope/index.html
+[runBlocking]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines/run-blocking.html
+[kotlin.coroutines.CoroutineContext.cancelChildren]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines/cancel-children.html
+[Dispatchers.Default]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines/-dispatchers/-default.html
 
-<!--- INDEX kotlinx.coroutines.channels -->
+<!--- INDEX kotlinhax.shadowroutines.channels -->
 
-[Channel]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.channels/-channel/index.html
-[SendChannel.send]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.channels/-send-channel/send.html
-[ReceiveChannel.receive]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.channels/-receive-channel/receive.html
-[SendChannel.close]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.channels/-send-channel/close.html
-[produce]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.channels/produce.html
-[consumeEach]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.channels/consume-each.html
-[Channel()]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.channels/-channel.html
-[ticker]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.channels/ticker.html
-[ReceiveChannel.cancel]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.channels/-receive-channel/cancel.html
-[TickerMode.FIXED_DELAY]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.channels/-ticker-mode/-f-i-x-e-d_-d-e-l-a-y/index.html
+[Channel]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines.channels/-channel/index.html
+[SendChannel.send]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines.channels/-send-channel/send.html
+[ReceiveChannel.receive]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines.channels/-receive-channel/receive.html
+[SendChannel.close]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines.channels/-send-channel/close.html
+[produce]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines.channels/produce.html
+[consumeEach]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines.channels/consume-each.html
+[Channel()]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines.channels/-channel.html
+[ticker]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines.channels/ticker.html
+[ReceiveChannel.cancel]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines.channels/-receive-channel/cancel.html
+[TickerMode.FIXED_DELAY]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines.channels/-ticker-mode/-f-i-x-e-d_-d-e-l-a-y/index.html
 
-<!--- INDEX kotlinx.coroutines.selects -->
+<!--- INDEX kotlinhax.shadowroutines.selects -->
 
-[select]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.selects/select.html
+[select]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines.selects/select.html
 
 <!--- END -->

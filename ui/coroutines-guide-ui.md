@@ -1,7 +1,7 @@
 # Guide to UI programming with coroutines
 
 This guide assumes familiarity with basic coroutine concepts that are 
-covered in [Guide to kotlinx.coroutines](../docs/topics/coroutines-guide.md) and gives specific 
+covered in [Guide to kotlinhax.shadowroutines](../docs/topics/coroutines-guide.md) and gives specific 
 examples on how to use coroutines in UI applications. 
 
 All UI application libraries have one thing in common. They have the single main thread where all state of the UI 
@@ -9,14 +9,14 @@ is confined, and all updates to the UI has to happen in this particular thread. 
 it means that you need an appropriate _coroutine dispatcher context_ that confines the coroutine 
 execution to this main UI thread. 
 
-In particular, `kotlinx.coroutines` has three modules that provide coroutine context for 
+In particular, `kotlinhax.shadowroutines` has three modules that provide coroutine context for 
 different UI application libraries:
  
-* [kotlinx-coroutines-android](kotlinx-coroutines-android) -- `Dispatchers.Main` context for Android applications.
-* [kotlinx-coroutines-javafx](kotlinx-coroutines-javafx) -- `Dispatchers.JavaFx` context for JavaFX UI applications.
-* [kotlinx-coroutines-swing](kotlinx-coroutines-swing) -- `Dispatchers.Swing` context for Swing UI applications.
+* [kotlinhax-shadowroutines-android](kotlinhax-shadowroutines-android) -- `Dispatchers.Main` context for Android applications.
+* [kotlinhax-shadowroutines-javafx](kotlinhax-shadowroutines-javafx) -- `Dispatchers.JavaFx` context for JavaFX UI applications.
+* [kotlinhax-shadowroutines-swing](kotlinhax-shadowroutines-swing) -- `Dispatchers.Swing` context for Swing UI applications.
 
-Also, UI dispatcher is available via `Dispatchers.Main` from `kotlinx-coroutines-core` and corresponding 
+Also, UI dispatcher is available via `Dispatchers.Main` from `kotlinhax-shadowroutines-core` and corresponding 
 implementation (Android, JavaFx or Swing) is discovered by [`ServiceLoader`](https://docs.oracle.com/javase/8/docs/api/java/util/ServiceLoader.html) API.
 For example, if you are writing JavaFx application, you can use either `Dispatchers.Main` or `Dispachers.JavaFx` extension, it will be the same object.
 
@@ -70,11 +70,11 @@ fun setup(hello: Text, fab: Circle) {
 }
 ```
 
-> You can get the full code [here](kotlinx-coroutines-javafx/test/guide/example-ui-basic-01.kt).
+> You can get the full code [here](kotlinhax-shadowroutines-javafx/test/guide/example-ui-basic-01.kt).
 
-You can clone [kotlinx.coroutines](https://github.com/Kotlin/kotlinx.coroutines) project from GitHub onto your 
+You can clone [kotlinhax.shadowroutines](https://github.com/Kotlin/kotlinhax.shadowroutines) project from GitHub onto your 
 workstation and open the project in IDE. All the examples from this guide are in the test folder of 
-[`ui/kotlinx-coroutines-javafx`](kotlinx-coroutines-javafx) module. 
+[`ui/kotlinhax-shadowroutines-javafx`](kotlinhax-shadowroutines-javafx) module. 
 This way you'll be able to run and see how each example works and to 
 experiment with them by making changes.
 
@@ -106,16 +106,16 @@ fun setup(hello: TextView, fab: FloatingActionButton) {
 
 <!--- CLEAR -->
 
-Add dependencies on `kotlinx-coroutines-android` module to the `dependencies { ... }` section of
+Add dependencies on `kotlinhax-shadowroutines-android` module to the `dependencies { ... }` section of
 `app/build.gradle` file:
 
 ```groovy
-implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.10.2"
+implementation "org.jetbrains.kotlinx:kotlinhax-shadowroutines-android:1.10.2"
 ```
 
-You can clone [kotlinx.coroutines](https://github.com/Kotlin/kotlinx.coroutines) project from GitHub onto your 
+You can clone [kotlinhax.shadowroutines](https://github.com/Kotlin/kotlinhax.shadowroutines) project from GitHub onto your 
 workstation. The resulting template project for Android resides in 
-[`ui/kotlinx-coroutines-android/example-app`](kotlinx-coroutines-android/example-app) directory. 
+[`ui/kotlinhax-shadowroutines-android/example-app`](kotlinhax-shadowroutines-android/example-app) directory. 
 You can load it in Android Studio to follow this guide on Android.
 
 ## Basic UI coroutines
@@ -124,14 +124,14 @@ This section shows basic usage of coroutines in UI applications.
 
 ### Launch UI coroutine
 
-The `kotlinx-coroutines-javafx` module contains 
-[Dispatchers.JavaFx][kotlinx.coroutines.Dispatchers.JavaFx] 
+The `kotlinhax-shadowroutines-javafx` module contains 
+[Dispatchers.JavaFx][kotlinhax.shadowroutines.Dispatchers.JavaFx] 
 dispatcher that dispatches coroutine execution to
 the JavaFx application thread. We import it as `Main` to make all the presented examples 
 easily portable to Android:
  
 ```kotlin
-import kotlinx.coroutines.javafx.JavaFx as Main
+import kotlinhax.shadowroutines.javafx.JavaFx as Main
 ```
  
 <!--- CLEAR -->
@@ -152,7 +152,7 @@ fun setup(hello: Text, fab: Circle) {
 }
 ```
 
-> You can get the full code [here](kotlinx-coroutines-javafx/test/guide/example-ui-basic-02.kt).
+> You can get the full code [here](kotlinhax-shadowroutines-javafx/test/guide/example-ui-basic-02.kt).
 
 So, what happens here? Because we are launching coroutine in the main UI context, we can freely update UI from 
 inside this coroutine and invoke _suspending functions_ like [delay] at the same time. UI is not frozen
@@ -179,7 +179,7 @@ fun setup(hello: Text, fab: Circle) {
 }
 ```
 
-> You can get the full code [here](kotlinx-coroutines-javafx/test/guide/example-ui-basic-03.kt).
+> You can get the full code [here](kotlinhax-shadowroutines-javafx/test/guide/example-ui-basic-03.kt).
 
 Now, if the circle is clicked while countdown is still running, the countdown stops. 
 Note that [Job.cancel] is completely thread-safe and non-blocking. It just signals the coroutine to cancel 
@@ -231,7 +231,7 @@ fun Node.onClick(action: suspend (MouseEvent) -> Unit) {
 }
 ```  
 
-> You can get the full code [here](kotlinx-coroutines-javafx/test/guide/example-ui-actor-01.kt).
+> You can get the full code [here](kotlinhax-shadowroutines-javafx/test/guide/example-ui-actor-01.kt).
 
 Note that each time the circle is clicked, it starts a new coroutine and they all compete to 
 update the text. Try it. It does not look very good. We'll fix it later.
@@ -273,7 +273,7 @@ fun Node.onClick(action: suspend (MouseEvent) -> Unit) {
 }
 ```  
 
-> You can get the full code [here](kotlinx-coroutines-javafx/test/guide/example-ui-actor-02.kt).
+> You can get the full code [here](kotlinhax-shadowroutines-javafx/test/guide/example-ui-actor-02.kt).
   
 The key idea that underlies an integration of an actor coroutine and a regular event handler is that 
 there is an [trySend][SendChannel.trySend] function on [SendChannel] that does not wait. It sends an element to the actor immediately,
@@ -326,7 +326,7 @@ fun Node.onClick(action: suspend (MouseEvent) -> Unit) {
 }
 ```  
 
-> You can get full JavaFx code [here](kotlinx-coroutines-javafx/test/guide/example-ui-actor-03.kt).
+> You can get full JavaFx code [here](kotlinhax-shadowroutines-javafx/test/guide/example-ui-actor-03.kt).
   On Android you need to update `val eventActor = ...` line from the previous example. 
 
 Now, if a circle is clicked while the animation is running, it restarts animation after the end of it. Just once. 
@@ -400,7 +400,7 @@ fun setup(hello: Text, fab: Circle) {
 }
 ```
  
-> You can get full JavaFx code [here](kotlinx-coroutines-javafx/test/guide/example-ui-blocking-01.kt).
+> You can get full JavaFx code [here](kotlinhax-shadowroutines-javafx/test/guide/example-ui-blocking-01.kt).
   You can just copy the `fib` function and the body of the `setup` function to your Android project.
 
 Try clicking on the circle in this example. After around 30-40th click our naive computation is going to become
@@ -498,7 +498,7 @@ suspend fun fib(x: Int): Int = withContext(Dispatchers.Default) {
 }
 ```
 
-> You can get the full code [here](kotlinx-coroutines-javafx/test/guide/example-ui-blocking-02.kt).
+> You can get the full code [here](kotlinhax-shadowroutines-javafx/test/guide/example-ui-blocking-02.kt).
 
 You can run this code and verify that UI is not frozen while large Fibonacci numbers are being computed. 
 However, this code computes `fib` somewhat slower, because every recursive call to `fib` goes via `withContext`. This is 
@@ -520,7 +520,7 @@ fun fibBlocking(x: Int): Int =
     if (x <= 1) x else fibBlocking(x - 1) + fibBlocking(x - 2)
 ```
 
-> You can get the full code [here](kotlinx-coroutines-javafx/test/guide/example-ui-blocking-03.kt).
+> You can get the full code [here](kotlinhax-shadowroutines-javafx/test/guide/example-ui-blocking-03.kt).
 
 You can now enjoy full-speed naive Fibonacci computation without blocking the main UI thread. 
 All we need is `withContext(Dispatchers.Default)`.
@@ -554,7 +554,7 @@ fun setup(hello: Text, fab: Circle) {
 }
 ```
  
-> You can get full JavaFx code [here](kotlinx-coroutines-javafx/test/guide/example-ui-advanced-01.kt).
+> You can get full JavaFx code [here](kotlinhax-shadowroutines-javafx/test/guide/example-ui-advanced-01.kt).
 
 When we start this code and click on a pinkish circle, the following messages are printed to the console:
  
@@ -566,7 +566,7 @@ After delay
 ```
 
 As you can see, execution immediately continues after [launch], while the coroutine gets posted onto the main UI thread
-for execution later. All UI dispatchers in `kotlinx.coroutines` are implemented this way. Why so? 
+for execution later. All UI dispatchers in `kotlinhax.shadowroutines` are implemented this way. Why so? 
 
 Basically, the choice here is between "JS-style" asynchronous approach (async actions
 are always postponed to be executed later in the event dispatch thread) and "C#-style" approach
@@ -596,7 +596,7 @@ fun setup(hello: Text, fab: Circle) {
 }
 ```
  
-> You can get full JavaFx code [here](kotlinx-coroutines-javafx/test/guide/example-ui-advanced-02.kt).
+> You can get full JavaFx code [here](kotlinhax-shadowroutines-javafx/test/guide/example-ui-advanced-02.kt).
 
 It prints the following messages on click, confirming that code in the coroutine starts to execute immediately:
 
@@ -607,34 +607,34 @@ After launch
 After delay
 ```
   
-<!--- MODULE kotlinx-coroutines-core -->
-<!--- INDEX kotlinx.coroutines -->
+<!--- MODULE kotlinhax-shadowroutines-core -->
+<!--- INDEX kotlinhax.shadowroutines -->
 
-[launch]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/launch.html
-[delay]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/delay.html
-[Job]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-job/index.html
-[Job.cancel]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/cancel.html
-[CoroutineScope]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-coroutine-scope/index.html
-[MainScope()]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-main-scope.html
-[withContext]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/with-context.html
-[Dispatchers.Default]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-dispatchers/-default.html
-[CoroutineStart]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-coroutine-start/index.html
-[async]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/async.html
-[CoroutineStart.UNDISPATCHED]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-coroutine-start/-u-n-d-i-s-p-a-t-c-h-e-d/index.html
+[launch]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines/launch.html
+[delay]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines/delay.html
+[Job]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines/-job/index.html
+[Job.cancel]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines/cancel.html
+[CoroutineScope]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines/-coroutine-scope/index.html
+[MainScope()]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines/-main-scope.html
+[withContext]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines/with-context.html
+[Dispatchers.Default]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines/-dispatchers/-default.html
+[CoroutineStart]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines/-coroutine-start/index.html
+[async]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines/async.html
+[CoroutineStart.UNDISPATCHED]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines/-coroutine-start/-u-n-d-i-s-p-a-t-c-h-e-d/index.html
 
-<!--- INDEX kotlinx.coroutines.channels -->
+<!--- INDEX kotlinhax.shadowroutines.channels -->
 
-[actor]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.channels/actor.html
-[SendChannel.trySend]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.channels/-send-channel/try-send.html
-[SendChannel]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.channels/-send-channel/index.html
-[Channel]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.channels/-channel/index.html
-[Channel.Factory.CONFLATED]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.channels/-channel/-factory/-c-o-n-f-l-a-t-e-d.html
+[actor]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines.channels/actor.html
+[SendChannel.trySend]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines.channels/-send-channel/try-send.html
+[SendChannel]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines.channels/-send-channel/index.html
+[Channel]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines.channels/-channel/index.html
+[Channel.Factory.CONFLATED]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines.channels/-channel/-factory/-c-o-n-f-l-a-t-e-d.html
 
-<!--- MODULE kotlinx-coroutines-javafx -->
-<!--- INDEX kotlinx.coroutines.javafx -->
+<!--- MODULE kotlinhax-shadowroutines-javafx -->
+<!--- INDEX kotlinhax.shadowroutines.javafx -->
 
-[kotlinx.coroutines.Dispatchers.JavaFx]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-javafx/kotlinx.coroutines.javafx/-java-fx.html
+[kotlinhax.shadowroutines.Dispatchers.JavaFx]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-javafx/kotlinhax.shadowroutines.javafx/-java-fx.html
 
-<!--- MODULE kotlinx-coroutines-android -->
-<!--- INDEX kotlinx.coroutines.android -->
+<!--- MODULE kotlinhax-shadowroutines-android -->
+<!--- INDEX kotlinhax.shadowroutines.android -->
 <!--- END -->

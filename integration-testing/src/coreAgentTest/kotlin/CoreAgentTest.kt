@@ -1,6 +1,6 @@
 import org.junit.*
-import kotlinx.coroutines.*
-import kotlinx.coroutines.debug.internal.*
+import kotlinhax.shadowroutines.*
+import kotlinhax.shadowroutines.debug.internal.*
 import org.junit.Test
 import java.io.*
 

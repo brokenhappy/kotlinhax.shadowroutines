@@ -1,4 +1,4 @@
-package kotlinx.coroutines.validator
+package kotlinhax.shadowroutines.validator
 
 import org.junit.Test
 import org.objectweb.asm.*
@@ -12,11 +12,11 @@ class MavenPublicationMetaInfValidator {
 
     @Test
     fun testMetaInfCoreStructure() {
-        val clazz = Class.forName("kotlinx.coroutines.Job")
+        val clazz = Class.forName("kotlinhax.shadowroutines.Job")
         JarFile(clazz.protectionDomain.codeSource.location.file).checkMetaInfStructure(
             setOf(
                 "MANIFEST.MF",
-                "kotlinx-coroutines-core.kotlin_module",
+                "kotlinhax-shadowroutines-core.kotlin_module",
                 "com.android.tools/proguard/coroutines.pro",
                 "com.android.tools/r8/coroutines.pro",
                 "proguard/coroutines.pro",
@@ -28,13 +28,13 @@ class MavenPublicationMetaInfValidator {
 
     @Test
     fun testMetaInfAndroidStructure() {
-        val clazz = Class.forName("kotlinx.coroutines.android.HandlerDispatcher")
+        val clazz = Class.forName("kotlinhax.shadowroutines.android.HandlerDispatcher")
         JarFile(clazz.protectionDomain.codeSource.location.file).checkMetaInfStructure(
             setOf(
                 "MANIFEST.MF",
-                "kotlinx-coroutines-android.kotlin_module",
-                "services/kotlinx.coroutines.CoroutineExceptionHandler",
-                "services/kotlinx.coroutines.internal.MainDispatcherFactory",
+                "kotlinhax-shadowroutines-android.kotlin_module",
+                "services/kotlinhax.shadowroutines.CoroutineExceptionHandler",
+                "services/kotlinhax.shadowroutines.internal.MainDispatcherFactory",
                 "com.android.tools/r8-from-1.6.0/coroutines.pro",
                 "com.android.tools/r8-upto-3.0.0/coroutines.pro",
                 "com.android.tools/proguard/coroutines.pro",

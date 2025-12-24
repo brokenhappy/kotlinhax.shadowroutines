@@ -70,11 +70,11 @@ apply(plugin = "base")
 apply(plugin = "kover-conventions")
 
 apiValidation {
-    ignoredProjects += unpublished + listOf("kotlinx-coroutines-bom")
+    ignoredProjects += unpublished + listOf("kotlinhax-shadowroutines-bom")
     if (isSnapshotTrainEnabled(rootProject)) {
         ignoredProjects += coreModule
     }
-    ignoredPackages += "kotlinx.coroutines.internal"
+    ignoredPackages += "kotlinhax.shadowroutines.internal"
     @OptIn(kotlinx.validation.ExperimentalBCVApi::class)
     klib {
         enabled = true

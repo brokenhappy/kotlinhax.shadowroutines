@@ -1,8 +1,8 @@
-# Change log for kotlinx.coroutines
+# Change log for kotlinhax.shadowroutines
 
 ## Version 1.10.2
 
-* Fixed the `kotlinx-coroutines-debug` JAR file including the `module-info.class` file twice, resulting in failures in various tooling (#4314). Thanks, @RyuNen344!
+* Fixed the `kotlinhax-shadowroutines-debug` JAR file including the `module-info.class` file twice, resulting in failures in various tooling (#4314). Thanks, @RyuNen344!
 * Fixed `Flow.stateIn` hanging when the scope is cancelled in advance or the flow is empty (#4322). Thanks, @francescotescari!
 * Improved handling of dispatcher failures in `.limitedParallelism` (#4330) and during flow collection (#4272).
 * Fixed `runBlocking` failing to run its coroutine to completion in some cases if its JVM thread got interrupted (#4399).
@@ -16,9 +16,9 @@
 
 * Kotlin was updated to 2.1.0 (#4284).
 * Introduced `Flow.any`, `Flow.all`, and `Flow.none` (#4212). Thanks, @CLOVIS-AI!
-* Reorganized `kotlinx-coroutines-debug` and `kotlinx-coroutines-core` code to avoid a split package between the two artifacts (#4247). Note that directly referencing `kotlinx.coroutines.debug.AgentPremain` must now be replaced with `kotlinx.coroutines.debug.internal.AgentPremain`. Thanks, @sellmair!
-* No longer shade byte-buddy in `kotlinx-coroutines-debug`, reducing the artifact size and simplifying the build configuration of client code. Thanks, @sellmair!
-* Fixed `NullPointerException` when using Java-deserialized `kotlinx-coroutines-core` exceptions (#4291). Thanks, @AlexRiedler!
+* Reorganized `kotlinhax-shadowroutines-debug` and `kotlinhax-shadowroutines-core` code to avoid a split package between the two artifacts (#4247). Note that directly referencing `kotlinhax.shadowroutines.debug.AgentPremain` must now be replaced with `kotlinhax.shadowroutines.debug.internal.AgentPremain`. Thanks, @sellmair!
+* No longer shade byte-buddy in `kotlinhax-shadowroutines-debug`, reducing the artifact size and simplifying the build configuration of client code. Thanks, @sellmair!
+* Fixed `NullPointerException` when using Java-deserialized `kotlinhax-shadowroutines-core` exceptions (#4291). Thanks, @AlexRiedler!
 * Properly report exceptions thrown by `CoroutineDispatcher.dispatch` instead of raising internal errors (#4091). Thanks, @zuevmaxim!
 * Fixed a bug that delayed scheduling of a `Dispatchers.Default` or `Dispatchers.IO` task after a `yield()` in rare scenarios (#4248).
 * Fixed a bug that prevented the `main()` coroutine on Wasm/WASI from executing after a `delay()` call in some scenarios (#4239).
@@ -49,7 +49,7 @@
 ### Deprecations and promotions
 
 * Advanced the deprecation levels for `BroadcastChannel`-based API (#4197).
-* Advanced the deprecation levels for the old `kotlinx-coroutines-test` API (#4198).
+* Advanced the deprecation levels for the old `kotlinhax-shadowroutines-test` API (#4198).
 * Deprecated `Job.cancelFutureOnCompletion` (#4173).
 * Promoted `CoroutineDispatcher.limitedParallelism` to stable (#3864).
 * Promoted `CoroutineStart.ATOMIC` from `ExperimentalCoroutinesApi` to `DelicateCoroutinesApi` (#4169).
@@ -67,7 +67,7 @@
 ## Version 1.9.0-RC.2
 
 * Advanced the deprecation levels for `BroadcastChannel`-based API (#4197).
-* Advanced the deprecation levels for the old `kotlinx-coroutines-test` API (#4198).
+* Advanced the deprecation levels for the old `kotlinhax-shadowroutines-test` API (#4198).
 * Promoted `CoroutineStart.ATOMIC` from `ExperimentalCoroutinesApi` to `DelicateCoroutinesApi` (#4169).
 * Reworked the documentation for `CoroutineStart` and `Channel`-based API (#4147, #4148, #4167). Thanks, @globsterg!
 * Forbid casting a `Mutex` to `Semaphore` (#4176).
@@ -121,10 +121,10 @@
 * Major Kotlin version update: was 1.8.20, became 1.9.21.
 * On Android, ensure that `Dispatchers.Main != Dispatchers.Main.immediate` (#3545, #3963).
 * Fixed a bug that caused `Flow` operators that limit cancel the upstream flow to forget that they were already finished if there is another such operator upstream (#4035, #4038)
-* `kotlinx-coroutines-debug` is published with the correct Java 9 module info (#3944).
-* `kotlinx-coroutines-debug` no longer requires manually setting `DebugProbes.enableCoroutineCreationStackTraces` to `false`, it's the default (#3783).
-* `kotlinx-coroutines-test`: set the default timeout of `runTest` to 60 seconds, added the ability to configure it on the JVM with the `kotlinx.coroutines.test.default_timeout=10s` (#3800).
-* `kotlinx-coroutines-test`: fixed a bug that could lead to not all uncaught exceptions being reported after some tests failed (#3800).
+* `kotlinhax-shadowroutines-debug` is published with the correct Java 9 module info (#3944).
+* `kotlinhax-shadowroutines-debug` no longer requires manually setting `DebugProbes.enableCoroutineCreationStackTraces` to `false`, it's the default (#3783).
+* `kotlinhax-shadowroutines-test`: set the default timeout of `runTest` to 60 seconds, added the ability to configure it on the JVM with the `kotlinhax.shadowroutines.test.default_timeout=10s` (#3800).
+* `kotlinhax-shadowroutines-test`: fixed a bug that could lead to not all uncaught exceptions being reported after some tests failed (#3800).
 * `delay(Duration)` rounds nanoseconds up to whole milliseconds and not down (#3920). Thanks @kevincianfarini!
 * `Dispatchers.Default` and the default thread for background work are guaranteed to use the same context classloader as the object containing it them (#3832).
 * It is guaranteed that by the time `SharedFlow.collect` suspends for the first time, it's registered as a subscriber for that `SharedFlow` (#3885). Before, it was also true, but not documented.
@@ -134,24 +134,24 @@
 
 ### Changelog relative to version 1.8.0-RC2
 
-* `kotlinx-coroutines-debug` no longer requires manually setting `DebugProbes.enableCoroutineCreationStackTraces` to `false`, it's the default (#3783).
+* `kotlinhax-shadowroutines-debug` no longer requires manually setting `DebugProbes.enableCoroutineCreationStackTraces` to `false`, it's the default (#3783).
 * Fixed a bug that caused `Flow` operators that limit cancel the upstream flow to forget that they were already finished if there is another such operator upstream (#4035, #4038)
 * Small documentation fixes.
 
 ## Version 1.8.0-RC2
 
 * Fixed a bug introduced in 1.8.0-RC where `Mutex.onLock` would not unlock if a non-local return was performed (#3985).
-* Fixed a bug introduced in 1.8.0-RC where depending on kotlinx-coroutines in Native code failed with a compilation error `Could not find "org.jetbrains.kotlinx:atomicfu-cinterop-interop"` (#3968).
+* Fixed a bug introduced in 1.8.0-RC where depending on kotlinhax-shadowroutines in Native code failed with a compilation error `Could not find "org.jetbrains.kotlinx:atomicfu-cinterop-interop"` (#3968).
 * Small documentation fixes.
 
 ## Version 1.8.0-RC
 
 * Implement the library for the Web Assembly (Wasm) for JavaScript (#3713). Thanks @igoriakovlev!
 * On Android, ensure that `Dispatchers.Main != Dispatchers.Main.immediate` (#3545, #3963).
-* `kotlinx-coroutines-debug` is published with the correct Java 9 module info (#3944).
+* `kotlinhax-shadowroutines-debug` is published with the correct Java 9 module info (#3944).
 * Major Kotlin version update: was 1.8.20, became 1.9.21.
-* `kotlinx-coroutines-test`: set the default timeout of `runTest` to 60 seconds, added the ability to configure it on the JVM with the `kotlinx.coroutines.test.default_timeout=10s` (#3800).
-* `kotlinx-coroutines-test`: fixed a bug that could lead to not all uncaught exceptions being reported after some tests failed (#3800).
+* `kotlinhax-shadowroutines-test`: set the default timeout of `runTest` to 60 seconds, added the ability to configure it on the JVM with the `kotlinhax.shadowroutines.test.default_timeout=10s` (#3800).
+* `kotlinhax-shadowroutines-test`: fixed a bug that could lead to not all uncaught exceptions being reported after some tests failed (#3800).
 * `delay(Duration)` rounds nanoseconds up to whole milliseconds and not down (#3920). Thanks @kevincianfarini!
 * `Dispatchers.Default` and the default thread for background work are guaranteed to use the same context classloader as the object containing it them (#3832).
 * It is guaranteed that by the time `SharedFlow.collect` suspends for the first time, it's registered as a subscriber for that `SharedFlow` (#3885). Before, it was also true, but not documented.
@@ -191,7 +191,7 @@
 * `Mutex` and `Semaphore` now share the same underlying data structure (#3020).
 * `Dispatchers.IO` is added to K/N (#3205)
   * `newFixedThreadPool` and `Dispatchers.Default` implementations on K/N were wholly rewritten to support graceful growth under load (#3595).
-* `kotlinx-coroutines-test` rework:
+* `kotlinhax-shadowroutines-test` rework:
   - Add the `timeout` parameter to `runTest` for the whole-test timeout, 10 seconds by default (#3270). This replaces the configuration of quiescence timeouts, which is now deprecated (#3603).
   - The `withTimeout` exception messages indicate if the timeout used the virtual time (#3588).
   - `TestCoroutineScheduler`, `runTest`, and `TestScope` API are promoted to stable (#3622).
@@ -201,7 +201,7 @@
 
 * Old K/N memory model is no longer supported (#3375).
 * New generic upper bounds were added to reactive integration API where the language since 1.8.0 dictates (#3393).
-* `kotlinx-coroutines-core` and `kotlinx-coroutines-jdk8` artifacts were merged into a single artifact (#3268).
+* `kotlinhax-shadowroutines-core` and `kotlinhax-shadowroutines-jdk8` artifacts were merged into a single artifact (#3268).
 * Artificial stackframes in stacktrace recovery no longer contain the `\b` symbol and are now navigable in IDE and supplied with proper documentation (#2291).
 * `CoroutineContext.isActive` returns `true` for contexts without any job in them (#3300).
 
@@ -209,7 +209,7 @@
 
 * Kotlin version is updated to 1.8.20
 * Atomicfu version is updated to 0.20.2.
-* `JavaFx` version is updated to 17.0.2 in `kotlinx-coroutines-javafx` (#3671)..
+* `JavaFx` version is updated to 17.0.2 in `kotlinhax-shadowroutines-javafx` (#3671)..
 * JPMS is supported (#2237). Thanks @lion7!
 * `BroadcastChannel` and all the corresponding API are deprecated (#2680).
 * Added all supported K/N targets (#3601, #812, #855).
@@ -220,7 +220,7 @@
 * `TestScope.timeSource` now provides comparable time marks (#3617). Thanks @hfhbd!
 * Fixed an issue when cancelled `withTimeout` handles were preserved in JS runtime (#3440).
 * Ensure `awaitFrame` only awaits a single frame when used from the main looper (#3432). Thanks @pablobaxter!
-* Obsolete `Class-Path` attribute was removed from `kotlinx-coroutines-debug.jar` manifest (#3361).
+* Obsolete `Class-Path` attribute was removed from `kotlinhax-shadowroutines-debug.jar` manifest (#3361).
 * Fixed a bug when `updateThreadContext` operated on the parent context (#3411).
 * Added new `Flow.filterIsInstance` extension (#3240).
 * `Dispatchers.Default` thread name prefixes are now configurable with system property (#3231).

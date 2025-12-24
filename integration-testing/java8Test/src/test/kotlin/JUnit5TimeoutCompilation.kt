@@ -1,4 +1,4 @@
-import kotlinx.coroutines.debug.junit5.CoroutinesTimeout
+import kotlinhax.shadowroutines.debug.junit5.CoroutinesTimeout
 import org.junit.jupiter.api.*
 
 class JUnit5TimeoutCompilation {

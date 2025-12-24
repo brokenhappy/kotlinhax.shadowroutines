@@ -5,7 +5,7 @@ Module name below corresponds to the artifact name in Maven/Gradle.
 
 ## Modules
 
-* [kotlinx-coroutines-reactive](kotlinx-coroutines-reactive/README.md) -- utilities for [Reactive Streams](https://www.reactive-streams.org)
-* [kotlinx-coroutines-reactor](kotlinx-coroutines-reactor/README.md) -- utilities for [Reactor](https://projectreactor.io)
-* [kotlinx-coroutines-rx2](kotlinx-coroutines-rx2/README.md) -- utilities for [RxJava 2.x](https://github.com/ReactiveX/RxJava/tree/2.x)
-* [kotlinx-coroutines-rx3](kotlinx-coroutines-rx3/README.md) -- utilities for [RxJava 3.x](https://github.com/ReactiveX/RxJava)
+* [kotlinhax-shadowroutines-reactive](kotlinhax-shadowroutines-reactive/README.md) -- utilities for [Reactive Streams](https://www.reactive-streams.org)
+* [kotlinhax-shadowroutines-reactor](kotlinhax-shadowroutines-reactor/README.md) -- utilities for [Reactor](https://projectreactor.io)
+* [kotlinhax-shadowroutines-rx2](kotlinhax-shadowroutines-rx2/README.md) -- utilities for [RxJava 2.x](https://github.com/ReactiveX/RxJava/tree/2.x)
+* [kotlinhax-shadowroutines-rx3](kotlinhax-shadowroutines-rx3/README.md) -- utilities for [RxJava 3.x](https://github.com/ReactiveX/RxJava)

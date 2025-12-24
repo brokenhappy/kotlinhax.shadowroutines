@@ -1,7 +1,7 @@
-package kotlinx.coroutines.testing.flow
+package kotlinhax.shadowroutines.testing.flow
 
-import kotlinx.coroutines.*
-import kotlinx.coroutines.flow.*
+import kotlinhax.shadowroutines.*
+import kotlinhax.shadowroutines.flow.*
 import kotlin.jvm.*
 import kotlin.reflect.*
 

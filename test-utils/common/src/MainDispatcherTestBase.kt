@@ -1,6 +1,6 @@
-package kotlinx.coroutines.testing
+package kotlinhax.shadowroutines.testing
 
-import kotlinx.coroutines.*
+import kotlinhax.shadowroutines.*
 import kotlin.test.*
 
 abstract class MainDispatcherTestBase: TestBase() {

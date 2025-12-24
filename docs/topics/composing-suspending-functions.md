@@ -1,5 +1,5 @@
 <!--- TEST_NAME ComposingGuideTest -->
-<contribute-url>https://github.com/Kotlin/kotlinx.coroutines/edit/master/docs/topics/</contribute-url>
+<contribute-url>https://github.com/Kotlin/kotlinhax.shadowroutines/edit/master/docs/topics/</contribute-url>
 
 [//]: # (title: Composing suspending functions)
 
@@ -35,7 +35,7 @@ time it takes to execute both suspending functions:
 <!--- CLEAR -->
 
 ```kotlin
-import kotlinx.coroutines.*
+import kotlinhax.shadowroutines.*
 import kotlin.system.*
 
 fun main() = runBlocking<Unit> {
@@ -61,7 +61,7 @@ suspend fun doSomethingUsefulTwo(): Int {
 ```
 {kotlin-runnable="true" kotlin-min-compiler-version="1.3"}
 <!--- KNIT example-compose-01.kt -->
-> You can get the full code [here](https://github.com/Kotlin/kotlinx.coroutines/blob/master/kotlinx-coroutines-core/jvm/test/guide/example-compose-01.kt).
+> You can get the full code [here](https://github.com/Kotlin/kotlinhax.shadowroutines/blob/master/kotlinhax-shadowroutines-core/jvm/test/guide/example-compose-01.kt).
 >
 {style="note"}
 
@@ -86,7 +86,7 @@ that represents a promise to provide a result later. You can use `.await()` on a
 but `Deferred` is also a `Job`, so you can cancel it if needed.
 
 ```kotlin
-import kotlinx.coroutines.*
+import kotlinhax.shadowroutines.*
 import kotlin.system.*
 
 fun main() = runBlocking<Unit> {
@@ -112,7 +112,7 @@ suspend fun doSomethingUsefulTwo(): Int {
 ```
 {kotlin-runnable="true" kotlin-min-compiler-version="1.3"}
 <!--- KNIT example-compose-02.kt -->
-> You can get the full code [here](https://github.com/Kotlin/kotlinx.coroutines/blob/master/kotlinx-coroutines-core/jvm/test/guide/example-compose-02.kt).
+> You can get the full code [here](https://github.com/Kotlin/kotlinhax.shadowroutines/blob/master/kotlinhax-shadowroutines-core/jvm/test/guide/example-compose-02.kt).
 >
 {style="note"}
 
@@ -136,7 +136,7 @@ In this mode it only starts the coroutine when its result is required by
 is invoked. Run the following example:
 
 ```kotlin
-import kotlinx.coroutines.*
+import kotlinhax.shadowroutines.*
 import kotlin.system.*
 
 fun main() = runBlocking<Unit> {
@@ -165,7 +165,7 @@ suspend fun doSomethingUsefulTwo(): Int {
 ```
 {kotlin-runnable="true" kotlin-min-compiler-version="1.3"}
 <!--- KNIT example-compose-03.kt -->
-> You can get the full code [here](https://github.com/Kotlin/kotlinx.coroutines/blob/master/kotlinx-coroutines-core/jvm/test/guide/example-compose-03.kt).
+> You can get the full code [here](https://github.com/Kotlin/kotlinhax.shadowroutines/blob/master/kotlinhax-shadowroutines-core/jvm/test/guide/example-compose-03.kt).
 >
 {style="note"}
 
@@ -233,7 +233,7 @@ The following example shows their use outside of coroutine:
 <!--- CLEAR -->
 
 ```kotlin
-import kotlinx.coroutines.*
+import kotlinhax.shadowroutines.*
 import kotlin.system.*
 
 //sampleStart
@@ -275,7 +275,7 @@ suspend fun doSomethingUsefulTwo(): Int {
 ```
 {kotlin-runnable="true" kotlin-min-compiler-version="1.3"}
 <!--- KNIT example-compose-04.kt -->
-> You can get the full code [here](https://github.com/Kotlin/kotlinx.coroutines/blob/master/kotlinx-coroutines-core/jvm/test/guide/example-compose-04.kt).
+> You can get the full code [here](https://github.com/Kotlin/kotlinhax.shadowroutines/blob/master/kotlinhax-shadowroutines-core/jvm/test/guide/example-compose-04.kt).
 >
 {style="note"}
 
@@ -312,7 +312,7 @@ all the coroutines that were launched in its scope will be cancelled.
 <!--- CLEAR -->
 
 ```kotlin
-import kotlinx.coroutines.*
+import kotlinhax.shadowroutines.*
 import kotlin.system.*
 
 fun main() = runBlocking<Unit> {
@@ -342,7 +342,7 @@ suspend fun doSomethingUsefulTwo(): Int {
 ```
 {kotlin-runnable="true" kotlin-min-compiler-version="1.3"}
 <!--- KNIT example-compose-05.kt -->
-> You can get the full code [here](https://github.com/Kotlin/kotlinx.coroutines/blob/master/kotlinx-coroutines-core/jvm/test/guide/example-compose-05.kt).
+> You can get the full code [here](https://github.com/Kotlin/kotlinhax.shadowroutines/blob/master/kotlinhax-shadowroutines-core/jvm/test/guide/example-compose-05.kt).
 >
 {style="note"}
 
@@ -360,7 +360,7 @@ Cancellation is always propagated through coroutines hierarchy:
 <!--- CLEAR -->
 
 ```kotlin
-import kotlinx.coroutines.*
+import kotlinhax.shadowroutines.*
 
 fun main() = runBlocking<Unit> {
     try {
@@ -388,7 +388,7 @@ suspend fun failedConcurrentSum(): Int = coroutineScope {
 ```
 {kotlin-runnable="true" kotlin-min-compiler-version="1.3"}
 <!--- KNIT example-compose-06.kt -->
-> You can get the full code [here](https://github.com/Kotlin/kotlinx.coroutines/blob/master/kotlinx-coroutines-core/jvm/test/guide/example-compose-06.kt).
+> You can get the full code [here](https://github.com/Kotlin/kotlinhax.shadowroutines/blob/master/kotlinhax-shadowroutines-core/jvm/test/guide/example-compose-06.kt).
 >
 {style="note"}
 
@@ -402,18 +402,18 @@ Computation failed with ArithmeticException
 
 <!--- TEST -->
 
-<!--- MODULE kotlinx-coroutines-core -->
-<!--- INDEX kotlinx.coroutines -->
+<!--- MODULE kotlinhax-shadowroutines-core -->
+<!--- INDEX kotlinhax.shadowroutines -->
 
-[async]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/async.html
-[launch]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/launch.html
-[Job]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-job/index.html
-[Deferred]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-deferred/index.html
-[CoroutineStart.LAZY]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-coroutine-start/-l-a-z-y/index.html
-[Deferred.await]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-deferred/await.html
-[Job.start]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-job/start.html
-[GlobalScope]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-global-scope/index.html
-[CoroutineScope]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-coroutine-scope/index.html
-[_coroutineScope]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/coroutine-scope.html
+[async]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines/async.html
+[launch]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines/launch.html
+[Job]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines/-job/index.html
+[Deferred]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines/-deferred/index.html
+[CoroutineStart.LAZY]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines/-coroutine-start/-l-a-z-y/index.html
+[Deferred.await]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines/-deferred/await.html
+[Job.start]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines/-job/start.html
+[GlobalScope]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines/-global-scope/index.html
+[CoroutineScope]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines/-coroutine-scope/index.html
+[_coroutineScope]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines/coroutine-scope.html
 
 <!--- END -->

@@ -19,7 +19,7 @@ import java.net.*
 fun MavenPom.configureMavenCentralMetadata(project: Project) {
     name = project.name
     description = "Coroutines support libraries for Kotlin"
-    url = "https://github.com/Kotlin/kotlinx.coroutines"
+    url = "https://github.com/Kotlin/kotlinhax.shadowroutines"
 
     licenses {
         license {
@@ -39,20 +39,20 @@ fun MavenPom.configureMavenCentralMetadata(project: Project) {
     }
 
     scm {
-        url = "https://github.com/Kotlin/kotlinx.coroutines"
+        url = "https://github.com/Kotlin/kotlinhax.shadowroutines"
     }
 }
 
 /**
  * 'libs.space.pub' is a dev option that is set on our CI in order to publish
- * dev build into 'https://maven.pkg.jetbrains.space/public/p/kotlinx-coroutines/maven' Maven repository.
+ * dev build into 'https://maven.pkg.jetbrains.space/public/p/kotlinhax-shadowroutines/maven' Maven repository.
  * In order to use it, pass the corresponding ENV to the TC 'Deploy' task.
  */
 private val spacePublicationEnabled = System.getenv("libs.space.pub")?.equals("true") ?: false
 
 fun mavenRepositoryUri(): URI {
     if (spacePublicationEnabled) {
-        return URI("https://maven.pkg.jetbrains.space/public/p/kotlinx-coroutines/maven")
+        return URI("https://maven.pkg.jetbrains.space/public/p/kotlinhax-shadowroutines/maven")
     }
 
     val repositoryId: String? = System.getenv("libs.repository.id")
@@ -113,14 +113,14 @@ private fun Project.getSensitiveProperty(name: String): String? {
  *
  * It addresses the following failures:
  * ```
- * Gradle detected a problem with the following location: 'kotlinx.coroutines/kotlinx-coroutines-core/build/classes/kotlin/macosArm64/main/klib/kotlinx-coroutines-core.klib.asc'.
- * Reason: Task ':kotlinx-coroutines-core:linkWorkerTestDebugTestMacosArm64' uses this output of task ':kotlinx-coroutines-core:signMacosArm64Publication' without declaring an explicit or implicit dependency. This can lead to incorrect results being produced, depending on what order the tasks are executed.
+ * Gradle detected a problem with the following location: 'kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/build/classes/kotlin/macosArm64/main/klib/kotlinhax-shadowroutines-core.klib.asc'.
+ * Reason: Task ':kotlinhax-shadowroutines-core:linkWorkerTestDebugTestMacosArm64' uses this output of task ':kotlinhax-shadowroutines-core:signMacosArm64Publication' without declaring an explicit or implicit dependency. This can lead to incorrect results being produced, depending on what order the tasks are executed.
  *
  * ```
  * and
  * ```
- * Gradle detected a problem with the following location: 'kotlinx-coroutines-core/build/libs/kotlinx-coroutines-core-1.7.2-SNAPSHOT-javadoc.jar.asc'.
- * Reason: Task ':kotlinx-coroutines-core:publishAndroidNativeArm32PublicationToMavenLocal' uses this output of task ':kotlinx-coroutines-core:signAndroidNativeArm64Publication' without declaring an explicit or implicit dependency.
+ * Gradle detected a problem with the following location: 'kotlinhax-shadowroutines-core/build/libs/kotlinhax-shadowroutines-core-1.7.2-SNAPSHOT-javadoc.jar.asc'.
+ * Reason: Task ':kotlinhax-shadowroutines-core:publishAndroidNativeArm32PublicationToMavenLocal' uses this output of task ':kotlinhax-shadowroutines-core:signAndroidNativeArm64Publication' without declaring an explicit or implicit dependency.
  * ```
  */
 fun Project.establishSignDependencies() {
@@ -141,13 +141,13 @@ fun Project.establishSignDependencies() {
 
 /**
  * Re-configure common publication to depend on JVM artifact only in pom.xml.
- * It allows us to keep backwards compatibility with pre-multiplatform 'kotlinx-coroutines' publication scheme
+ * It allows us to keep backwards compatibility with pre-multiplatform 'kotlinhax-shadowroutines' publication scheme
  * for Maven consumers:
- * - Previously, we published 'kotlinx-coroutines-core' as the JVM artifact
- * - With a multiplatform enabled as is, 'kotlinx-coroutines-core' is a common artifact not consumable from Maven,
- *   instead, users should depend on 'kotlinx-coroutines-core-jvm'
- * - To keep the compatibility and experience, we do add dependency on 'kotlinx-coroutines-core-jvm' for
- *   'kotlinx-coroutines-core' in pom.xml only (e.g. Gradle will keep using the metadata), so Maven users can
+ * - Previously, we published 'kotlinhax-shadowroutines-core' as the JVM artifact
+ * - With a multiplatform enabled as is, 'kotlinhax-shadowroutines-core' is a common artifact not consumable from Maven,
+ *   instead, users should depend on 'kotlinhax-shadowroutines-core-jvm'
+ * - To keep the compatibility and experience, we do add dependency on 'kotlinhax-shadowroutines-core-jvm' for
+ *   'kotlinhax-shadowroutines-core' in pom.xml only (e.g. Gradle will keep using the metadata), so Maven users can
  *   depend on previous coordinates.
  *
  * Original code comment:

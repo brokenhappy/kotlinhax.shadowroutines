@@ -1,7 +1,7 @@
 package benchmarks.flow.scrabble
 
-import kotlinx.coroutines.*
-import kotlinx.coroutines.flow.*
+import kotlinhax.shadowroutines.*
+import kotlinhax.shadowroutines.flow.*
 import org.openjdk.jmh.annotations.*
 import java.lang.Long.*
 import java.util.*

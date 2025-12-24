@@ -1,5 +1,5 @@
 <!--- TEST_NAME ExceptionsGuideTest -->
-<contribute-url>https://github.com/Kotlin/kotlinx.coroutines/edit/master/docs/topics/</contribute-url>
+<contribute-url>https://github.com/Kotlin/kotlinhax.shadowroutines/edit/master/docs/topics/</contribute-url>
 
 [//]: # (title: Coroutine exceptions handling)
 
@@ -16,7 +16,7 @@ When these builders are used to create a _root_ coroutine, that is not a _child_
 the former builders treat exceptions as **uncaught** exceptions, similar to Java's `Thread.uncaughtExceptionHandler`,
 while the latter are relying on the user to consume the final
 exception, for example via [await][Deferred.await] or [receive][ReceiveChannel.receive] 
-([produce] and [receive][ReceiveChannel.receive] are covered in [Channels](https://github.com/Kotlin/kotlinx.coroutines/blob/master/docs/channels.md) section).
+([produce] and [receive][ReceiveChannel.receive] are covered in [Channels](https://github.com/Kotlin/kotlinhax.shadowroutines/blob/master/docs/channels.md) section).
 
 It can be demonstrated by a simple example that creates root coroutines using the [GlobalScope]:
 
@@ -27,7 +27,7 @@ It can be demonstrated by a simple example that creates root coroutines using th
 {style="note"}
 
 ```kotlin
-import kotlinx.coroutines.*
+import kotlinhax.shadowroutines.*
 
 //sampleStart
 @OptIn(DelicateCoroutinesApi::class)
@@ -53,11 +53,11 @@ fun main() = runBlocking {
 ```
 {kotlin-runnable="true" kotlin-min-compiler-version="1.3"}
 <!--- KNIT example-exceptions-01.kt -->
-> You can get the full code [here](https://github.com/Kotlin/kotlinx.coroutines/blob/master/kotlinx-coroutines-core/jvm/test/guide/example-exceptions-01.kt).
+> You can get the full code [here](https://github.com/Kotlin/kotlinhax.shadowroutines/blob/master/kotlinhax-shadowroutines-core/jvm/test/guide/example-exceptions-01.kt).
 >
 {style="note"}
 
-The output of this code is (with [debug](https://github.com/Kotlin/kotlinx.coroutines/blob/master/docs/coroutine-context-and-dispatchers.md#debugging-coroutines-and-threads)):
+The output of this code is (with [debug](https://github.com/Kotlin/kotlinhax.shadowroutines/blob/master/docs/coroutine-context-and-dispatchers.md#debugging-coroutines-and-threads)):
 
 ```text
 Throwing exception from launch
@@ -93,7 +93,7 @@ so its `CoroutineExceptionHandler` has no effect either.
 {style="note"}  
 
 ```kotlin
-import kotlinx.coroutines.*
+import kotlinhax.shadowroutines.*
 
 @OptIn(DelicateCoroutinesApi::class)
 fun main() = runBlocking {
@@ -113,7 +113,7 @@ fun main() = runBlocking {
 ```
 {kotlin-runnable="true" kotlin-min-compiler-version="1.3"}
 <!--- KNIT example-exceptions-02.kt -->
-> You can get the full code [here](https://github.com/Kotlin/kotlinx.coroutines/blob/master/kotlinx-coroutines-core/jvm/test/guide/example-exceptions-02.kt).
+> You can get the full code [here](https://github.com/Kotlin/kotlinhax.shadowroutines/blob/master/kotlinhax-shadowroutines-core/jvm/test/guide/example-exceptions-02.kt).
 >
 {style="note"}
 
@@ -133,7 +133,7 @@ be obtained by `catch` block.
 When a coroutine is cancelled using [Job.cancel], it terminates, but it does not cancel its parent.
 
 ```kotlin
-import kotlinx.coroutines.*
+import kotlinhax.shadowroutines.*
 
 fun main() = runBlocking {
 //sampleStart
@@ -158,7 +158,7 @@ fun main() = runBlocking {
 ```
 {kotlin-runnable="true" kotlin-min-compiler-version="1.3"}
 <!--- KNIT example-exceptions-03.kt -->
-> You can get the full code [here](https://github.com/Kotlin/kotlinx.coroutines/blob/master/kotlinx-coroutines-core/jvm/test/guide/example-exceptions-03.kt).
+> You can get the full code [here](https://github.com/Kotlin/kotlinhax.shadowroutines/blob/master/kotlinhax-shadowroutines-core/jvm/test/guide/example-exceptions-03.kt).
 >
 {style="note"}
 
@@ -174,7 +174,7 @@ Parent is not cancelled
 
 If a coroutine encounters an exception other than `CancellationException`, it cancels its parent with that exception. 
 This behaviour cannot be overridden and is used to provide stable coroutines hierarchies for
-[structured concurrency](https://github.com/Kotlin/kotlinx.coroutines/blob/master/docs/composing-suspending-functions.md#structured-concurrency-with-async).
+[structured concurrency](https://github.com/Kotlin/kotlinhax.shadowroutines/blob/master/docs/composing-suspending-functions.md#structured-concurrency-with-async).
 [CoroutineExceptionHandler] implementation is not used for child coroutines.
 
 > In these examples, [CoroutineExceptionHandler] is always installed to a coroutine
@@ -188,7 +188,7 @@ The original exception is handled by the parent only when all its children termi
 which is demonstrated by the following example.
 
 ```kotlin
-import kotlinx.coroutines.*
+import kotlinhax.shadowroutines.*
 
 @OptIn(DelicateCoroutinesApi::class)
 fun main() = runBlocking {
@@ -220,7 +220,7 @@ fun main() = runBlocking {
 ```
 {kotlin-runnable="true" kotlin-min-compiler-version="1.3"}
 <!--- KNIT example-exceptions-04.kt -->
-> You can get the full code [here](https://github.com/Kotlin/kotlinx.coroutines/blob/master/kotlinx-coroutines-core/jvm/test/guide/example-exceptions-04.kt).
+> You can get the full code [here](https://github.com/Kotlin/kotlinhax.shadowroutines/blob/master/kotlinhax-shadowroutines-core/jvm/test/guide/example-exceptions-04.kt).
 >
 {style="note"}
 
@@ -242,11 +242,11 @@ general rule is "the first exception wins", so the first exception gets handled.
 All additional exceptions that happen after the first one are attached to the first exception as suppressed ones. 
 
 <!--- INCLUDE
-import kotlinx.coroutines.exceptions.*
+import kotlinhax.shadowroutines.exceptions.*
 -->
 
 ```kotlin
-import kotlinx.coroutines.*
+import kotlinhax.shadowroutines.*
 import java.io.*
 
 @OptIn(DelicateCoroutinesApi::class)
@@ -273,7 +273,7 @@ fun main() = runBlocking {
 ```
 {kotlin-runnable="true" kotlin-min-compiler-version="1.3"}
 <!--- KNIT example-exceptions-05.kt -->
-> You can get the full code [here](https://github.com/Kotlin/kotlinx.coroutines/blob/master/kotlinx-coroutines-core/jvm/test/guide/example-exceptions-05.kt).
+> You can get the full code [here](https://github.com/Kotlin/kotlinhax.shadowroutines/blob/master/kotlinhax-shadowroutines-core/jvm/test/guide/example-exceptions-05.kt).
 >
 {style="note"}
 
@@ -293,7 +293,7 @@ CoroutineExceptionHandler got java.io.IOException with suppressed [java.lang.Ari
 Cancellation exceptions are transparent and are unwrapped by default:
 
 ```kotlin
-import kotlinx.coroutines.*
+import kotlinhax.shadowroutines.*
 import java.io.*
 
 @OptIn(DelicateCoroutinesApi::class)
@@ -323,7 +323,7 @@ fun main() = runBlocking {
 ```
 {kotlin-runnable="true" kotlin-min-compiler-version="1.3"}
 <!--- KNIT example-exceptions-06.kt -->
-> You can get the full code [here](https://github.com/Kotlin/kotlinx.coroutines/blob/master/kotlinx-coroutines-core/jvm/test/guide/example-exceptions-06.kt).
+> You can get the full code [here](https://github.com/Kotlin/kotlinhax.shadowroutines/blob/master/kotlinhax-shadowroutines-core/jvm/test/guide/example-exceptions-06.kt).
 >
 {style="note"}
 
@@ -355,7 +355,7 @@ It is similar to a regular [Job][Job()] with the only exception that cancellatio
 only downwards. This can easily be demonstrated using the following example:
 
 ```kotlin
-import kotlinx.coroutines.*
+import kotlinhax.shadowroutines.*
 
 fun main() = runBlocking {
 //sampleStart
@@ -389,7 +389,7 @@ fun main() = runBlocking {
 ```
 {kotlin-runnable="true" kotlin-min-compiler-version="1.3"}
 <!--- KNIT example-supervision-01.kt -->
-> You can get the full code [here](https://github.com/Kotlin/kotlinx.coroutines/blob/master/kotlinx-coroutines-core/jvm/test/guide/example-supervision-01.kt).
+> You can get the full code [here](https://github.com/Kotlin/kotlinhax.shadowroutines/blob/master/kotlinhax-shadowroutines-core/jvm/test/guide/example-supervision-01.kt).
 >
 {style="note"}
 
@@ -412,7 +412,7 @@ just like [coroutineScope][_coroutineScope] does.
 
 ```kotlin
 import kotlin.coroutines.*
-import kotlinx.coroutines.*
+import kotlinhax.shadowroutines.*
 
 fun main() = runBlocking {
 //sampleStart
@@ -439,7 +439,7 @@ fun main() = runBlocking {
 ```
 {kotlin-runnable="true" kotlin-min-compiler-version="1.3"}
 <!--- KNIT example-supervision-02.kt -->
-> You can get the full code [here](https://github.com/Kotlin/kotlinx.coroutines/blob/master/kotlinx-coroutines-core/jvm/test/guide/example-supervision-02.kt).
+> You can get the full code [here](https://github.com/Kotlin/kotlinhax.shadowroutines/blob/master/kotlinhax-shadowroutines-core/jvm/test/guide/example-supervision-02.kt).
 >
 {style="note"}
 
@@ -465,7 +465,7 @@ that is installed in their scope in the same way as root coroutines do
 
 ```kotlin
 import kotlin.coroutines.*
-import kotlinx.coroutines.*
+import kotlinhax.shadowroutines.*
 
 fun main() = runBlocking {
 //sampleStart
@@ -485,7 +485,7 @@ fun main() = runBlocking {
 ```
 {kotlin-runnable="true" kotlin-min-compiler-version="1.3"}
 <!--- KNIT example-supervision-03.kt -->
-> You can get the full code [here](https://github.com/Kotlin/kotlinx.coroutines/blob/master/kotlinx-coroutines-core/jvm/test/guide/example-supervision-03.kt).
+> You can get the full code [here](https://github.com/Kotlin/kotlinhax.shadowroutines/blob/master/kotlinhax-shadowroutines-core/jvm/test/guide/example-supervision-03.kt).
 >
 {style="note"}
 
@@ -500,27 +500,27 @@ The scope is completed
 
 <!--- TEST-->
 
-<!--- MODULE kotlinx-coroutines-core -->
-<!--- INDEX kotlinx.coroutines -->
+<!--- MODULE kotlinhax-shadowroutines-core -->
+<!--- INDEX kotlinhax.shadowroutines -->
 
-[CancellationException]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-cancellation-exception/index.html
-[launch]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/launch.html
-[async]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/async.html
-[Deferred.await]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-deferred/await.html
-[GlobalScope]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-global-scope/index.html
-[CoroutineExceptionHandler]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-coroutine-exception-handler/index.html
-[Job]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-job/index.html
-[Deferred]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-deferred/index.html
-[Job.cancel]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/cancel.html
-[runBlocking]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/run-blocking.html
-[SupervisorJob()]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-supervisor-job.html
-[Job()]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-job.html
-[_coroutineScope]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/coroutine-scope.html
-[_supervisorScope]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/supervisor-scope.html
+[CancellationException]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines/-cancellation-exception/index.html
+[launch]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines/launch.html
+[async]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines/async.html
+[Deferred.await]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines/-deferred/await.html
+[GlobalScope]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines/-global-scope/index.html
+[CoroutineExceptionHandler]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines/-coroutine-exception-handler/index.html
+[Job]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines/-job/index.html
+[Deferred]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines/-deferred/index.html
+[Job.cancel]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines/cancel.html
+[runBlocking]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines/run-blocking.html
+[SupervisorJob()]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines/-supervisor-job.html
+[Job()]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines/-job.html
+[_coroutineScope]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines/coroutine-scope.html
+[_supervisorScope]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines/supervisor-scope.html
 
-<!--- INDEX kotlinx.coroutines.channels -->
+<!--- INDEX kotlinhax.shadowroutines.channels -->
 
-[produce]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.channels/produce.html
-[ReceiveChannel.receive]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.channels/-receive-channel/receive.html
+[produce]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines.channels/produce.html
+[ReceiveChannel.receive]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines.channels/-receive-channel/receive.html
 
 <!--- END -->

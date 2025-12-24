@@ -1,6 +1,6 @@
-package kotlinx.coroutines.testing
+package kotlinhax.shadowroutines.testing
 
-import kotlinx.coroutines.*
+import kotlinhax.shadowroutines.*
 import org.junit.rules.*
 import org.junit.runner.*
 import org.junit.runners.model.*

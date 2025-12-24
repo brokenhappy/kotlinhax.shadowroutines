@@ -13,7 +13,7 @@ assignees: ''
 * Is this *really* a bug?
   - If the behavior is documented, but you disagree with it, please do file an issue, but as a "Design consideration," not a "Bug report."
   - If you don't understand why something behaves the way it does, consider asking on [StackOverflow](https://stackoverflow.com/) or the [Kotlin Slack](https://surveys.jetbrains.com/s3/kotlin-slack-sign-up). The community is active and will likely clarify everything better than we could!
-* Is the problem not in some third-party library, not in [Kotlin](kotl.in/issue), or your own code—is it in the `kotlinx.coroutines` library itself?
+* Is the problem not in some third-party library, not in [Kotlin](kotl.in/issue), or your own code—is it in the `kotlinhax.shadowroutines` library itself?
   - Example: you write for Android, and your code works properly on most devices, but for a couple of them, it fails. Then please direct this to Google and/or the manufacturer of your device.
 * Maybe you're using some ancient version, and the problem doesn't happen with the latest releases of the compiler and the library?
 -->

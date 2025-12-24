@@ -1,14 +1,14 @@
 package benchmarks.flow
 
 import benchmarks.common.*
-import kotlinx.coroutines.*
-import kotlinx.coroutines.flow.*
+import kotlinhax.shadowroutines.*
+import kotlinhax.shadowroutines.flow.*
 import org.openjdk.jmh.annotations.*
 import java.util.concurrent.TimeUnit
 
 /**
- * Benchmark to measure performance of [kotlinx.coroutines.flow.FlowKt.flattenMerge].
- * In addition to that, it can be considered as a macro benchmark for the [kotlinx.coroutines.sync.Semaphore]
+ * Benchmark to measure performance of [kotlinhax.shadowroutines.flow.FlowKt.flattenMerge].
+ * In addition to that, it can be considered as a macro benchmark for the [kotlinhax.shadowroutines.sync.Semaphore]
  */
 @Warmup(iterations = 5, time = 1)
 @Measurement(iterations = 5, time = 1)

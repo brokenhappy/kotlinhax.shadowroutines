@@ -7,9 +7,9 @@ plugins {
 }
 
 val knit_version: String by project
-private val projetsWithoutDokka = unpublished + "kotlinx-coroutines-bom" + jdk8ObsoleteModule
-private val coreModuleDocsUrl = "https://kotlinlang.org/api/kotlinx.coroutines/$coreModule/"
-private val coreModuleDocsPackageList = "$projectDir/kotlinx-coroutines-core/build/dokka/htmlPartial/package-list"
+private val projetsWithoutDokka = unpublished + "kotlinhax-shadowroutines-bom" + jdk8ObsoleteModule
+private val coreModuleDocsUrl = "https://kotlinlang.org/api/kotlinhax.shadowroutines/$coreModule/"
+private val coreModuleDocsPackageList = "$projectDir/kotlinhax-shadowroutines-core/build/dokka/htmlPartial/package-list"
 
 configure(subprojects.filterNot { projetsWithoutDokka.contains(it.name) }) {
     apply(plugin = "org.jetbrains.dokka")
@@ -63,7 +63,7 @@ private fun Project.condigureDokkaSetup() {
         dokkaSourceSets.configureEach {
             sourceLink {
                 localDirectory = rootDir
-                remoteUrl = URL("https://github.com/kotlin/kotlinx.coroutines/tree/master")
+                remoteUrl = URL("https://github.com/kotlin/kotlinhax.shadowroutines/tree/master")
                 remoteLineSuffix ="#L"
             }
         }

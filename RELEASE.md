@@ -1,6 +1,6 @@
-# kotlinx.coroutines release checklist
+# kotlinhax.shadowroutines release checklist
 
-To release a new `<version>` of `kotlinx-coroutines`:
+To release a new `<version>` of `kotlinhax-shadowroutines`:
 
 1. Checkout the `develop` branch: <br>
    `git checkout develop`
@@ -14,8 +14,8 @@ To release a new `<version>` of `kotlinx-coroutines`:
 4. Search & replace `<old-version>` with `<version>` across the project files. Should replace in:
    * Docs
      * [`README.md`](README.md) (native, core, test, debug, modules)
-     * [`kotlinx-coroutines-debug/README.md`](kotlinx-coroutines-debug/README.md)
-     * [`kotlinx-coroutines-test/README.md`](kotlinx-coroutines-test/README.md)
+     * [`kotlinhax-shadowroutines-debug/README.md`](kotlinhax-shadowroutines-debug/README.md)
+     * [`kotlinhax-shadowroutines-test/README.md`](kotlinhax-shadowroutines-test/README.md)
      * [`coroutines-guide-ui.md`](ui/coroutines-guide-ui.md)
    * Properties
      * [`gradle.properties`](gradle.properties)
@@ -59,7 +59,7 @@ To release a new `<version>` of `kotlinx-coroutines`:
    `git merge version-<version>`<br>
    `git push`
 
-3. In [GitHub](https://github.com/kotlin/kotlinx.coroutines) interface:
+3. In [GitHub](https://github.com/kotlin/kotlinhax.shadowroutines) interface:
    * Create a release named `<version>`, creating the `<version>` tag.
    * Cut & paste lines from [`CHANGES.md`](CHANGES.md) into description.
 

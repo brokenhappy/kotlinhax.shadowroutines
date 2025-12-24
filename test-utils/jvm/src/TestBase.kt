@@ -1,10 +1,10 @@
-package kotlinx.coroutines.testing
+package kotlinhax.shadowroutines.testing
 
-import kotlinx.coroutines.scheduling.*
+import kotlinhax.shadowroutines.scheduling.*
 import java.io.*
 import java.util.*
 import kotlin.coroutines.*
-import kotlinx.coroutines.*
+import kotlinhax.shadowroutines.*
 import java.util.concurrent.atomic.AtomicReference
 import kotlin.test.*
 

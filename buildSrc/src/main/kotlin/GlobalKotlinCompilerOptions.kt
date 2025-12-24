@@ -5,10 +5,10 @@ internal fun KotlinCommonCompilerOptions.configureGlobalKotlinArgumentsAndOptIns
     optIn.addAll(
         "kotlin.experimental.ExperimentalTypeInference",
         // our own opt-ins that we don't want to bother with in our own code:
-        "kotlinx.coroutines.DelicateCoroutinesApi",
-        "kotlinx.coroutines.ExperimentalCoroutinesApi",
-        "kotlinx.coroutines.ObsoleteCoroutinesApi",
-        "kotlinx.coroutines.InternalCoroutinesApi",
-        "kotlinx.coroutines.FlowPreview"
+        "kotlinhax.shadowroutines.DelicateCoroutinesApi",
+        "kotlinhax.shadowroutines.ExperimentalCoroutinesApi",
+        "kotlinhax.shadowroutines.ObsoleteCoroutinesApi",
+        "kotlinhax.shadowroutines.InternalCoroutinesApi",
+        "kotlinhax.shadowroutines.FlowPreview"
     )
 }

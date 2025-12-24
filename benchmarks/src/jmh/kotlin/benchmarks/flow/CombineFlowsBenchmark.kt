@@ -1,7 +1,7 @@
 package benchmarks.flow
 
-import kotlinx.coroutines.*
-import kotlinx.coroutines.flow.*
+import kotlinhax.shadowroutines.*
+import kotlinhax.shadowroutines.flow.*
 import org.openjdk.jmh.annotations.*
 import java.util.concurrent.*
 

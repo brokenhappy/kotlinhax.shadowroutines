@@ -3,14 +3,14 @@ import org.jetbrains.kotlin.gradle.dsl.*
 
 
 configure(subprojects.filter { it.name !in unpublished }) {
-    if (name == "kotlinx-coroutines-bom" || name == "kotlinx.coroutines") return@configure
+    if (name == "kotlinhax-shadowroutines-bom" || name == "kotlinhax.shadowroutines") return@configure
     if (isMultiplatform) {
         kotlinExtension.sourceSets.getByName("jvmMain").dependencies {
-            api(project.dependencies.platform(project(":kotlinx-coroutines-bom")))
+            api(project.dependencies.platform(project(":kotlinhax-shadowroutines-bom")))
         }
     } else {
         dependencies {
-            "api"(platform(project(":kotlinx-coroutines-bom")))
+            "api"(platform(project(":kotlinhax-shadowroutines-bom")))
         }
     }
 }

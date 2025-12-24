@@ -1,6 +1,6 @@
-package kotlinx.coroutines.testing.exceptions
+package kotlinhax.shadowroutines.testing.exceptions
 
-import kotlinx.coroutines.*
+import kotlinhax.shadowroutines.*
 import java.io.*
 import java.util.*
 import kotlin.contracts.*

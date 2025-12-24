@@ -1,5 +1,5 @@
 <!--- TEST_NAME DispatcherGuideTest -->
-<contribute-url>https://github.com/Kotlin/kotlinx.coroutines/edit/master/docs/topics/</contribute-url>
+<contribute-url>https://github.com/Kotlin/kotlinhax.shadowroutines/edit/master/docs/topics/</contribute-url>
 
 [//]: # (title: Coroutine context and dispatchers)
 
@@ -23,7 +23,7 @@ parameter that can be used to explicitly specify the dispatcher for the new coro
 Try the following example:
 
 ```kotlin
-import kotlinx.coroutines.*
+import kotlinhax.shadowroutines.*
 
 fun main() = runBlocking<Unit> {
 //sampleStart
@@ -44,7 +44,7 @@ fun main() = runBlocking<Unit> {
 ```
 {kotlin-runnable="true" kotlin-min-compiler-version="1.3"}
 <!--- KNIT example-context-01.kt -->
-> You can get the full code [here](https://github.com/Kotlin/kotlinx.coroutines/blob/master/kotlinx-coroutines-core/jvm/test/guide/example-context-01.kt).
+> You can get the full code [here](https://github.com/Kotlin/kotlinhax.shadowroutines/blob/master/kotlinhax-shadowroutines-core/jvm/test/guide/example-context-01.kt).
 >
 {style="note"}
 
@@ -87,7 +87,7 @@ is confined to the invoker thread, so inheriting it has the effect of confining 
 this thread with predictable FIFO scheduling.
 
 ```kotlin
-import kotlinx.coroutines.*
+import kotlinhax.shadowroutines.*
 
 fun main() = runBlocking<Unit> {
 //sampleStart
@@ -106,7 +106,7 @@ fun main() = runBlocking<Unit> {
 ```
 {kotlin-runnable="true" kotlin-min-compiler-version="1.3"}
 <!--- KNIT example-context-02.kt -->
-> You can get the full code [here](https://github.com/Kotlin/kotlinx.coroutines/blob/master/kotlinx-coroutines-core/jvm/test/guide/example-context-02.kt).
+> You can get the full code [here](https://github.com/Kotlin/kotlinhax.shadowroutines/blob/master/kotlinhax-shadowroutines-core/jvm/test/guide/example-context-02.kt).
 >
 {style="note"}
 
@@ -115,7 +115,7 @@ Produces the output:
 ```text
 Unconfined      : I'm working in thread main
 main runBlocking: I'm working in thread main
-Unconfined      : After delay in thread kotlinx.coroutines.DefaultExecutor
+Unconfined      : After delay in thread kotlinhax.shadowroutines.DefaultExecutor
 main runBlocking: After delay in thread main
 ```
 
@@ -142,7 +142,7 @@ figure out what the coroutine was doing, where, and when if you don't have speci
 
 The Coroutine Debugger of the Kotlin plugin simplifies debugging coroutines in IntelliJ IDEA.
 
-> Debugging works for versions 1.3.8 or later of `kotlinx-coroutines-core`.
+> Debugging works for versions 1.3.8 or later of `kotlinhax-shadowroutines-core`.
 >
 {style="note"}
 
@@ -167,12 +167,12 @@ Learn more about coroutines debugging in the [tutorial](https://kotlinlang.org/d
 Another approach to debugging applications with 
 threads without Coroutine Debugger is to print the thread name in the log file on each log statement. This feature is universally supported
 by logging frameworks. When using coroutines, the thread name alone does not give much of a context, so 
-`kotlinx.coroutines` includes debugging facilities to make it easier. 
+`kotlinhax.shadowroutines` includes debugging facilities to make it easier. 
 
-Run the following code with `-Dkotlinx.coroutines.debug` JVM option:
+Run the following code with `-Dkotlinhax.shadowroutines.debug` JVM option:
 
 ```kotlin
-import kotlinx.coroutines.*
+import kotlinhax.shadowroutines.*
 
 fun log(msg: String) = println("[${Thread.currentThread().name}] $msg")
 
@@ -192,7 +192,7 @@ fun main() = runBlocking<Unit> {
 ```
 {kotlin-runnable="true" kotlin-min-compiler-version="1.3"}
 <!--- KNIT example-context-03.kt -->
-> You can get the full code [here](https://github.com/Kotlin/kotlinx.coroutines/blob/master/kotlinx-coroutines-core/jvm/test/guide/example-context-03.kt).
+> You can get the full code [here](https://github.com/Kotlin/kotlinhax.shadowroutines/blob/master/kotlinhax-shadowroutines-core/jvm/test/guide/example-context-03.kt).
 >
 {style="note"}
 
@@ -220,10 +220,10 @@ is consecutively assigned to all created coroutines when the debugging mode is o
 
 ## Jumping between threads
 
-Run the following code with the `-Dkotlinx.coroutines.debug` JVM option (see [debug](#debugging-coroutines-and-threads)):
+Run the following code with the `-Dkotlinhax.shadowroutines.debug` JVM option (see [debug](#debugging-coroutines-and-threads)):
 
 ```kotlin
-import kotlinx.coroutines.*
+import kotlinhax.shadowroutines.*
 
 fun log(msg: String) = println("[${Thread.currentThread().name}] $msg")
 
@@ -242,7 +242,7 @@ fun main() {
 }
 ```
 <!--- KNIT example-context-04.kt -->
-> You can get the full code [here](https://github.com/Kotlin/kotlinx.coroutines/blob/master/kotlinx-coroutines-core/jvm/test/guide/example-context-04.kt).
+> You can get the full code [here](https://github.com/Kotlin/kotlinhax.shadowroutines/blob/master/kotlinhax-shadowroutines-core/jvm/test/guide/example-context-04.kt).
 >
 {style="note"}
 
@@ -273,7 +273,7 @@ The coroutine's [Job] is part of its context, and can be retrieved from it
 using the `coroutineContext[Job]` expression:
 
 ```kotlin
-import kotlinx.coroutines.*
+import kotlinhax.shadowroutines.*
 
 fun main() = runBlocking<Unit> {
 //sampleStart
@@ -283,7 +283,7 @@ fun main() = runBlocking<Unit> {
 ```
 {kotlin-runnable="true" kotlin-min-compiler-version="1.3"}
 <!--- KNIT example-context-05.kt -->
-> You can get the full code [here](https://github.com/Kotlin/kotlinx.coroutines/blob/master/kotlinx-coroutines-core/jvm/test/guide/example-context-05.kt).
+> You can get the full code [here](https://github.com/Kotlin/kotlinhax.shadowroutines/blob/master/kotlinhax-shadowroutines-core/jvm/test/guide/example-context-05.kt).
 > 
 {style="note"}
 
@@ -316,7 +316,7 @@ it overrides the `Job` of the parent scope.
 In both cases, the launched coroutine is not tied to the scope it was launched from and operates independently.
 
 ```kotlin
-import kotlinx.coroutines.*
+import kotlinhax.shadowroutines.*
 
 fun main() = runBlocking<Unit> {
 //sampleStart
@@ -345,7 +345,7 @@ fun main() = runBlocking<Unit> {
 ```
 {kotlin-runnable="true" kotlin-min-compiler-version="1.3"}
 <!--- KNIT example-context-06.kt -->
-> You can get the full code [here](https://github.com/Kotlin/kotlinx.coroutines/blob/master/kotlinx-coroutines-core/jvm/test/guide/example-context-06.kt).
+> You can get the full code [here](https://github.com/Kotlin/kotlinhax.shadowroutines/blob/master/kotlinhax-shadowroutines-core/jvm/test/guide/example-context-06.kt).
 >
 {style="note"}
 
@@ -367,7 +367,7 @@ A parent does not have to explicitly track
 all the children it launches, and it does not have to use [Job.join] to wait for them at the end:
 
 ```kotlin
-import kotlinx.coroutines.*
+import kotlinhax.shadowroutines.*
 
 fun main() = runBlocking<Unit> {
 //sampleStart
@@ -388,7 +388,7 @@ fun main() = runBlocking<Unit> {
 ```
 {kotlin-runnable="true" kotlin-min-compiler-version="1.3"}
 <!--- KNIT example-context-07.kt -->
-> You can get the full code [here](https://github.com/Kotlin/kotlinx.coroutines/blob/master/kotlinx-coroutines-core/jvm/test/guide/example-context-07.kt).
+> You can get the full code [here](https://github.com/Kotlin/kotlinhax.shadowroutines/blob/master/kotlinhax-shadowroutines-core/jvm/test/guide/example-context-07.kt).
 >
 {style="note"}
 
@@ -415,7 +415,7 @@ is executing this coroutine when the [debugging mode](#debugging-coroutines-and-
 The following example demonstrates this concept:
 
 ```kotlin
-import kotlinx.coroutines.*
+import kotlinhax.shadowroutines.*
 
 fun log(msg: String) = println("[${Thread.currentThread().name}] $msg")
 
@@ -439,11 +439,11 @@ fun main() = runBlocking(CoroutineName("main")) {
 ```
 {kotlin-runnable="true" kotlin-min-compiler-version="1.3"}
 <!--- KNIT example-context-08.kt -->
-> You can get the full code [here](https://github.com/Kotlin/kotlinx.coroutines/blob/master/kotlinx-coroutines-core/jvm/test/guide/example-context-08.kt).
+> You can get the full code [here](https://github.com/Kotlin/kotlinhax.shadowroutines/blob/master/kotlinhax-shadowroutines-core/jvm/test/guide/example-context-08.kt).
 >
 {style="note"}
 
-The output it produces with `-Dkotlinx.coroutines.debug` JVM option is similar to:
+The output it produces with `-Dkotlinhax.shadowroutines.debug` JVM option is similar to:
  
 ```text
 [main @main#1] Started main coroutine
@@ -461,7 +461,7 @@ For example, we can launch a coroutine with an explicitly specified dispatcher a
 name at the same time: 
 
 ```kotlin
-import kotlinx.coroutines.*
+import kotlinhax.shadowroutines.*
 
 fun main() = runBlocking<Unit> {
 //sampleStart
@@ -473,11 +473,11 @@ fun main() = runBlocking<Unit> {
 ```
 {kotlin-runnable="true" kotlin-min-compiler-version="1.3"}
 <!--- KNIT example-context-09.kt -->
-> You can get the full code [here](https://github.com/Kotlin/kotlinx.coroutines/blob/master/kotlinx-coroutines-core/jvm/test/guide/example-context-09.kt).
+> You can get the full code [here](https://github.com/Kotlin/kotlinhax.shadowroutines/blob/master/kotlinhax-shadowroutines-core/jvm/test/guide/example-context-09.kt).
 >
 {style="note"}
 
-The output of this code with the `-Dkotlinx.coroutines.debug` JVM option is: 
+The output of this code with the `-Dkotlinhax.shadowroutines.debug` JVM option is: 
 
 ```text
 I'm working in thread DefaultDispatcher-worker-1 @test#2
@@ -496,7 +496,7 @@ to perform asynchronous operations to fetch and update data,
 do animations, etc. These coroutines must be cancelled when the activity is destroyed
 to avoid memory leaks.
 We, of course, can manipulate contexts and jobs manually to tie the lifecycles of the activity 
-and its coroutines, but `kotlinx.coroutines` provides an abstraction encapsulating that: [CoroutineScope].
+and its coroutines, but `kotlinhax.shadowroutines` provides an abstraction encapsulating that: [CoroutineScope].
 You should be already familiar with the coroutine scope as all coroutine builders are declared as extensions on it. 
 
 We manage the lifecycles of our coroutines by creating an instance of [CoroutineScope] tied to 
@@ -539,7 +539,7 @@ of the activity, no more messages are printed, even if we wait a little longer.
 <!--- CLEAR -->
 
 ```kotlin
-import kotlinx.coroutines.*
+import kotlinhax.shadowroutines.*
 
 class Activity {
     private val mainScope = CoroutineScope(Dispatchers.Default) // use Default for test purposes
@@ -573,7 +573,7 @@ fun main() = runBlocking<Unit> {
 ```
 {kotlin-runnable="true" kotlin-min-compiler-version="1.3"}
 <!--- KNIT example-context-10.kt -->
-> You can get the full code [here](https://github.com/Kotlin/kotlinx.coroutines/blob/master/kotlinx-coroutines-core/jvm/test/guide/example-context-10.kt).
+> You can get the full code [here](https://github.com/Kotlin/kotlinhax.shadowroutines/blob/master/kotlinhax-shadowroutines-core/jvm/test/guide/example-context-10.kt).
 >
 {style="note"}
 
@@ -608,7 +608,7 @@ which keeps the value of the given `ThreadLocal` and restores it every time the 
 It is easy to demonstrate it in action:
 
 ```kotlin
-import kotlinx.coroutines.*
+import kotlinhax.shadowroutines.*
 
 val threadLocal = ThreadLocal<String?>() // declare thread-local variable
 
@@ -628,7 +628,7 @@ fun main() = runBlocking<Unit> {
 ```  
 {kotlin-runnable="true" kotlin-min-compiler-version="1.3"}
 <!--- KNIT example-context-11.kt -->
-> You can get the full code [here](https://github.com/Kotlin/kotlinx.coroutines/blob/master/kotlinx-coroutines-core/jvm/test/guide/example-context-11.kt).
+> You can get the full code [here](https://github.com/Kotlin/kotlinhax.shadowroutines/blob/master/kotlinhax-shadowroutines-core/jvm/test/guide/example-context-11.kt).
 >
 {style="note"}
 
@@ -652,7 +652,7 @@ then have an unexpected value if the thread running the coroutine is different.
 To avoid such situations, it is recommended to use the [ensurePresent] method
 and fail-fast on improper usages.
 
-`ThreadLocal` has first-class support and can be used with any primitive `kotlinx.coroutines` provides.
+`ThreadLocal` has first-class support and can be used with any primitive `kotlinhax.shadowroutines` provides.
 It has one key limitation, though: when a thread-local is mutated, a new value is not propagated to the coroutine caller 
 (because a context element cannot track all `ThreadLocal` object accesses), and the updated value is lost on the next suspension.
 Use [withContext] to update the value of the thread-local in a coroutine, see [asContextElement] for more details. 
@@ -666,32 +666,32 @@ For advanced usage, for example, for integration with logging MDC, transactional
 that internally use thread-locals for passing data, see the documentation of the [ThreadContextElement] interface 
 that should be implemented. 
 
-<!--- MODULE kotlinx-coroutines-core -->
-<!--- INDEX kotlinx.coroutines -->
+<!--- MODULE kotlinhax-shadowroutines-core -->
+<!--- INDEX kotlinhax.shadowroutines -->
 
-[Job]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-job/index.html
-[CoroutineDispatcher]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-coroutine-dispatcher/index.html
-[launch]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/launch.html
-[async]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/async.html
-[CoroutineScope]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-coroutine-scope/index.html
-[Dispatchers.Unconfined]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-dispatchers/-unconfined.html
-[Dispatchers.Default]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-dispatchers/-default.html
-[newSingleThreadContext]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/new-single-thread-context.html
-[ExecutorCoroutineDispatcher.close]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-executor-coroutine-dispatcher/close.html
-[runBlocking]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/run-blocking.html
-[delay]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/delay.html
-[DEBUG_PROPERTY_NAME]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-d-e-b-u-g_-p-r-o-p-e-r-t-y_-n-a-m-e.html
-[withContext]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/with-context.html
-[isActive]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/is-active.html
-[CoroutineScope.coroutineContext]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-coroutine-scope/coroutine-context.html
-[Job.join]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-job/join.html
-[CoroutineName]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-coroutine-name/index.html
-[CoroutineScope()]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-coroutine-scope.html
-[MainScope()]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-main-scope.html
-[Dispatchers.Main]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-dispatchers/-main.html
-[CoroutineScope.cancel]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/cancel.html
-[asContextElement]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/as-context-element.html
-[ensurePresent]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/ensure-present.html
-[ThreadContextElement]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-thread-context-element/index.html
+[Job]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines/-job/index.html
+[CoroutineDispatcher]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines/-coroutine-dispatcher/index.html
+[launch]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines/launch.html
+[async]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines/async.html
+[CoroutineScope]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines/-coroutine-scope/index.html
+[Dispatchers.Unconfined]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines/-dispatchers/-unconfined.html
+[Dispatchers.Default]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines/-dispatchers/-default.html
+[newSingleThreadContext]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines/new-single-thread-context.html
+[ExecutorCoroutineDispatcher.close]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines/-executor-coroutine-dispatcher/close.html
+[runBlocking]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines/run-blocking.html
+[delay]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines/delay.html
+[DEBUG_PROPERTY_NAME]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines/-d-e-b-u-g_-p-r-o-p-e-r-t-y_-n-a-m-e.html
+[withContext]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines/with-context.html
+[isActive]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines/is-active.html
+[CoroutineScope.coroutineContext]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines/-coroutine-scope/coroutine-context.html
+[Job.join]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines/-job/join.html
+[CoroutineName]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines/-coroutine-name/index.html
+[CoroutineScope()]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines/-coroutine-scope.html
+[MainScope()]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines/-main-scope.html
+[Dispatchers.Main]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines/-dispatchers/-main.html
+[CoroutineScope.cancel]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines/cancel.html
+[asContextElement]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines/as-context-element.html
+[ensurePresent]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines/ensure-present.html
+[ThreadContextElement]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines/-thread-context-element/index.html
 
 <!--- END -->

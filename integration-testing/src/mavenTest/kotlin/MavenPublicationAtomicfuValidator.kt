@@ -1,4 +1,4 @@
-package kotlinx.coroutines.validator
+package kotlinhax.shadowroutines.validator
 
 import org.junit.Test
 import org.objectweb.asm.*
@@ -20,13 +20,13 @@ class MavenPublicationAtomicfuValidator {
 
     @Test
     fun testNoAtomicfuInMppJar() {
-        val clazz = Class.forName("kotlinx.coroutines.Job")
+        val clazz = Class.forName("kotlinhax.shadowroutines.Job")
         JarFile(clazz.protectionDomain.codeSource.location.file).checkForAtomicFu()
     }
 
     @Test
     fun testNoAtomicfuInAndroidJar() {
-        val clazz = Class.forName("kotlinx.coroutines.android.HandlerDispatcher")
+        val clazz = Class.forName("kotlinhax.shadowroutines.android.HandlerDispatcher")
         JarFile(clazz.protectionDomain.codeSource.location.file).checkForAtomicFu()
     }
 

@@ -1,6 +1,6 @@
 import org.junit.*
-import kotlinx.coroutines.*
-import kotlinx.coroutines.debug.*
+import kotlinhax.shadowroutines.*
+import kotlinhax.shadowroutines.debug.*
 import org.junit.Test
 import java.io.*
 import java.lang.IllegalStateException

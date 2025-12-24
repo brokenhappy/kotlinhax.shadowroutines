@@ -1,4 +1,4 @@
-package kotlinx.coroutines.validator
+package kotlinhax.shadowroutines.validator
 
 import org.junit.Test
 import java.util.jar.*
@@ -8,13 +8,13 @@ class MavenPublicationVersionValidator {
 
     @Test
     fun testMppJar() {
-        val clazz = Class.forName("kotlinx.coroutines.Job")
+        val clazz = Class.forName("kotlinhax.shadowroutines.Job")
         JarFile(clazz.protectionDomain.codeSource.location.file).checkForVersion("kotlinx_coroutines_core.version")
     }
 
     @Test
     fun testAndroidJar() {
-        val clazz = Class.forName("kotlinx.coroutines.android.HandlerDispatcher")
+        val clazz = Class.forName("kotlinhax.shadowroutines.android.HandlerDispatcher")
         JarFile(clazz.protectionDomain.codeSource.location.file).checkForVersion("kotlinx_coroutines_android.version")
     }
 

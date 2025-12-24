@@ -1,13 +1,13 @@
 <!--- TEST_NAME SelectGuideTest --> 
-<contribute-url>https://github.com/Kotlin/kotlinx.coroutines/edit/master/docs/topics/</contribute-url>
+<contribute-url>https://github.com/Kotlin/kotlinhax.shadowroutines/edit/master/docs/topics/</contribute-url>
 
 [//]: # (title: Select expression \(experimental\))
 
 Select expression makes it possible to await multiple suspending functions simultaneously and _select_
 the first one that becomes available.
 
-> Select expressions are an experimental feature of `kotlinx.coroutines`. Their API is expected to 
-> evolve in the upcoming updates of the `kotlinx.coroutines` library with potentially
+> Select expressions are an experimental feature of `kotlinhax.shadowroutines`. Their API is expected to 
+> evolve in the upcoming updates of the `kotlinhax.shadowroutines` library with potentially
 > breaking changes.
 >
 {style="note"}
@@ -58,9 +58,9 @@ Let us run it all seven times:
 <!--- CLEAR -->
 
 ```kotlin
-import kotlinx.coroutines.*
-import kotlinx.coroutines.channels.*
-import kotlinx.coroutines.selects.*
+import kotlinhax.shadowroutines.*
+import kotlinhax.shadowroutines.channels.*
+import kotlinhax.shadowroutines.selects.*
 
 fun CoroutineScope.fizz() = produce<String> {
     while (true) { // sends "Fizz" every 500 ms
@@ -100,7 +100,7 @@ fun main() = runBlocking<Unit> {
 ```
 {kotlin-runnable="true" kotlin-min-compiler-version="1.3"}
 <!--- KNIT example-select-01.kt -->
-> You can get the full code [here](https://github.com/Kotlin/kotlinx.coroutines/blob/master/kotlinx-coroutines-core/jvm/test/guide/example-select-01.kt).
+> You can get the full code [here](https://github.com/Kotlin/kotlinhax.shadowroutines/blob/master/kotlinhax-shadowroutines-core/jvm/test/guide/example-select-01.kt).
 >
 {style="note"}
 
@@ -154,9 +154,9 @@ channel `b` that produces "World" four times:
 <!--- CLEAR -->
 
 ```kotlin
-import kotlinx.coroutines.*
-import kotlinx.coroutines.channels.*
-import kotlinx.coroutines.selects.*
+import kotlinhax.shadowroutines.*
+import kotlinhax.shadowroutines.channels.*
+import kotlinhax.shadowroutines.selects.*
 
 suspend fun selectAorB(a: ReceiveChannel<String>, b: ReceiveChannel<String>): String =
     select<String> {
@@ -195,7 +195,7 @@ fun main() = runBlocking<Unit> {
 ```
 {kotlin-runnable="true" kotlin-min-compiler-version="1.3"}
 <!--- KNIT example-select-02.kt -->
-> You can get the full code [here](https://github.com/Kotlin/kotlinx.coroutines/blob/master/kotlinx-coroutines-core/jvm/test/guide/example-select-02.kt).
+> You can get the full code [here](https://github.com/Kotlin/kotlinhax.shadowroutines/blob/master/kotlinhax-shadowroutines-core/jvm/test/guide/example-select-02.kt).
 >
 {style="note"}
 
@@ -249,9 +249,9 @@ Consumer is going to be quite slow, taking 250 ms to process each number:
 <!--- CLEAR -->
 
 ```kotlin
-import kotlinx.coroutines.*
-import kotlinx.coroutines.channels.*
-import kotlinx.coroutines.selects.*
+import kotlinhax.shadowroutines.*
+import kotlinhax.shadowroutines.channels.*
+import kotlinhax.shadowroutines.selects.*
 
 fun CoroutineScope.produceNumbers(side: SendChannel<Int>) = produce<Int> {
     for (num in 1..10) { // produce 10 numbers from 1 to 10
@@ -280,7 +280,7 @@ fun main() = runBlocking<Unit> {
 ```
 {kotlin-runnable="true" kotlin-min-compiler-version="1.3"}
 <!--- KNIT example-select-03.kt -->
-> You can get the full code [here](https://github.com/Kotlin/kotlinx.coroutines/blob/master/kotlinx-coroutines-core/jvm/test/guide/example-select-03.kt).
+> You can get the full code [here](https://github.com/Kotlin/kotlinhax.shadowroutines/blob/master/kotlinhax-shadowroutines-core/jvm/test/guide/example-select-03.kt).
 >
 {style="note"}
   
@@ -332,8 +332,8 @@ of deferred values to provide `onAwait` clause for each deferred value.
 <!--- CLEAR -->
 
 ```kotlin
-import kotlinx.coroutines.*
-import kotlinx.coroutines.selects.*
+import kotlinhax.shadowroutines.*
+import kotlinhax.shadowroutines.selects.*
 import java.util.*
     
 fun CoroutineScope.asyncString(time: Int) = async {
@@ -364,7 +364,7 @@ fun main() = runBlocking<Unit> {
 ```
 {kotlin-runnable="true" kotlin-min-compiler-version="1.3"}
 <!--- KNIT example-select-04.kt -->
-> You can get the full code [here](https://github.com/Kotlin/kotlinx.coroutines/blob/master/kotlinx-coroutines-core/jvm/test/guide/example-select-04.kt).
+> You can get the full code [here](https://github.com/Kotlin/kotlinhax.shadowroutines/blob/master/kotlinhax-shadowroutines-core/jvm/test/guide/example-select-04.kt).
 >
 {style="note"}
 
@@ -421,9 +421,9 @@ data to it:
 <!--- CLEAR -->
 
 ```kotlin
-import kotlinx.coroutines.*
-import kotlinx.coroutines.channels.*
-import kotlinx.coroutines.selects.*
+import kotlinhax.shadowroutines.*
+import kotlinhax.shadowroutines.channels.*
+import kotlinhax.shadowroutines.selects.*
     
 fun CoroutineScope.switchMapDeferreds(input: ReceiveChannel<Deferred<String>>) = produce<String> {
     var current = input.receive() // start with first received deferred value
@@ -473,7 +473,7 @@ fun main() = runBlocking<Unit> {
 ```
 {kotlin-runnable="true" kotlin-min-compiler-version="1.3"}
 <!--- KNIT example-select-05.kt -->
-> You can get the full code [here](https://github.com/Kotlin/kotlinx.coroutines/blob/master/kotlinx-coroutines-core/jvm/test/guide/example-select-05.kt).
+> You can get the full code [here](https://github.com/Kotlin/kotlinhax.shadowroutines/blob/master/kotlinhax-shadowroutines-core/jvm/test/guide/example-select-05.kt).
 >
 {style="note"}
 
@@ -488,21 +488,21 @@ Channel was closed
 
 <!--- TEST -->
 
-<!--- MODULE kotlinx-coroutines-core -->
-<!--- INDEX kotlinx.coroutines -->
+<!--- MODULE kotlinhax-shadowroutines-core -->
+<!--- INDEX kotlinhax.shadowroutines -->
 
-[Deferred.onAwait]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-deferred/on-await.html
+[Deferred.onAwait]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines/-deferred/on-await.html
 
-<!--- INDEX kotlinx.coroutines.channels -->
+<!--- INDEX kotlinhax.shadowroutines.channels -->
 
-[ReceiveChannel.receive]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.channels/-receive-channel/receive.html
-[ReceiveChannel.onReceive]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.channels/-receive-channel/on-receive.html
-[ReceiveChannel.onReceiveCatching]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.channels/-receive-channel/on-receive-catching.html
-[SendChannel.send]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.channels/-send-channel/send.html
-[SendChannel.onSend]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.channels/-send-channel/on-send.html
+[ReceiveChannel.receive]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines.channels/-receive-channel/receive.html
+[ReceiveChannel.onReceive]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines.channels/-receive-channel/on-receive.html
+[ReceiveChannel.onReceiveCatching]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines.channels/-receive-channel/on-receive-catching.html
+[SendChannel.send]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines.channels/-send-channel/send.html
+[SendChannel.onSend]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines.channels/-send-channel/on-send.html
 
-<!--- INDEX kotlinx.coroutines.selects -->
+<!--- INDEX kotlinhax.shadowroutines.selects -->
 
-[select]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.selects/select.html
+[select]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines.selects/select.html
 
 <!--- END -->

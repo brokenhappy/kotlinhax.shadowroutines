@@ -16,11 +16,11 @@
 <!--- END -->
 
 ## Compatibility
-This document describes the compatibility policy of `kotlinx.coroutines` library since version 1.0.0 and semantics of compatibility-specific annotations.
+This document describes the compatibility policy of `kotlinhax.shadowroutines` library since version 1.0.0 and semantics of compatibility-specific annotations.
 
 
 ## Public API types
-`kotlinx.coroutines` public API comes in five flavours: stable, experimental, obsolete, internal and deprecated. 
+`kotlinhax.shadowroutines` public API comes in five flavours: stable, experimental, obsolete, internal and deprecated. 
 All public API except stable is marked with the corresponding annotation.
 
 ### Experimental API
@@ -32,8 +32,8 @@ By default, most of the new API is marked as experimental and becomes stable in 
 Otherwise, either semantics is fixed without changes in ABI or API goes through deprecation cycle. 
 
 When using experimental API may be dangerous:
-* You are writing a library which depends on `kotlinx.coroutines` and want to use experimental coroutines API in a stable library API.
-It may lead to undesired consequences when end users of your library update their `kotlinx.coroutines` version where experimental API
+* You are writing a library which depends on `kotlinhax.shadowroutines` and want to use experimental coroutines API in a stable library API.
+It may lead to undesired consequences when end users of your library update their `kotlinhax.shadowroutines` version where experimental API
 has slightly different semantics.
 * You want to build core infrastructure of the application around experimental API. 
 
@@ -46,7 +46,7 @@ When using preview API may be dangerous:
 * You are writing a library/framework and want to use [Flow] API in a stable release or in a stable API.
 * You want to use [Flow] in the core infrastructure of your application.
 * You want to use [Flow] as "write-and-forget" solution and cannot afford additional maintenance cost when 
-  it comes to `kotlinx.coroutines` updates.
+  it comes to `kotlinhax.shadowroutines` updates.
 
 
 ### Obsolete API
@@ -57,9 +57,9 @@ but replacement is not yet implemented.
 The semantics of this API won't be changed, but it will go through a deprecation cycle as soon as the replacement is ready.
 
 ### Internal API
-Internal API is marked with [@InternalCoroutinesApi][InternalCoroutinesApi] or is part of `kotlinx.coroutines.internal` package.
+Internal API is marked with [@InternalCoroutinesApi][InternalCoroutinesApi] or is part of `kotlinhax.shadowroutines.internal` package.
 This API has no guarantees on its stability, can and will be changed and/or removed in the future releases. 
-If you can't avoid using internal API, please report it to [issue tracker](https://github.com/Kotlin/kotlinx.coroutines/issues/new).
+If you can't avoid using internal API, please report it to [issue tracker](https://github.com/Kotlin/kotlinhax.shadowroutines/issues/new).
 
 ### Stable API
 Stable API is guaranteed to preserve its ABI and documented semantics. If at some point unfixable design flaws will be discovered, 
@@ -93,7 +93,7 @@ For the Gradle project, a warning can be disabled by passing a compiler flag in 
 
 ```groovy
 tasks.withType(org.jetbrains.kotlin.gradle.tasks.AbstractKotlinCompile).all {
-    kotlinOptions.freeCompilerArgs += ["-Xuse-experimental=kotlinx.coroutines.ExperimentalCoroutinesApi"]
+    kotlinOptions.freeCompilerArgs += ["-Xuse-experimental=kotlinhax.shadowroutines.ExperimentalCoroutinesApi"]
 }
 
 ```
@@ -107,23 +107,23 @@ For the Maven project, a warning can be disabled by passing a compiler flag in y
     ... your configuration ...
     <configuration>
         <args>
-            <arg>-Xuse-experimental=kotlinx.coroutines.ExperimentalCoroutinesApi</arg>
+            <arg>-Xuse-experimental=kotlinhax.shadowroutines.ExperimentalCoroutinesApi</arg>
         </args>
     </configuration>
 </plugin>
 ```
 
 
-<!--- MODULE kotlinx-coroutines-core -->
-<!--- INDEX kotlinx.coroutines.flow -->
+<!--- MODULE kotlinhax-shadowroutines-core -->
+<!--- INDEX kotlinhax.shadowroutines.flow -->
 
-[Flow]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.flow/-flow/index.html
+[Flow]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines.flow/-flow/index.html
 
-<!--- INDEX kotlinx.coroutines -->
+<!--- INDEX kotlinhax.shadowroutines -->
 
-[ExperimentalCoroutinesApi]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-experimental-coroutines-api/index.html
-[FlowPreview]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-flow-preview/index.html
-[ObsoleteCoroutinesApi]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-obsolete-coroutines-api/index.html
-[InternalCoroutinesApi]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-internal-coroutines-api/index.html
+[ExperimentalCoroutinesApi]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines/-experimental-coroutines-api/index.html
+[FlowPreview]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines/-flow-preview/index.html
+[ObsoleteCoroutinesApi]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines/-obsolete-coroutines-api/index.html
+[InternalCoroutinesApi]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines/-internal-coroutines-api/index.html
 
 <!--- END -->

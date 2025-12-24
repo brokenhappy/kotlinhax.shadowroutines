@@ -1,0 +1,9 @@
+kotlinhax.shadowroutines.TimeoutCancellationException: Timed out waiting for 200 ms
+	at _COROUTINE._BOUNDARY._(CoroutineDebugging.kt)
+	at kotlinhax.shadowroutines.exceptions.StackTraceRecoveryWithTimeoutTest.suspendForever(StackTraceRecoveryWithTimeoutTest.kt:92)
+	at kotlinhax.shadowroutines.exceptions.StackTraceRecoveryWithTimeoutTest$outerChild$2.invokeSuspend(StackTraceRecoveryWithTimeoutTest.kt:78)
+	at kotlinhax.shadowroutines.exceptions.StackTraceRecoveryWithTimeoutTest.outerChild(StackTraceRecoveryWithTimeoutTest.kt:74)
+	at kotlinhax.shadowroutines.exceptions.StackTraceRecoveryWithTimeoutTest$testStacktraceIsRecoveredFromSuspensionPointWithChild$1.invokeSuspend(StackTraceRecoveryWithTimeoutTest.kt:66)
+Caused by: kotlinhax.shadowroutines.TimeoutCancellationException: Timed out waiting for 200 ms
+	at kotlinhax.shadowroutines.TimeoutKt.TimeoutCancellationException(Timeout.kt:116)
+	at kotlinhax.shadowroutines.TimeoutCoroutine.run(Timeout.kt:86)

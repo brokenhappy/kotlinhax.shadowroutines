@@ -1,8 +1,8 @@
 @file:OptIn(ExperimentalCoroutinesApi::class)
 
 import org.junit.*
-import kotlinx.coroutines.*
-import kotlinx.coroutines.debug.*
+import kotlinhax.shadowroutines.*
+import kotlinhax.shadowroutines.debug.*
 import org.junit.Ignore
 import org.junit.Test
 import java.io.*
@@ -18,15 +18,15 @@ class DynamicAttachDebugJpmsTest {
      * Here is the state of experiments:
      * When launching this test with additional workarounds like
      * ```
-     *     jvmArgs("--add-exports=kotlinx.coroutines.debug/kotlinx.coroutines.repackaged.net.bytebuddy=com.sun.jna")
-     *     jvmArgs("--add-exports=kotlinx.coroutines.debug/kotlinx.coroutines.repackaged.net.bytebuddy.agent=com.sun.jna")
+     *     jvmArgs("--add-exports=kotlinhax.shadowroutines.debug/kotlinhax.shadowroutines.repackaged.net.bytebuddy=com.sun.jna")
+     *     jvmArgs("--add-exports=kotlinhax.shadowroutines.debug/kotlinhax.shadowroutines.repackaged.net.bytebuddy.agent=com.sun.jna")
      *```
      *
      * Then we see issues like
      *
      * ```
      * Caused by: java.lang.IllegalStateException: The Byte Buddy agent is not loaded or this method is not called via the system class loader
-     * 	at kotlinx.coroutines.debug/kotlinx.coroutines.repackaged.net.bytebuddy.agent.Installer.getInstrumentation(Installer.java:61)
+     * 	at kotlinhax.shadowroutines.debug/kotlinhax.shadowroutines.repackaged.net.bytebuddy.agent.Installer.getInstrumentation(Installer.java:61)
      * 	... 54 more
      * 	```
      */

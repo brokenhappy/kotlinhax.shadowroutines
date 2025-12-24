@@ -1,8 +1,8 @@
-package kotlinx.coroutines.testing
+package kotlinhax.shadowroutines.testing
 
 import kotlin.test.*
 import kotlin.js.*
-import kotlinx.coroutines.*
+import kotlinhax.shadowroutines.*
 
 actual val VERBOSE = false
 

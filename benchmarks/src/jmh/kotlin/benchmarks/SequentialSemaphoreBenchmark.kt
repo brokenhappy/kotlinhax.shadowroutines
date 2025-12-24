@@ -1,7 +1,7 @@
 package benchmarks
 
-import kotlinx.coroutines.*
-import kotlinx.coroutines.sync.*
+import kotlinhax.shadowroutines.*
+import kotlinhax.shadowroutines.sync.*
 import org.openjdk.jmh.annotations.*
 import java.util.concurrent.TimeUnit
 import kotlin.test.*

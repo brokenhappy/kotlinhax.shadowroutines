@@ -1,10 +1,10 @@
 @file:Suppress("unused")
-package kotlinx.coroutines.testing
+package kotlinhax.shadowroutines.testing
 
 import kotlinx.atomicfu.*
-import kotlinx.coroutines.flow.*
-import kotlinx.coroutines.*
-import kotlinx.coroutines.internal.*
+import kotlinhax.shadowroutines.flow.*
+import kotlinhax.shadowroutines.*
+import kotlinhax.shadowroutines.internal.*
 import kotlin.coroutines.*
 import kotlin.test.*
 import kotlin.time.*

@@ -58,11 +58,11 @@ publishing {
 }
 
 
-// Legacy from https://github.com/Kotlin/kotlinx.coroutines/pull/2031
+// Legacy from https://github.com/Kotlin/kotlinhax.shadowroutines/pull/2031
 // Should be fixed with the rest of the hacks around publication
 tasks.matching { it.name == "generatePomFileForKotlinMultiplatformPublication" }.configureEach {
     dependsOn(tasks.matching { it.name == "generatePomFileForJvmPublication" })
 }
 
-// Compatibility with old TeamCity configurations that perform :kotlinx-coroutines-core:bintrayUpload
+// Compatibility with old TeamCity configurations that perform :kotlinhax-shadowroutines-core:bintrayUpload
 tasks.register("bintrayUpload") { dependsOn(tasks.matching { it.name == "publish" }) }

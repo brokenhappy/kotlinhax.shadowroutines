@@ -1,8 +1,8 @@
 package benchmarks
 
 import benchmarks.akka.CORES_COUNT
-import kotlinx.coroutines.*
-import kotlinx.coroutines.scheduling.*
+import kotlinhax.shadowroutines.*
+import kotlinhax.shadowroutines.scheduling.*
 import org.openjdk.jmh.annotations.Param
 import org.openjdk.jmh.annotations.Setup
 import org.openjdk.jmh.annotations.TearDown

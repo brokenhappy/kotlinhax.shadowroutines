@@ -14,7 +14,7 @@ val Project.jdkToolchainVersion: Int get() = property("jdk_toolchain_version").t
 
 /**
  * TODO: check if this is still relevant.
- * It was introduced in <https://github.com/Kotlin/kotlinx.coroutines/pull/2389>, and the project for which this was
+ * It was introduced in <https://github.com/Kotlin/kotlinhax.shadowroutines/pull/2389>, and the project for which this was
  * done is already long finished.
  */
 val Project.nativeTargetsAreEnabled: Boolean get() = rootProject.properties["disable_native_targets"] == null
@@ -22,26 +22,26 @@ val Project.nativeTargetsAreEnabled: Boolean get() = rootProject.properties["dis
 val Project.sourceSets: SourceSetContainer
     get() = extensions.getByName("sourceSets") as SourceSetContainer
 
-val coreModule = "kotlinx-coroutines-core"
-val jdk8ObsoleteModule = "kotlinx-coroutines-jdk8"
+val coreModule = "kotlinhax-shadowroutines-core"
+val jdk8ObsoleteModule = "kotlinhax-shadowroutines-jdk8"
 val testUtilsModule = "test-utils"
 
 // Not applicable for Kotlin plugin
-val sourceless = setOf("kotlinx.coroutines", "kotlinx-coroutines-bom")
+val sourceless = setOf("kotlinhax.shadowroutines", "kotlinhax-shadowroutines-bom")
 
 // Not published
-val unpublished = setOf("kotlinx.coroutines", "benchmarks", "android-unit-tests", testUtilsModule)
+val unpublished = setOf("kotlinhax.shadowroutines", "benchmarks", "android-unit-tests", testUtilsModule)
 
-val Project.isMultiplatform: Boolean get() = name in setOf(coreModule, "kotlinx-coroutines-test", testUtilsModule)
-val Project.isBom: Boolean get() = name == "kotlinx-coroutines-bom"
+val Project.isMultiplatform: Boolean get() = name in setOf(coreModule, "kotlinhax-shadowroutines-test", testUtilsModule)
+val Project.isBom: Boolean get() = name == "kotlinhax-shadowroutines-bom"
 
 // Projects that we do not check for Android API level 14 check due to various limitations
 val androidNonCompatibleProjects = setOf(
-    "kotlinx-coroutines-debug",
-    "kotlinx-coroutines-swing",
-    "kotlinx-coroutines-javafx",
-    "kotlinx-coroutines-jdk8",
-    "kotlinx-coroutines-jdk9",
-    "kotlinx-coroutines-reactor",
-    "kotlinx-coroutines-test"
+    "kotlinhax-shadowroutines-debug",
+    "kotlinhax-shadowroutines-swing",
+    "kotlinhax-shadowroutines-javafx",
+    "kotlinhax-shadowroutines-jdk8",
+    "kotlinhax-shadowroutines-jdk9",
+    "kotlinhax-shadowroutines-reactor",
+    "kotlinhax-shadowroutines-test"
 )

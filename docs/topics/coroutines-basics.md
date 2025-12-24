@@ -1,4 +1,4 @@
-<contribute-url>https://github.com/Kotlin/kotlinx.coroutines/edit/master/docs/topics/</contribute-url>
+<contribute-url>https://github.com/Kotlin/kotlinhax.shadowroutines/edit/master/docs/topics/</contribute-url>
 
 [//]: # (title: Coroutines basics)
 
@@ -51,11 +51,11 @@ This example doesn't use concurrency yet, but by marking the functions with the 
 you allow them to call other suspending functions and run concurrent code inside.
 
 While the `suspend` keyword is part of the core Kotlin language, most coroutine features
-are available through the [`kotlinx.coroutines`](https://github.com/Kotlin/kotlinx.coroutines) library.
+are available through the [`kotlinhax.shadowroutines`](https://github.com/Kotlin/kotlinhax.shadowroutines) library.
 
-## Add the kotlinx.coroutines library to your project
+## Add the kotlinhax.shadowroutines library to your project
 
-To include the `kotlinx.coroutines` library in your project, add the corresponding dependency configuration based on your build tool:
+To include the `kotlinhax.shadowroutines` library in your project, add the corresponding dependency configuration based on your build tool:
 
 <tabs group="build-tool">
 <tab title="Kotlin" group-key="kotlin">
@@ -67,7 +67,7 @@ repositories {
 }
 
 dependencies {
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:%coroutinesVersion%")
+    implementation("org.jetbrains.kotlinx:kotlinhax-shadowroutines-core:%coroutinesVersion%")
 }
 ```
 
@@ -81,7 +81,7 @@ repositories {
 }
 
 dependencies {
-    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:%coroutinesVersion%'
+    implementation 'org.jetbrains.kotlinx:kotlinhax-shadowroutines-core:%coroutinesVersion%'
 }
 ```
 </tab>
@@ -94,7 +94,7 @@ dependencies {
     <dependencies>
         <dependency>
             <groupId>org.jetbrains.kotlinx</groupId>
-            <artifactId>kotlinx-coroutines-core</artifactId>
+            <artifactId>kotlinhax-shadowroutines-core</artifactId>
             <version>%coroutinesVersion%</version>
         </dependency>
     </dependencies>
@@ -124,10 +124,10 @@ To create a coroutine in Kotlin, you need the following:
 
 Let's look at an example that uses multiple coroutines in a multithreaded environment:
 
-1. Import the `kotlinx.coroutines` library:
+1. Import the `kotlinhax.shadowroutines` library:
 
     ```kotlin
-    import kotlinx.coroutines.*
+    import kotlinhax.shadowroutines.*
     ```
 
 2. Mark functions that can pause and resume with the `suspend` keyword:
@@ -146,7 +146,7 @@ Let's look at an example that uses multiple coroutines in a multithreaded enviro
     > 
     {style="note"}
 
-3. Add the [`delay()`](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/delay.html#) function to simulate a suspending task, such as fetching data or writing to a database:
+3. Add the [`delay()`](https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines/delay.html#) function to simulate a suspending task, such as fetching data or writing to a database:
 
     ```kotlin
     suspend fun greet() {
@@ -159,7 +159,7 @@ Let's look at an example that uses multiple coroutines in a multithreaded enviro
     >
     {style="tip"} -->
 
-4. Use [`withContext(Dispatchers.Default)`](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/with-context.html#) to define an entry point for multithreaded concurrent code that runs on a shared thread pool:
+4. Use [`withContext(Dispatchers.Default)`](https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines/with-context.html#) to define an entry point for multithreaded concurrent code that runs on a shared thread pool:
 
     ```kotlin
     suspend fun main() {
@@ -178,7 +178,7 @@ Let's look at an example that uses multiple coroutines in a multithreaded enviro
    > 
    {style="note"}
 
-5. Use a [coroutine builder function](#coroutine-builder-functions) like [`CoroutineScope.launch()`](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/launch.html) to start the coroutine:
+5. Use a [coroutine builder function](#coroutine-builder-functions) like [`CoroutineScope.launch()`](https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines/launch.html) to start the coroutine:
 
     ```kotlin
     suspend fun main() {
@@ -194,7 +194,7 @@ Let's look at an example that uses multiple coroutines in a multithreaded enviro
 
     ```kotlin
     // Imports the coroutines library
-    import kotlinx.coroutines.*
+    import kotlinhax.shadowroutines.*
 
     // Imports the kotlin.time.Duration to express duration in seconds
     import kotlin.time.Duration.Companion.seconds
@@ -233,9 +233,9 @@ Try running the example multiple times.
 You may notice that the output order and thread names may change each time you run the program, because the OS decides when threads run.
 
 > You can display coroutine names next to thread names in the output of your code for additional information.
-> To do so, pass the `-Dkotlinx.coroutines.debug` VM option in your build tool or IDE run configuration.
+> To do so, pass the `-Dkotlinhax.shadowroutines.debug` VM option in your build tool or IDE run configuration.
 >
-> See [Debugging coroutines](https://github.com/Kotlin/kotlinx.coroutines/blob/master/docs/topics/debugging.md) for more information.
+> See [Debugging coroutines](https://github.com/Kotlin/kotlinhax.shadowroutines/blob/master/docs/topics/debugging.md) for more information.
 >
 {style="tip"}
 
@@ -251,7 +251,7 @@ A parent coroutine waits for its children to complete before it finishes.
 If the parent coroutine fails or gets canceled, all its child coroutines are recursively canceled too.
 Keeping coroutines connected this way makes cancellation and error handling predictable and safe.
 
-To maintain structured concurrency, new coroutines can only be launched in a [`CoroutineScope`](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-coroutine-scope/) that defines and manages their lifecycle.
+To maintain structured concurrency, new coroutines can only be launched in a [`CoroutineScope`](https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines/-coroutine-scope/) that defines and manages their lifecycle.
 The `CoroutineScope` includes the _coroutine context_, which defines the dispatcher and other execution properties.
 When you start a coroutine inside another coroutine, it automatically becomes a child of its parent scope.
 
@@ -261,7 +261,7 @@ Inside the builder's block, the [receiver](lambdas.md#function-literals-with-rec
 ### Create a coroutine scope with the `coroutineScope()` function
 
 To create a new coroutine scope with the current coroutine context, use the
-[`coroutineScope()`](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/coroutine-scope.html) function.
+[`coroutineScope()`](https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines/coroutine-scope.html) function.
 This function creates a root coroutine of the coroutine subtree.
 It's the direct parent of coroutines launched inside the block and the indirect parent of any coroutines they launch.
 `coroutineScope()` executes the suspending block and waits until the block and any coroutines launched in it complete.
@@ -272,7 +272,7 @@ Here's an example:
 // Imports the kotlin.time.Duration to express duration in seconds
 import kotlin.time.Duration.Companion.seconds
 
-import kotlinx.coroutines.*
+import kotlinhax.shadowroutines.*
 
 // If the coroutine context doesn't specify a dispatcher,
 // CoroutineScope.launch() uses Dispatchers.Default
@@ -332,7 +332,7 @@ Inside this lambda, the implicit receiver is a `CoroutineScope`, so builder func
 To extract the coroutine builders into another function, that function must declare a `CoroutineScope` receiver, otherwise a compilation error occurs:
 
 ```kotlin
-import kotlinx.coroutines.*
+import kotlinhax.shadowroutines.*
 //sampleStart
 suspend fun main() {
     coroutineScope {
@@ -365,16 +365,16 @@ Here are some examples:
 * [`CoroutineScope.launch()`](#coroutinescope-launch)
 * [`CoroutineScope.async()`](#coroutinescope-async)
 * [`runBlocking()`](#runblocking)
-* [`withContext()`](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/with-context.html)
+* [`withContext()`](https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines/with-context.html)
 * [`coroutineScope()`](#create-a-coroutine-scope-with-the-coroutinescope-function)
 
 Coroutine builder functions require a `CoroutineScope` to run in.
-This can be an existing scope or one you create with helper functions such as `coroutineScope()`, [`runBlocking()`](#runblocking), or [`withContext()`](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/with-context.html#).
+This can be an existing scope or one you create with helper functions such as `coroutineScope()`, [`runBlocking()`](#runblocking), or [`withContext()`](https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines/with-context.html#).
 Each builder defines how the coroutine starts and how you interact with its result.
 
 ### `CoroutineScope.launch()`
 
-The [`CoroutineScope.launch()`](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/launch.html#) coroutine builder function is an extension function on `CoroutineScope`.
+The [`CoroutineScope.launch()`](https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines/launch.html#) coroutine builder function is an extension function on `CoroutineScope`.
 It starts a new coroutine without blocking the rest of the scope, inside an existing [coroutine scope](#coroutine-scope-and-structured-concurrency).
 
 Use `CoroutineScope.launch()` to run a task alongside other work when the result isn't needed or you don't want to wait for it:
@@ -383,7 +383,7 @@ Use `CoroutineScope.launch()` to run a task alongside other work when the result
 // Imports the kotlin.time.Duration to enable expressing duration in milliseconds
 import kotlin.time.Duration.Companion.milliseconds
 
-import kotlinx.coroutines.*
+import kotlinhax.shadowroutines.*
 
 suspend fun main() {
     withContext(Dispatchers.Default) {
@@ -409,7 +409,7 @@ suspend fun performBackgroundWork() = coroutineScope { // this: CoroutineScope
 
 After running this example, you can see that the `main()` function isn't blocked by `CoroutineScope.launch()` and keeps running other code while the coroutine works in the background.
 
-> The `CoroutineScope.launch()` function returns a [`Job`](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-job/) handle.
+> The `CoroutineScope.launch()` function returns a [`Job`](https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines/-job/) handle.
 > Use this handle to wait for the launched coroutine to complete.
 > For more information, see [Cancellation and timeouts](cancellation-and-timeouts.md#cancel-coroutines).
 > 
@@ -417,15 +417,15 @@ After running this example, you can see that the `main()` function isn't blocked
 
 ### `CoroutineScope.async()`
 
-The [`CoroutineScope.async()`](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/async.html) coroutine builder function is an extension function on `CoroutineScope`.
-It starts a concurrent computation inside an existing [coroutine scope](#coroutine-scope-and-structured-concurrency) and returns a [`Deferred`](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-deferred/) handle that represents an eventual result.
+The [`CoroutineScope.async()`](https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines/async.html) coroutine builder function is an extension function on `CoroutineScope`.
+It starts a concurrent computation inside an existing [coroutine scope](#coroutine-scope-and-structured-concurrency) and returns a [`Deferred`](https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines/-deferred/) handle that represents an eventual result.
 Use the `.await()` function to suspend the code until the result is ready:
 
 ```kotlin
 // Imports the kotlin.time.Duration to enable expressing duration in milliseconds
 import kotlin.time.Duration.Companion.milliseconds
 
-import kotlinx.coroutines.*
+import kotlinhax.shadowroutines.*
 
 //sampleStart
 suspend fun main() = withContext(Dispatchers.Default) { // this: CoroutineScope
@@ -451,14 +451,14 @@ suspend fun main() = withContext(Dispatchers.Default) { // this: CoroutineScope
 
 ### `runBlocking()`
 
-The [`runBlocking()`](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/run-blocking.html) coroutine builder function creates a coroutine scope and blocks the current [thread](#comparing-coroutines-and-jvm-threads) until
+The [`runBlocking()`](https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines/run-blocking.html) coroutine builder function creates a coroutine scope and blocks the current [thread](#comparing-coroutines-and-jvm-threads) until
 the coroutines launched in that scope finish.
 
 Use `runBlocking()` only when there is no other option to call suspending code from non-suspending code:
 
 ```kotlin
 import kotlin.time.Duration.Companion.milliseconds
-import kotlinx.coroutines.*
+import kotlinhax.shadowroutines.*
 
 // A third-party interface you can't change
 interface Repository {
@@ -482,7 +482,7 @@ suspend fun myReadItem(): Int {
 
 ## Coroutine dispatchers
 
-A [_coroutine dispatcher_](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-dispatchers/#) controls which thread or thread pool coroutines use for their execution.
+A [_coroutine dispatcher_](https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines/-dispatchers/#) controls which thread or thread pool coroutines use for their execution.
 Coroutines aren't always tied to a single thread.
 They can pause on one thread and resume on another, depending on the dispatcher.
 This lets you run many coroutines at the same time without allocating a separate thread for every coroutine.
@@ -503,8 +503,8 @@ While the coroutine scope controls the coroutine's lifecycle, the dispatcher con
 >
 {style="note"}
 
-The `kotlinx.coroutines` library includes different dispatchers for different use cases.
-For example, [`Dispatchers.Default`](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-dispatchers/-default.html) runs coroutines on a shared pool of threads, performing work in the background,
+The `kotlinhax.shadowroutines` library includes different dispatchers for different use cases.
+For example, [`Dispatchers.Default`](https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines/-dispatchers/-default.html) runs coroutines on a shared pool of threads, performing work in the background,
 separate from the main thread. This makes it an ideal choice for CPU-intensive operations like data processing.
 
 To specify a dispatcher for a coroutine builder like `CoroutineScope.launch()`, pass it as an argument:
@@ -523,7 +523,7 @@ Alternatively, you can use a `withContext()` block to run all code in it on a sp
 // Imports the kotlin.time.Duration to enable expressing duration in milliseconds
 import kotlin.time.Duration.Companion.milliseconds
 
-import kotlinx.coroutines.*
+import kotlinhax.shadowroutines.*
 
 //sampleStart
 suspend fun main() = withContext(Dispatchers.Default) { // this: CoroutineScope
@@ -551,7 +551,7 @@ suspend fun main() = withContext(Dispatchers.Default) { // this: CoroutineScope
 ```
 {kotlin-runnable="true"}
 
-To learn more about coroutine dispatchers and their uses, including other dispatchers like [`Dispatchers.IO`](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-dispatchers/-i-o.html) and [`Dispatchers.Main`](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-dispatchers/-main.html), see [Coroutine context and dispatchers](coroutine-context-and-dispatchers.md).
+To learn more about coroutine dispatchers and their uses, including other dispatchers like [`Dispatchers.IO`](https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines/-dispatchers/-i-o.html) and [`Dispatchers.Main`](https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines/-dispatchers/-main.html), see [Coroutine context and dispatchers](coroutine-context-and-dispatchers.md).
 
 ## Comparing coroutines and JVM threads
 
@@ -573,7 +573,7 @@ Let's look at an example where 50,000 coroutines each wait five seconds and then
 
 ```kotlin
 import kotlin.time.Duration.Companion.seconds
-import kotlinx.coroutines.*
+import kotlinhax.shadowroutines.*
 
 suspend fun main() {
     withContext(Dispatchers.Default) {

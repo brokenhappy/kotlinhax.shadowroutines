@@ -30,4 +30,4 @@ What could the desired API look like? What would some sample code using the new 
 
 **Prior Art**
 
-(Optional) Maybe you have seen something like the feature you need, but in other libraries, or there is something very similar but not quite sufficient in `kotlinx.coroutines`? Maybe there's already a way to do it, but it's too cumbersome and unclear?
+(Optional) Maybe you have seen something like the feature you need, but in other libraries, or there is something very similar but not quite sufficient in `kotlinhax.shadowroutines`? Maybe there's already a way to do it, but it's too cumbersome and unclear?

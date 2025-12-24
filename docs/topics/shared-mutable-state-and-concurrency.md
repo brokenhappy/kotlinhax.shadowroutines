@@ -1,5 +1,5 @@
 <!--- TEST_NAME SharedStateGuideTest -->
-<contribute-url>https://github.com/Kotlin/kotlinx.coroutines/edit/master/docs/topics/</contribute-url>
+<contribute-url>https://github.com/Kotlin/kotlinhax.shadowroutines/edit/master/docs/topics/</contribute-url>
 
 [//]: # (title: Shared mutable state and concurrency)
 
@@ -36,7 +36,7 @@ multi-threaded [Dispatchers.Default].
 <!--- CLEAR -->
 
 ```kotlin
-import kotlinx.coroutines.*
+import kotlinhax.shadowroutines.*
 import kotlin.system.*    
 
 suspend fun massiveRun(action: suspend () -> Unit) {
@@ -69,7 +69,7 @@ fun main() = runBlocking {
 ```
 {kotlin-runnable="true" kotlin-min-compiler-version="1.3"}
 <!--- KNIT example-sync-01.kt -->
-> You can get the full code [here](https://github.com/Kotlin/kotlinx.coroutines/blob/master/kotlinx-coroutines-core/jvm/test/guide/example-sync-01.kt).
+> You can get the full code [here](https://github.com/Kotlin/kotlinhax.shadowroutines/blob/master/kotlinhax-shadowroutines-core/jvm/test/guide/example-sync-01.kt).
 >
 {style="note"}
 
@@ -88,7 +88,7 @@ There is a common misconception that making a variable `volatile` solves concurr
 <!--- CLEAR -->
 
 ```kotlin
-import kotlinx.coroutines.*
+import kotlinhax.shadowroutines.*
 import kotlin.system.*
 
 suspend fun massiveRun(action: suspend () -> Unit) {
@@ -122,7 +122,7 @@ fun main() = runBlocking {
 ```
 {kotlin-runnable="true" kotlin-min-compiler-version="1.3"}
 <!--- KNIT example-sync-02.kt -->
-> You can get the full code [here](https://github.com/Kotlin/kotlinx.coroutines/blob/master/kotlinx-coroutines-core/jvm/test/guide/example-sync-02.kt).
+> You can get the full code [here](https://github.com/Kotlin/kotlinhax.shadowroutines/blob/master/kotlinhax-shadowroutines-core/jvm/test/guide/example-sync-02.kt).
 >
 {style="note"}
 
@@ -145,7 +145,7 @@ In the case of a simple counter we can use `AtomicInteger` class which has atomi
 <!--- CLEAR -->
 
 ```kotlin
-import kotlinx.coroutines.*
+import kotlinhax.shadowroutines.*
 import java.util.concurrent.atomic.*
 import kotlin.system.*
 
@@ -179,7 +179,7 @@ fun main() = runBlocking {
 ```
 {kotlin-runnable="true" kotlin-min-compiler-version="1.3"}
 <!--- KNIT example-sync-03.kt -->
-> You can get the full code [here](https://github.com/Kotlin/kotlinx.coroutines/blob/master/kotlinx-coroutines-core/jvm/test/guide/example-sync-03.kt).
+> You can get the full code [here](https://github.com/Kotlin/kotlinhax.shadowroutines/blob/master/kotlinhax-shadowroutines-core/jvm/test/guide/example-sync-03.kt).
 >
 {style="note"}
 
@@ -201,7 +201,7 @@ the single event-dispatch/application thread. It is easy to apply with coroutine
 <!--- CLEAR -->
 
 ```kotlin
-import kotlinx.coroutines.*
+import kotlinhax.shadowroutines.*
 import kotlin.system.*
 
 suspend fun massiveRun(action: suspend () -> Unit) {
@@ -238,7 +238,7 @@ fun main() = runBlocking {
 ```
 {kotlin-runnable="true" kotlin-min-compiler-version="1.3"}
 <!--- KNIT example-sync-04.kt -->
-> You can get the full code [here](https://github.com/Kotlin/kotlinx.coroutines/blob/master/kotlinx-coroutines-core/jvm/test/guide/example-sync-04.kt).
+> You can get the full code [here](https://github.com/Kotlin/kotlinhax.shadowroutines/blob/master/kotlinhax-shadowroutines-core/jvm/test/guide/example-sync-04.kt).
 >
 {style="note"}
 
@@ -260,7 +260,7 @@ the single-threaded context to start with.
 <!--- CLEAR -->
 
 ```kotlin
-import kotlinx.coroutines.*
+import kotlinhax.shadowroutines.*
 import kotlin.system.*
 
 suspend fun massiveRun(action: suspend () -> Unit) {
@@ -295,7 +295,7 @@ fun main() = runBlocking {
 ```
 {kotlin-runnable="true" kotlin-min-compiler-version="1.3"}
 <!--- KNIT example-sync-05.kt -->
-> You can get the full code [here](https://github.com/Kotlin/kotlinx.coroutines/blob/master/kotlinx-coroutines-core/jvm/test/guide/example-sync-05.kt).
+> You can get the full code [here](https://github.com/Kotlin/kotlinhax.shadowroutines/blob/master/kotlinhax-shadowroutines-core/jvm/test/guide/example-sync-05.kt).
 >
 {style="note"}
 
@@ -319,8 +319,8 @@ There is also [withLock] extension function that conveniently represents
 <!--- CLEAR -->
 
 ```kotlin
-import kotlinx.coroutines.*
-import kotlinx.coroutines.sync.*
+import kotlinhax.shadowroutines.*
+import kotlinhax.shadowroutines.sync.*
 import kotlin.system.*
 
 suspend fun massiveRun(action: suspend () -> Unit) {
@@ -357,7 +357,7 @@ fun main() = runBlocking {
 ```
 {kotlin-runnable="true" kotlin-min-compiler-version="1.3"}
 <!--- KNIT example-sync-06.kt -->
-> You can get the full code [here](https://github.com/Kotlin/kotlinx.coroutines/blob/master/kotlinx-coroutines-core/jvm/test/guide/example-sync-06.kt).
+> You can get the full code [here](https://github.com/Kotlin/kotlinhax.shadowroutines/blob/master/kotlinhax-shadowroutines-core/jvm/test/guide/example-sync-06.kt).
 >
 {style="note"}
 
@@ -370,17 +370,17 @@ The locking in this example is fine-grained, so it pays the price. However, it i
 where you absolutely must modify some shared state periodically, but there is no natural thread that this state
 is confined to.
 
-<!--- MODULE kotlinx-coroutines-core -->
-<!--- INDEX kotlinx.coroutines -->
+<!--- MODULE kotlinhax-shadowroutines-core -->
+<!--- INDEX kotlinhax.shadowroutines -->
 
-[Dispatchers.Default]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-dispatchers/-default.html
-[withContext]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/with-context.html
+[Dispatchers.Default]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines/-dispatchers/-default.html
+[withContext]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines/with-context.html
 
-<!--- INDEX kotlinx.coroutines.sync -->
+<!--- INDEX kotlinhax.shadowroutines.sync -->
 
-[Mutex]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.sync/-mutex/index.html
-[Mutex.lock]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.sync/-mutex/lock.html
-[Mutex.unlock]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.sync/-mutex/unlock.html
-[withLock]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.sync/with-lock.html
+[Mutex]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines.sync/-mutex/index.html
+[Mutex.lock]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines.sync/-mutex/lock.html
+[Mutex.unlock]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines.sync/-mutex/unlock.html
+[withLock]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines.sync/with-lock.html
 
 <!--- END -->

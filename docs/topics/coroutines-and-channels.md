@@ -1,4 +1,4 @@
-<contribute-url>https://github.com/Kotlin/kotlinx.coroutines/edit/master/docs/topics/</contribute-url>
+<contribute-url>https://github.com/Kotlin/kotlinhax.shadowroutines/edit/master/docs/topics/</contribute-url>
 
 [//]: # (title: Coroutines and channels − tutorial)
 
@@ -581,7 +581,7 @@ despite all the requests taking place on the main UI thread:
     ```
 
 2. The log can show you which coroutine the corresponding code is running on. To enable it, open **Run | Edit configurations**
-   and add the `-Dkotlinx.coroutines.debug` VM option:
+   and add the `-Dkotlinhax.shadowroutines.debug` VM option:
 
    ![Edit run configuration](run-configuration.png){width=500}
 
@@ -618,7 +618,7 @@ To get the result of a coroutine, you can call `await()` on the `Deferred` insta
 the coroutine that this `await()` is called from is suspended:
 
 ```kotlin
-import kotlinx.coroutines.*
+import kotlinhax.shadowroutines.*
 
 fun main() = runBlocking {
     val deferred: Deferred<Int> = async {
@@ -647,7 +647,7 @@ tests.
 If there is a list of deferred objects, you can call `awaitAll()` to await the results of all of them:
 
 ```kotlin
-import kotlinx.coroutines.*
+import kotlinhax.shadowroutines.*
 
 fun main() = runBlocking {
     val deferreds: List<Deferred<Int>> = (1..3).map {
@@ -835,7 +835,7 @@ launch { /* this: CoroutineScope */ }
 A new coroutine inside `runBlocking`, `launch`, or `async` is started automatically inside the scope:
 
 ```kotlin
-import kotlinx.coroutines.*
+import kotlinhax.shadowroutines.*
 
 fun main() = runBlocking { /* this: CoroutineScope */
     launch { /* ... */ }
@@ -1240,8 +1240,8 @@ By default, a "Rendezvous" channel is created.
 In the following task, you'll create a "Rendezvous" channel, two producer coroutines, and a consumer coroutine:
 
 ```kotlin
-import kotlinx.coroutines.channels.Channel
-import kotlinx.coroutines.*
+import kotlinhax.shadowroutines.channels.Channel
+import kotlinhax.shadowroutines.*
 
 fun main() = runBlocking<Unit> {
     val channel = Channel<String>()
@@ -1554,4 +1554,4 @@ can see the difference in tests that use virtual time.
 ## What's next
 
 * Check out the [Asynchronous Programming with Kotlin](https://kotlinconf.com/workshops/) workshop at KotlinConf.
-* Find out more about using [virtual time and the experimental testing package](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-test/).
+* Find out more about using [virtual time and the experimental testing package](https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-test/).

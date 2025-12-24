@@ -1,11 +1,11 @@
 package benchmarks.flow
 
-import kotlinx.coroutines.*
-import kotlinx.coroutines.flow.*
+import kotlinhax.shadowroutines.*
+import kotlinhax.shadowroutines.flow.*
 import org.openjdk.jmh.annotations.*
 import java.util.concurrent.*
 import benchmarks.flow.scrabble.flow as unsafeFlow
-import kotlinx.coroutines.flow.flow as safeFlow
+import kotlinhax.shadowroutines.flow.flow as safeFlow
 
 @Warmup(iterations = 7, time = 1, timeUnit = TimeUnit.SECONDS)
 @Measurement(iterations = 7, time = 1, timeUnit = TimeUnit.SECONDS)

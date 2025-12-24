@@ -4,14 +4,14 @@ This is a supplementary project that provides integration tests.
 
 The tests are the following:
 * `mavenTest` depends on the published artifacts and tests artifacts binary content for absence of atomicfu in the classpath.
-* `jvmCoreTest` miscellaneous tests that check the behaviour of `kotlinx-coroutines-core` dependency in a smoke manner.
-* `coreAgentTest` checks that `kotlinx-coroutines-core` can be run as a Java agent.
+* `jvmCoreTest` miscellaneous tests that check the behaviour of `kotlinhax-shadowroutines-core` dependency in a smoke manner.
+* `coreAgentTest` checks that `kotlinhax-shadowroutines-core` can be run as a Java agent.
 * `debugAgentTest` checks that the coroutine debugger can be run as a Java agent.
-* `debugDynamicAgentTest` checks that `kotlinx-coroutines-debug` agent can self-attach dynamically to JVM as a standalone dependency.
-* `debugDynamicAgentJpmsTest` checks that `kotlinx-coroutines-debug` agent can self-attach dynamically to JVM as a standalone dependency  (with JPMS)
+* `debugDynamicAgentTest` checks that `kotlinhax-shadowroutines-debug` agent can self-attach dynamically to JVM as a standalone dependency.
+* `debugDynamicAgentJpmsTest` checks that `kotlinhax-shadowroutines-debug` agent can self-attach dynamically to JVM as a standalone dependency  (with JPMS)
 * `smokeTest` builds the multiplatform test project that depends on coroutines.
 * `java8Test` checks that some APIs built with Java 9+ can be used with Java 8.
 
-The `integration-testing` project is expected to be in a subdirectory of the main `kotlinx.coroutines` project.
+The `integration-testing` project is expected to be in a subdirectory of the main `kotlinhax.shadowroutines` project.
 
 To run all the available tests: `./gradlew publishToMavenLocal` + `cd integration-testing` + `./gradlew check`.

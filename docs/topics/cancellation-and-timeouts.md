@@ -1,4 +1,4 @@
-<contribute-url>https://github.com/Kotlin/kotlinx.coroutines/edit/master/docs/topics/</contribute-url>
+<contribute-url>https://github.com/Kotlin/kotlinhax.shadowroutines/edit/master/docs/topics/</contribute-url>
 
 [//]: # (title: Cancellation and timeouts)
 
@@ -10,30 +10,30 @@ You can also use it to release resources early and to stop a coroutine from acce
 >
 {style="tip"}
 
-Cancellation works through the [`Job`](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-job/) handle, which represents the lifecycle of a coroutine and its parent-child relationships.
+Cancellation works through the [`Job`](https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines/-job/) handle, which represents the lifecycle of a coroutine and its parent-child relationships.
 `Job` allows you to check whether the coroutine is active and allows you to cancel it, along with its children, as defined by [structured concurrency](coroutines-basics.md#coroutine-scope-and-structured-concurrency).
 
 ## Cancel coroutines
 
-A coroutine is canceled when the [`cancel()`](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-job/cancel.html) function is invoked on its `Job` handle.
+A coroutine is canceled when the [`cancel()`](https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines/-job/cancel.html) function is invoked on its `Job` handle.
 [Coroutine builder functions](coroutines-basics.md#coroutine-builder-functions) such as
 [`.launch()`](coroutines-basics.md#coroutinescope-launch) return a `Job`. The [`.async()`](coroutines-basics.md#coroutinescope-async)
-function returns a [`Deferred`](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-deferred/), which
+function returns a [`Deferred`](https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines/-deferred/), which
 implements `Job` and supports the same cancellation behavior.
 
 You can call the `cancel()` function manually, or it can be invoked automatically through cancellation propagation when a parent coroutine is canceled.
 
-When a coroutine is canceled, it throws a [`CancellationException`](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-cancellation-exception/) the next time it checks for cancellation.
+When a coroutine is canceled, it throws a [`CancellationException`](https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines/-cancellation-exception/) the next time it checks for cancellation.
 For more information about how and when this happens, see [Suspension points and cancellation](#suspension-points-and-cancellation).
 
-> You can use the [`awaitCancellation()`](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/await-cancellation.html) function to suspend a coroutine until it's canceled.
+> You can use the [`awaitCancellation()`](https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines/await-cancellation.html) function to suspend a coroutine until it's canceled.
 >
 {style="tip"}
 
 Here's an example on how to manually cancel coroutines:
 
 ```kotlin
-import kotlinx.coroutines.*
+import kotlinhax.shadowroutines.*
 import kotlin.time.Duration
 
 //sampleStart
@@ -95,7 +95,7 @@ suspend fun main() {
 ```
 {kotlin-runnable="true" id="manual-cancellation-example"}
 
-In this example, [`CompletableDeferred`](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-completable-deferred/) is used as a signal that the coroutine has started running.
+In this example, [`CompletableDeferred`](https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines/-completable-deferred/) is used as a signal that the coroutine has started running.
 The coroutine calls `complete()` when it starts executing, and `await()` only returns once that `CompletableDeferred` is completed. This way, cancellation happens only after the coroutine has started running.
 The coroutine created by `.async()` doesn't have this check, so it may be canceled before it can run the code inside its block.
 
@@ -114,7 +114,7 @@ This prevents child coroutines from working after the parent has already stopped
 Here's an example:
 
 ```kotlin
-import kotlinx.coroutines.*
+import kotlinhax.shadowroutines.*
 import kotlin.time.Duration
 
 //sampleStart
@@ -179,9 +179,9 @@ For example, when awaiting a `Deferred` result, the coroutine only suspends if t
 Here's an example using common suspending functions that suspend, enabling the coroutine to check and stop when it's canceled:
 
 ```kotlin
-import kotlinx.coroutines.*
-import kotlinx.coroutines.sync.Mutex
-import kotlinx.coroutines.channels.Channel
+import kotlinhax.shadowroutines.*
+import kotlinhax.shadowroutines.sync.Mutex
+import kotlinhax.shadowroutines.channels.Channel
 import kotlin.time.Duration.Companion.milliseconds
 import kotlin.time.Duration
 
@@ -224,7 +224,7 @@ suspend fun main() {
 ```
 {kotlin-runnable="true" id="suspension-points-example"}
 
-> All suspending functions in the `kotlinx.coroutines` library cooperate with cancellation because they use [`suspendCancellableCoroutine()`](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/suspend-cancellable-coroutine.html) internally, which checks for cancellation when the coroutine suspends.
+> All suspending functions in the `kotlinhax.shadowroutines` library cooperate with cancellation because they use [`suspendCancellableCoroutine()`](https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines/suspend-cancellable-coroutine.html) internally, which checks for cancellation when the coroutine suspends.
 > In contrast, custom suspending functions that use [`suspendCoroutine()`](https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.coroutines/suspend-coroutine.html) don't react to cancellation.
 >
 {style="tip"}
@@ -243,13 +243,13 @@ These APIs are useful when your coroutines run for a long time between suspensio
 
 #### isActive
 
-Use the [`isActive`](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/is-active.html) property in long-running computations to periodically check for cancellation.
+Use the [`isActive`](https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines/is-active.html) property in long-running computations to periodically check for cancellation.
 This property is `false` when the coroutine is no longer active, which you can use to gracefully stop the coroutine when it no longer needs to continue the operation:
 
 Here's an example:
 
 ```kotlin
-import kotlinx.coroutines.*
+import kotlinhax.shadowroutines.*
 import kotlin.time.Duration.Companion.milliseconds
 import kotlin.random.Random
 
@@ -287,18 +287,18 @@ suspend fun main() {
 ```
 {kotlin-runnable="true" id="isactive-example"}
 
-In this example, the [`join()`](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-job/join.html) function suspends the coroutine until it finishes. This ensures that the list isn't accessed while the sorting coroutine is still running.
+In this example, the [`join()`](https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines/-job/join.html) function suspends the coroutine until it finishes. This ensures that the list isn't accessed while the sorting coroutine is still running.
 
-> You can use the [`cancelAndJoin()`](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/cancel-and-join.html) function to cancel a coroutine and wait for it to finish in a single call.
+> You can use the [`cancelAndJoin()`](https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines/cancel-and-join.html) function to cancel a coroutine and wait for it to finish in a single call.
 >
 {style="note"}
 
 #### ensureActive()
 
-Use the [`ensureActive()`](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/ensure-active.html) function to check for cancellation and stop the current computation by throwing `CancellationException` if the coroutine is canceled:
+Use the [`ensureActive()`](https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines/ensure-active.html) function to check for cancellation and stop the current computation by throwing `CancellationException` if the coroutine is canceled:
 
 ```kotlin
-import kotlinx.coroutines.*
+import kotlinhax.shadowroutines.*
 import kotlin.time.Duration.Companion.milliseconds
 
 suspend fun main() {
@@ -332,13 +332,13 @@ suspend fun main() {
 
 #### yield()
 
-The [`yield()`](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/yield.html) function suspends the coroutine and checks for cancellation before resuming.
+The [`yield()`](https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines/yield.html) function suspends the coroutine and checks for cancellation before resuming.
 Without suspending, coroutines on the same thread run sequentially.
 
 Use `yield` to allow other coroutines to run on the same thread or thread pool before one of them finishes:
 
 ```kotlin
-import kotlinx.coroutines.*
+import kotlinhax.shadowroutines.*
 
 //sampleStart
 fun main() {
@@ -372,10 +372,10 @@ On the JVM, some functions, such as `Thread.sleep()` or `BlockingQueue.take()`, 
 These blocking functions can be interrupted, which stops them prematurely.
 However, when you call them from a coroutine, cancellation doesn't interrupt the thread.
 
-To interrupt the thread when canceling a coroutine, use the [`runInterruptible()`](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/run-interruptible.html) function:
+To interrupt the thread when canceling a coroutine, use the [`runInterruptible()`](https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines/run-interruptible.html) function:
 
 ```kotlin
-import kotlinx.coroutines.*
+import kotlinhax.shadowroutines.*
 
 //sampleStart
 suspend fun main() {
@@ -421,7 +421,7 @@ Here's an example:
 ```kotlin
 import java.nio.file.*
 import java.nio.charset.*
-import kotlinx.coroutines.*
+import kotlinhax.shadowroutines.*
 import java.io.*
 
 // Defines a coroutine scope that uses the UI thread
@@ -471,7 +471,7 @@ Here's an example:
 ```kotlin
 import java.nio.file.*
 import java.nio.charset.*
-import kotlinx.coroutines.*
+import kotlinhax.shadowroutines.*
 import java.io.*
 
 // scope is a coroutine scope using the UI thread
@@ -526,7 +526,7 @@ In this example, storing the `BufferedReader` in a variable and closing it in th
 ### Run non-cancelable blocks
 
 You can prevent cancellation from affecting certain parts of a coroutine.
-To do so, pass [`NonCancellable`](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-non-cancellable/) as an argument to the `withContext()` coroutine builder function.
+To do so, pass [`NonCancellable`](https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines/-non-cancellable/) as an argument to the `withContext()` coroutine builder function.
 
 > Avoid using `NonCancellable` with other coroutine builders like `.launch()` or `.async()`. Doing so disrupts structured concurrency by breaking the parent-child relationship.
 >
@@ -538,7 +538,7 @@ complete even if the coroutine is canceled before they finish.
 Here's an example:
 
 ```kotlin
-import kotlinx.coroutines.*
+import kotlinhax.shadowroutines.*
 import kotlin.time.Duration.Companion.milliseconds
 
 //sampleStart
@@ -583,10 +583,10 @@ suspend fun main() {
 Timeouts allow you to automatically cancel a coroutine after a specified duration.
 They are useful for stopping operations that take too long, helping to keep your application responsive and avoid blocking threads unnecessarily.
 
-To specify a timeout, use the [`withTimeoutOrNull()`](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/with-timeout-or-null.html) function with a `Duration`:
+To specify a timeout, use the [`withTimeoutOrNull()`](https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines/with-timeout-or-null.html) function with a `Duration`:
 
 ```kotlin
-import kotlinx.coroutines.*
+import kotlinhax.shadowroutines.*
 import kotlin.time.Duration.Companion.milliseconds
 
 //sampleStart

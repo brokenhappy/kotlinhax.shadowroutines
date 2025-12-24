@@ -27,7 +27,7 @@ object AuxBuildConfiguration {
     }
 
     /*
-     * 'kotlinx-coroutines-core' dependency leaks into test runtime classpath via 'kotlin-compiler-embeddable'
+     * 'kotlinhax-shadowroutines-core' dependency leaks into test runtime classpath via 'kotlin-compiler-embeddable'
      * and conflicts with our own test/runtime incompatibilities (e.g. when class is moved from a main to test),
      * so we do substitution here.
      * TODO figure out if it's still the problem

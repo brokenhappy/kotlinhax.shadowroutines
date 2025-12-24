@@ -1,0 +1,10 @@
+kotlinhax.shadowroutines.testing.RecoverableTestException
+	at kotlinhax.shadowroutines.exceptions.StackTraceRecoveryChannelsTest$testOfferFromScope$1.invokeSuspend(StackTraceRecoveryChannelsTest.kt:109)
+	at _COROUTINE._BOUNDARY._(CoroutineDebugging.kt)
+	at kotlinhax.shadowroutines.exceptions.StackTraceRecoveryChannelsTest.sendInChannel(StackTraceRecoveryChannelsTest.kt:167)
+	at kotlinhax.shadowroutines.exceptions.StackTraceRecoveryChannelsTest$sendWithContext$2.invokeSuspend(StackTraceRecoveryChannelsTest.kt:162)
+	at kotlinhax.shadowroutines.exceptions.StackTraceRecoveryChannelsTest$sendFromScope$2.invokeSuspend(StackTraceRecoveryChannelsTest.kt:172)
+	at kotlinhax.shadowroutines.exceptions.StackTraceRecoveryChannelsTest$testOfferFromScope$1.invokeSuspend(StackTraceRecoveryChannelsTest.kt:112)
+Caused by: kotlinhax.shadowroutines.testing.RecoverableTestException
+	at kotlinhax.shadowroutines.exceptions.StackTraceRecoveryChannelsTest$testOfferFromScope$1.invokeSuspend(StackTraceRecoveryChannelsTest.kt:109)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)

@@ -1,4 +1,4 @@
-<contribute-url>https://github.com/Kotlin/kotlinx.coroutines/edit/master/docs/topics/</contribute-url>
+<contribute-url>https://github.com/Kotlin/kotlinhax.shadowroutines/edit/master/docs/topics/</contribute-url>
 
 
 [//]: # (title: Coroutines guide)
@@ -9,13 +9,13 @@ are not keywords in Kotlin and are not even part of its standard library. Moreov
 of _suspending function_ provides a safer and less error-prone abstraction for asynchronous 
 operations than futures and promises.  
 
-`kotlinx.coroutines` is a rich library for coroutines developed by JetBrains. It contains a number of high-level 
+`kotlinhax.shadowroutines` is a rich library for coroutines developed by JetBrains. It contains a number of high-level 
 coroutine-enabled primitives that this guide covers, including `launch`, `async`, and others. 
 
-This is a guide about the core features of `kotlinx.coroutines` with a series of examples, divided up into different topics.
+This is a guide about the core features of `kotlinhax.shadowroutines` with a series of examples, divided up into different topics.
 
-In order to use coroutines as well as follow the examples in this guide, you need to add a dependency on the `kotlinx-coroutines-core` module as explained 
-[in the project README](https://github.com/Kotlin/kotlinx.coroutines/blob/master/README.md#using-in-your-projects).
+In order to use coroutines as well as follow the examples in this guide, you need to add a dependency on the `kotlinhax-shadowroutines-core` module as explained 
+[in the project README](https://github.com/Kotlin/kotlinhax.shadowroutines/blob/master/README.md#using-in-your-projects).
 
 ## Table of contents
 
@@ -34,8 +34,8 @@ In order to use coroutines as well as follow the examples in this guide, you nee
 
 ## Additional references
 
-* [Guide to UI programming with coroutines](https://github.com/Kotlin/kotlinx.coroutines/blob/master/ui/coroutines-guide-ui.md)
+* [Guide to UI programming with coroutines](https://github.com/Kotlin/kotlinhax.shadowroutines/blob/master/ui/coroutines-guide-ui.md)
 * [Coroutines design document (KEEP)](https://github.com/Kotlin/KEEP/blob/master/proposals/coroutines.md)
-* [Full kotlinx.coroutines API reference](https://kotlinlang.org/api/kotlinx.coroutines/)
+* [Full kotlinhax.shadowroutines API reference](https://kotlinlang.org/api/kotlinhax.shadowroutines/)
 * [Best practices for coroutines in Android](https://developer.android.com/kotlin/coroutines/coroutines-best-practices)
 * [Additional Android resources for Kotlin coroutines and flow](https://developer.android.com/kotlin/coroutines/additional-resources)

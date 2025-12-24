@@ -1,4 +1,4 @@
-package kotlinx.coroutines.testing
+package kotlinhax.shadowroutines.testing
 
 import java.lang.ref.*
 import java.lang.reflect.*

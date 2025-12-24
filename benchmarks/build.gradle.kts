@@ -50,9 +50,9 @@ dependencies {
     implementation("com.github.akarnokd:rxjava2-extensions:0.20.8")
 
     implementation("com.typesafe.akka:akka-actor_2.12:2.5.0")
-    implementation(project(":kotlinx-coroutines-core"))
-    implementation(project(":kotlinx-coroutines-debug"))
-    implementation(project(":kotlinx-coroutines-reactive"))
+    implementation(project(":kotlinhax-shadowroutines-core"))
+    implementation(project(":kotlinhax-shadowroutines-debug"))
+    implementation(project(":kotlinhax-shadowroutines-reactive"))
 
     // add jmh dependency on main
     "jmhImplementation"(sourceSets.main.get().runtimeClasspath)

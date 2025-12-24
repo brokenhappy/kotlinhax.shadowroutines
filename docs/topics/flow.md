@@ -1,5 +1,5 @@
 <!--- TEST_NAME FlowGuideTest --> 
-<contribute-url>https://github.com/Kotlin/kotlinx.coroutines/edit/master/docs/topics/</contribute-url>
+<contribute-url>https://github.com/Kotlin/kotlinhax.shadowroutines/edit/master/docs/topics/</contribute-url>
 
 [//]: # (title: Asynchronous Flow)
 
@@ -21,7 +21,7 @@ fun main() {
 ```
 {kotlin-runnable="true" kotlin-min-compiler-version="1.3"}
 <!--- KNIT example-flow-01.kt -->
-> You can get the full code [here](https://github.com/Kotlin/kotlinx.coroutines/blob/master/kotlinx-coroutines-core/jvm/test/guide/example-flow-01.kt).
+> You can get the full code [here](https://github.com/Kotlin/kotlinhax.shadowroutines/blob/master/kotlinhax-shadowroutines-core/jvm/test/guide/example-flow-01.kt).
 >
 {style="note"}
 
@@ -54,7 +54,7 @@ fun main() {
 ```
 {kotlin-runnable="true" kotlin-min-compiler-version="1.3"}
 <!--- KNIT example-flow-02.kt -->
-> You can get the full code [here](https://github.com/Kotlin/kotlinx.coroutines/blob/master/kotlinx-coroutines-core/jvm/test/guide/example-flow-02.kt).
+> You can get the full code [here](https://github.com/Kotlin/kotlinhax.shadowroutines/blob/master/kotlinhax-shadowroutines-core/jvm/test/guide/example-flow-02.kt).
 >
 {style="note"}
 
@@ -73,7 +73,7 @@ When these values are computed by asynchronous code we can mark the `simple` fun
 so that it can perform its work without blocking and return the result as a list:
 
 ```kotlin
-import kotlinx.coroutines.*                 
+import kotlinhax.shadowroutines.*                 
                            
 //sampleStart
 suspend fun simple(): List<Int> {
@@ -88,7 +88,7 @@ fun main() = runBlocking<Unit> {
 ```  
 {kotlin-runnable="true" kotlin-min-compiler-version="1.3"}
 <!--- KNIT example-flow-03.kt -->
-> You can get the full code [here](https://github.com/Kotlin/kotlinx.coroutines/blob/master/kotlinx-coroutines-core/jvm/test/guide/example-flow-03.kt).
+> You can get the full code [here](https://github.com/Kotlin/kotlinhax.shadowroutines/blob/master/kotlinhax-shadowroutines-core/jvm/test/guide/example-flow-03.kt).
 >
 {style="note"}
 
@@ -106,8 +106,8 @@ Using the `List<Int>` result type, means we can only return all the values at on
 the stream of values that are being computed asynchronously, we can use a [`Flow<Int>`][Flow] type just like we would use a `Sequence<Int>` type for synchronously computed values:
 
 ```kotlin
-import kotlinx.coroutines.*
-import kotlinx.coroutines.flow.*
+import kotlinhax.shadowroutines.*
+import kotlinhax.shadowroutines.flow.*
 
 //sampleStart               
 fun simple(): Flow<Int> = flow { // flow builder
@@ -132,7 +132,7 @@ fun main() = runBlocking<Unit> {
 ```
 {kotlin-runnable="true" kotlin-min-compiler-version="1.3"}
 <!--- KNIT example-flow-04.kt -->
-> You can get the full code [here](https://github.com/Kotlin/kotlinx.coroutines/blob/master/kotlinx-coroutines-core/jvm/test/guide/example-flow-04.kt).
+> You can get the full code [here](https://github.com/Kotlin/kotlinhax.shadowroutines/blob/master/kotlinhax-shadowroutines-core/jvm/test/guide/example-flow-04.kt).
 >
 {style="note"}
 
@@ -169,8 +169,8 @@ Flows are _cold_ streams similar to sequences &mdash; the code inside a [flow][_
 run until the flow is collected. This becomes clear in the following example:
 
 ```kotlin
-import kotlinx.coroutines.*
-import kotlinx.coroutines.flow.*
+import kotlinhax.shadowroutines.*
+import kotlinhax.shadowroutines.flow.*
 
 //sampleStart      
 fun simple(): Flow<Int> = flow { 
@@ -193,7 +193,7 @@ fun main() = runBlocking<Unit> {
 ```  
 {kotlin-runnable="true" kotlin-min-compiler-version="1.3"}
 <!--- KNIT example-flow-05.kt -->
-> You can get the full code [here](https://github.com/Kotlin/kotlinx.coroutines/blob/master/kotlinx-coroutines-core/jvm/test/guide/example-flow-05.kt).
+> You can get the full code [here](https://github.com/Kotlin/kotlinhax.shadowroutines/blob/master/kotlinhax-shadowroutines-core/jvm/test/guide/example-flow-05.kt).
 >
 {style="note"}
 
@@ -227,8 +227,8 @@ The following example shows how the flow gets cancelled on a timeout when runnin
 and stops executing its code:
 
 ```kotlin
-import kotlinx.coroutines.*
-import kotlinx.coroutines.flow.*
+import kotlinhax.shadowroutines.*
+import kotlinhax.shadowroutines.flow.*
 
 //sampleStart           
 fun simple(): Flow<Int> = flow { 
@@ -249,7 +249,7 @@ fun main() = runBlocking<Unit> {
 ```
 {kotlin-runnable="true" kotlin-min-compiler-version="1.3"}
 <!--- KNIT example-flow-06.kt -->
-> You can get the full code [here](https://github.com/Kotlin/kotlinx.coroutines/blob/master/kotlinx-coroutines-core/jvm/test/guide/example-flow-06.kt).
+> You can get the full code [here](https://github.com/Kotlin/kotlinhax.shadowroutines/blob/master/kotlinhax-shadowroutines-core/jvm/test/guide/example-flow-06.kt).
 >
 {style="note"}
 
@@ -278,8 +278,8 @@ that allow flows to be declared:
 For example, the snippet that prints the numbers 1 to 3 from a flow can be rewritten as follows:
 
 ```kotlin
-import kotlinx.coroutines.*
-import kotlinx.coroutines.flow.*
+import kotlinhax.shadowroutines.*
+import kotlinhax.shadowroutines.flow.*
 
 fun main() = runBlocking<Unit> {
 //sampleStart
@@ -290,7 +290,7 @@ fun main() = runBlocking<Unit> {
 ```
 {kotlin-runnable="true" kotlin-min-compiler-version="1.3"}
 <!--- KNIT example-flow-07.kt -->
-> You can get the full code [here](https://github.com/Kotlin/kotlinx.coroutines/blob/master/kotlinx-coroutines-core/jvm/test/guide/example-flow-07.kt).
+> You can get the full code [here](https://github.com/Kotlin/kotlinhax.shadowroutines/blob/master/kotlinhax-shadowroutines-core/jvm/test/guide/example-flow-07.kt).
 >
 {style="note"}
 
@@ -317,8 +317,8 @@ mapped to its results with a [map] operator, even when performing a request is a
 operation that is implemented by a suspending function:   
 
 ```kotlin
-import kotlinx.coroutines.*
-import kotlinx.coroutines.flow.*
+import kotlinhax.shadowroutines.*
+import kotlinhax.shadowroutines.flow.*
 
 //sampleStart           
 suspend fun performRequest(request: Int): String {
@@ -335,7 +335,7 @@ fun main() = runBlocking<Unit> {
 ```
 {kotlin-runnable="true" kotlin-min-compiler-version="1.3"}
 <!--- KNIT example-flow-08.kt -->
-> You can get the full code [here](https://github.com/Kotlin/kotlinx.coroutines/blob/master/kotlinx-coroutines-core/jvm/test/guide/example-flow-08.kt).
+> You can get the full code [here](https://github.com/Kotlin/kotlinhax.shadowroutines/blob/master/kotlinhax-shadowroutines-core/jvm/test/guide/example-flow-08.kt).
 >
 {style="note"}
 
@@ -359,8 +359,8 @@ For example, using `transform` we can emit a string before performing a long-run
 and follow it with a response:
 
 ```kotlin
-import kotlinx.coroutines.*
-import kotlinx.coroutines.flow.*
+import kotlinhax.shadowroutines.*
+import kotlinhax.shadowroutines.flow.*
 
 suspend fun performRequest(request: Int): String {
     delay(1000) // imitate long-running asynchronous work
@@ -380,7 +380,7 @@ fun main() = runBlocking<Unit> {
 ```
 {kotlin-runnable="true" kotlin-min-compiler-version="1.3"}
 <!--- KNIT example-flow-09.kt -->
-> You can get the full code [here](https://github.com/Kotlin/kotlinx.coroutines/blob/master/kotlinx-coroutines-core/jvm/test/guide/example-flow-09.kt).
+> You can get the full code [here](https://github.com/Kotlin/kotlinhax.shadowroutines/blob/master/kotlinhax-shadowroutines-core/jvm/test/guide/example-flow-09.kt).
 >
 {style="note"}
 
@@ -404,8 +404,8 @@ is reached. Cancellation in coroutines is always performed by throwing an except
 functions (like `try { ... } finally { ... }` blocks) operate normally in case of cancellation:
 
 ```kotlin
-import kotlinx.coroutines.*
-import kotlinx.coroutines.flow.*
+import kotlinhax.shadowroutines.*
+import kotlinhax.shadowroutines.flow.*
 
 //sampleStart
 fun numbers(): Flow<Int> = flow {
@@ -428,7 +428,7 @@ fun main() = runBlocking<Unit> {
 ```
 {kotlin-runnable="true" kotlin-min-compiler-version="1.3"}
 <!--- KNIT example-flow-10.kt -->
-> You can get the full code [here](https://github.com/Kotlin/kotlinx.coroutines/blob/master/kotlinx-coroutines-core/jvm/test/guide/example-flow-10.kt).
+> You can get the full code [here](https://github.com/Kotlin/kotlinhax.shadowroutines/blob/master/kotlinhax-shadowroutines-core/jvm/test/guide/example-flow-10.kt).
 >
 {style="note"}
 
@@ -455,8 +455,8 @@ The [collect] operator is the most basic one, but there are other terminal opera
 For example:
 
 ```kotlin
-import kotlinx.coroutines.*
-import kotlinx.coroutines.flow.*
+import kotlinhax.shadowroutines.*
+import kotlinhax.shadowroutines.flow.*
 
 fun main() = runBlocking<Unit> {
 //sampleStart         
@@ -469,7 +469,7 @@ fun main() = runBlocking<Unit> {
 ```
 {kotlin-runnable="true" kotlin-min-compiler-version="1.3"}
 <!--- KNIT example-flow-11.kt -->
-> You can get the full code [here](https://github.com/Kotlin/kotlinx.coroutines/blob/master/kotlinx-coroutines-core/jvm/test/guide/example-flow-11.kt).
+> You can get the full code [here](https://github.com/Kotlin/kotlinhax.shadowroutines/blob/master/kotlinhax-shadowroutines-core/jvm/test/guide/example-flow-11.kt).
 >
 {style="note"}
 
@@ -492,8 +492,8 @@ upstream to downstream and is then delivered to the terminal operator after.
 See the following example that filters the even integers and maps them to strings:
 
 ```kotlin
-import kotlinx.coroutines.*
-import kotlinx.coroutines.flow.*
+import kotlinhax.shadowroutines.*
+import kotlinhax.shadowroutines.flow.*
 
 fun main() = runBlocking<Unit> {
 //sampleStart         
@@ -513,7 +513,7 @@ fun main() = runBlocking<Unit> {
 ```
 {kotlin-runnable="true" kotlin-min-compiler-version="1.3"}
 <!--- KNIT example-flow-12.kt -->
-> You can get the full code [here](https://github.com/Kotlin/kotlinx.coroutines/blob/master/kotlinx-coroutines-core/jvm/test/guide/example-flow-12.kt).
+> You can get the full code [here](https://github.com/Kotlin/kotlinhax.shadowroutines/blob/master/kotlinhax-shadowroutines-core/jvm/test/guide/example-flow-12.kt).
 >
 {style="note"}
 
@@ -556,8 +556,8 @@ of the corresponding flow. For example, consider the implementation of a `simple
 it is called on and emits three numbers:
 
 ```kotlin
-import kotlinx.coroutines.*
-import kotlinx.coroutines.flow.*
+import kotlinhax.shadowroutines.*
+import kotlinhax.shadowroutines.flow.*
 
 fun log(msg: String) = println("[${Thread.currentThread().name}] $msg")
            
@@ -576,7 +576,7 @@ fun main() = runBlocking<Unit> {
 ```
 {kotlin-runnable="true" kotlin-min-compiler-version="1.3"}
 <!--- KNIT example-flow-13.kt -->
-> You can get the full code [here](https://github.com/Kotlin/kotlinx.coroutines/blob/master/kotlinx-coroutines-core/jvm/test/guide/example-flow-13.kt).
+> You can get the full code [here](https://github.com/Kotlin/kotlinhax.shadowroutines/blob/master/kotlinhax-shadowroutines-core/jvm/test/guide/example-flow-13.kt).
 >
 {style="note"}
 
@@ -605,13 +605,13 @@ preservation property and is not allowed to [emit][FlowCollector.emit] from a di
 Try running the following code:
 
 ```kotlin
-import kotlinx.coroutines.*
-import kotlinx.coroutines.flow.*
+import kotlinhax.shadowroutines.*
+import kotlinhax.shadowroutines.flow.*
                       
 //sampleStart
 fun simple(): Flow<Int> = flow {
     // The WRONG way to change context for CPU-consuming code in flow builder
-    kotlinx.coroutines.withContext(Dispatchers.Default) {
+    kotlinhax.shadowroutines.withContext(Dispatchers.Default) {
         for (i in 1..3) {
             Thread.sleep(100) // pretend we are computing it in CPU-consuming way
             emit(i) // emit next value
@@ -626,7 +626,7 @@ fun main() = runBlocking<Unit> {
 ```
 {kotlin-runnable="true" kotlin-min-compiler-version="1.3"}
 <!--- KNIT example-flow-14.kt -->
-> You can get the full code [here](https://github.com/Kotlin/kotlinx.coroutines/blob/master/kotlinx-coroutines-core/jvm/test/guide/example-flow-14.kt).
+> You can get the full code [here](https://github.com/Kotlin/kotlinhax.shadowroutines/blob/master/kotlinhax-shadowroutines-core/jvm/test/guide/example-flow-14.kt).
 >
 {style="note"}
 
@@ -649,8 +649,8 @@ The correct way to change the context of a flow is shown in the example below, w
 names of the corresponding threads to show how it all works:
 
 ```kotlin
-import kotlinx.coroutines.*
-import kotlinx.coroutines.flow.*
+import kotlinhax.shadowroutines.*
+import kotlinhax.shadowroutines.flow.*
 
 fun log(msg: String) = println("[${Thread.currentThread().name}] $msg")
            
@@ -672,7 +672,7 @@ fun main() = runBlocking<Unit> {
 ```
 {kotlin-runnable="true" kotlin-min-compiler-version="1.3"}
 <!--- KNIT example-flow-15.kt -->
-> You can get the full code [here](https://github.com/Kotlin/kotlinx.coroutines/blob/master/kotlinx-coroutines-core/jvm/test/guide/example-flow-15.kt).
+> You can get the full code [here](https://github.com/Kotlin/kotlinhax.shadowroutines/blob/master/kotlinhax-shadowroutines-core/jvm/test/guide/example-flow-15.kt).
 >
 {style="note"}
   
@@ -702,8 +702,8 @@ the emission by a `simple` flow is slow, taking 100 ms to produce an element; an
 taking 300 ms to process an element. Let's see how long it takes to collect such a flow with three numbers:
 
 ```kotlin
-import kotlinx.coroutines.*
-import kotlinx.coroutines.flow.*
+import kotlinhax.shadowroutines.*
+import kotlinhax.shadowroutines.flow.*
 import kotlin.system.*
 
 //sampleStart
@@ -727,7 +727,7 @@ fun main() = runBlocking<Unit> {
 ```
 {kotlin-runnable="true" kotlin-min-compiler-version="1.3"}
 <!--- KNIT example-flow-16.kt -->
-> You can get the full code [here](https://github.com/Kotlin/kotlinx.coroutines/blob/master/kotlinx-coroutines-core/jvm/test/guide/example-flow-16.kt).
+> You can get the full code [here](https://github.com/Kotlin/kotlinhax.shadowroutines/blob/master/kotlinhax-shadowroutines-core/jvm/test/guide/example-flow-16.kt).
 >
 {style="note"}
 
@@ -746,8 +746,8 @@ We can use a [buffer] operator on a flow to run emitting code of the `simple` fl
 as opposed to running them sequentially:
 
 ```kotlin
-import kotlinx.coroutines.*
-import kotlinx.coroutines.flow.*
+import kotlinhax.shadowroutines.*
+import kotlinhax.shadowroutines.flow.*
 import kotlin.system.*
 
 fun simple(): Flow<Int> = flow {
@@ -773,7 +773,7 @@ fun main() = runBlocking<Unit> {
 ```
 {kotlin-runnable="true" kotlin-min-compiler-version="1.3"}
 <!--- KNIT example-flow-17.kt -->
-> You can get the full code [here](https://github.com/Kotlin/kotlinx.coroutines/blob/master/kotlinx-coroutines-core/jvm/test/guide/example-flow-17.kt).
+> You can get the full code [here](https://github.com/Kotlin/kotlinhax.shadowroutines/blob/master/kotlinhax-shadowroutines-core/jvm/test/guide/example-flow-17.kt).
 >
 {style="note"}
 
@@ -802,8 +802,8 @@ to process each value, but instead, only most recent ones. In this case, the [co
 intermediate values when a collector is too slow to process them. Building on the previous example:
 
 ```kotlin
-import kotlinx.coroutines.*
-import kotlinx.coroutines.flow.*
+import kotlinhax.shadowroutines.*
+import kotlinhax.shadowroutines.flow.*
 import kotlin.system.*
 
 fun simple(): Flow<Int> = flow {
@@ -829,7 +829,7 @@ fun main() = runBlocking<Unit> {
 ```
 {kotlin-runnable="true" kotlin-min-compiler-version="1.3"}
 <!--- KNIT example-flow-18.kt -->
-> You can get the full code [here](https://github.com/Kotlin/kotlinx.coroutines/blob/master/kotlinx-coroutines-core/jvm/test/guide/example-flow-18.kt).
+> You can get the full code [here](https://github.com/Kotlin/kotlinhax.shadowroutines/blob/master/kotlinhax-shadowroutines-core/jvm/test/guide/example-flow-18.kt).
 >
 {style="note"}
 
@@ -852,8 +852,8 @@ a family of `xxxLatest` operators that perform the same essential logic of a `xx
 code in their block on a new value. Let's try changing [conflate] to [collectLatest] in the previous example:
 
 ```kotlin
-import kotlinx.coroutines.*
-import kotlinx.coroutines.flow.*
+import kotlinhax.shadowroutines.*
+import kotlinhax.shadowroutines.flow.*
 import kotlin.system.*
 
 fun simple(): Flow<Int> = flow {
@@ -879,7 +879,7 @@ fun main() = runBlocking<Unit> {
 ```
 {kotlin-runnable="true" kotlin-min-compiler-version="1.3"}
 <!--- KNIT example-flow-19.kt -->
-> You can get the full code [here](https://github.com/Kotlin/kotlinx.coroutines/blob/master/kotlinx-coroutines-core/jvm/test/guide/example-flow-19.kt).
+> You can get the full code [here](https://github.com/Kotlin/kotlinhax.shadowroutines/blob/master/kotlinhax-shadowroutines-core/jvm/test/guide/example-flow-19.kt).
 >
 {style="note"}
  
@@ -906,8 +906,8 @@ Just like the [Sequence.zip] extension function in the Kotlin standard library,
 flows have a [zip] operator that combines the corresponding values of two flows:
 
 ```kotlin
-import kotlinx.coroutines.*
-import kotlinx.coroutines.flow.*
+import kotlinhax.shadowroutines.*
+import kotlinhax.shadowroutines.flow.*
 
 fun main() = runBlocking<Unit> { 
 //sampleStart                                                                           
@@ -920,7 +920,7 @@ fun main() = runBlocking<Unit> {
 ```
 {kotlin-runnable="true" kotlin-min-compiler-version="1.3"}
 <!--- KNIT example-flow-20.kt -->
-> You can get the full code [here](https://github.com/Kotlin/kotlinx.coroutines/blob/master/kotlinx-coroutines-core/jvm/test/guide/example-flow-20.kt).
+> You can get the full code [here](https://github.com/Kotlin/kotlinhax.shadowroutines/blob/master/kotlinhax-shadowroutines-core/jvm/test/guide/example-flow-20.kt).
 >
 {style="note"}
 
@@ -951,8 +951,8 @@ albeit results that are printed every 400 ms:
 {style="note"}
 
 ```kotlin
-import kotlinx.coroutines.*
-import kotlinx.coroutines.flow.*
+import kotlinhax.shadowroutines.*
+import kotlinhax.shadowroutines.flow.*
 
 fun main() = runBlocking<Unit> { 
 //sampleStart                                                                           
@@ -968,7 +968,7 @@ fun main() = runBlocking<Unit> {
 ```
 {kotlin-runnable="true" kotlin-min-compiler-version="1.3"}
 <!--- KNIT example-flow-21.kt -->
-> You can get the full code [here](https://github.com/Kotlin/kotlinx.coroutines/blob/master/kotlinx-coroutines-core/jvm/test/guide/example-flow-21.kt).
+> You can get the full code [here](https://github.com/Kotlin/kotlinhax.shadowroutines/blob/master/kotlinhax-shadowroutines-core/jvm/test/guide/example-flow-21.kt).
 >
 {style="note"}
 
@@ -981,8 +981,8 @@ fun main() = runBlocking<Unit> {
 However, when using a [combine] operator here instead of a [zip]:
 
 ```kotlin
-import kotlinx.coroutines.*
-import kotlinx.coroutines.flow.*
+import kotlinhax.shadowroutines.*
+import kotlinhax.shadowroutines.flow.*
 
 fun main() = runBlocking<Unit> { 
 //sampleStart                                                                           
@@ -998,7 +998,7 @@ fun main() = runBlocking<Unit> {
 ```
 {kotlin-runnable="true" kotlin-min-compiler-version="1.3"}
 <!--- KNIT example-flow-22.kt -->
-> You can get the full code [here](https://github.com/Kotlin/kotlinx.coroutines/blob/master/kotlinx-coroutines-core/jvm/test/guide/example-flow-22.kt).
+> You can get the full code [here](https://github.com/Kotlin/kotlinhax.shadowroutines/blob/master/kotlinhax-shadowroutines-core/jvm/test/guide/example-flow-22.kt).
 >
 {style="note"}
 
@@ -1050,8 +1050,8 @@ most direct analogues of the corresponding sequence operators. They wait for the
 starting to collect the next one as the following example shows:
 
 ```kotlin
-import kotlinx.coroutines.*
-import kotlinx.coroutines.flow.*
+import kotlinhax.shadowroutines.*
+import kotlinhax.shadowroutines.flow.*
 
 fun requestFlow(i: Int): Flow<String> = flow {
     emit("$i: First") 
@@ -1072,7 +1072,7 @@ fun main() = runBlocking<Unit> {
 ```
 {kotlin-runnable="true" kotlin-min-compiler-version="1.3"}
 <!--- KNIT example-flow-23.kt -->
-> You can get the full code [here](https://github.com/Kotlin/kotlinx.coroutines/blob/master/kotlinx-coroutines-core/jvm/test/guide/example-flow-23.kt).
+> You can get the full code [here](https://github.com/Kotlin/kotlinhax.shadowroutines/blob/master/kotlinhax-shadowroutines-core/jvm/test/guide/example-flow-23.kt).
 >
 {style="note"}
 
@@ -1098,8 +1098,8 @@ It is implemented by [flatMapMerge] and [flattenMerge] operators. They both acce
 (it is equal to [DEFAULT_CONCURRENCY] by default). 
 
 ```kotlin
-import kotlinx.coroutines.*
-import kotlinx.coroutines.flow.*
+import kotlinhax.shadowroutines.*
+import kotlinhax.shadowroutines.flow.*
 
 fun requestFlow(i: Int): Flow<String> = flow {
     emit("$i: First") 
@@ -1120,7 +1120,7 @@ fun main() = runBlocking<Unit> {
 ```
 {kotlin-runnable="true" kotlin-min-compiler-version="1.3"}
 <!--- KNIT example-flow-24.kt -->
-> You can get the full code [here](https://github.com/Kotlin/kotlinx.coroutines/blob/master/kotlinx-coroutines-core/jvm/test/guide/example-flow-24.kt).
+> You can get the full code [here](https://github.com/Kotlin/kotlinhax.shadowroutines/blob/master/kotlinhax-shadowroutines-core/jvm/test/guide/example-flow-24.kt).
 >
 {style="note"}
 
@@ -1151,8 +1151,8 @@ flattening mode where the collection of the previous flow is cancelled as soon a
 It is implemented by the [flatMapLatest] operator.
 
 ```kotlin
-import kotlinx.coroutines.*
-import kotlinx.coroutines.flow.*
+import kotlinhax.shadowroutines.*
+import kotlinhax.shadowroutines.flow.*
 
 fun requestFlow(i: Int): Flow<String> = flow {
     emit("$i: First") 
@@ -1173,7 +1173,7 @@ fun main() = runBlocking<Unit> {
 ```
 {kotlin-runnable="true" kotlin-min-compiler-version="1.3"}
 <!--- KNIT example-flow-25.kt -->
-> You can get the full code [here](https://github.com/Kotlin/kotlinx.coroutines/blob/master/kotlinx-coroutines-core/jvm/test/guide/example-flow-25.kt).
+> You can get the full code [here](https://github.com/Kotlin/kotlinhax.shadowroutines/blob/master/kotlinhax-shadowroutines-core/jvm/test/guide/example-flow-25.kt).
 >
 {style="note"}
 
@@ -1206,8 +1206,8 @@ There are several ways to handle these exceptions.
 A collector can use Kotlin's [`try/catch`][exceptions] block to handle exceptions: 
 
 ```kotlin
-import kotlinx.coroutines.*
-import kotlinx.coroutines.flow.*
+import kotlinhax.shadowroutines.*
+import kotlinhax.shadowroutines.flow.*
 
 //sampleStart
 fun simple(): Flow<Int> = flow {
@@ -1231,7 +1231,7 @@ fun main() = runBlocking<Unit> {
 ```
 {kotlin-runnable="true" kotlin-min-compiler-version="1.3"}
 <!--- KNIT example-flow-26.kt -->
-> You can get the full code [here](https://github.com/Kotlin/kotlinx.coroutines/blob/master/kotlinx-coroutines-core/jvm/test/guide/example-flow-26.kt).
+> You can get the full code [here](https://github.com/Kotlin/kotlinhax.shadowroutines/blob/master/kotlinhax-shadowroutines-core/jvm/test/guide/example-flow-26.kt).
 >
 {style="note"}
 
@@ -1255,8 +1255,8 @@ For example, let's change the code so that emitted values are [mapped][map] to s
 but the corresponding code produces an exception:
 
 ```kotlin
-import kotlinx.coroutines.*
-import kotlinx.coroutines.flow.*
+import kotlinhax.shadowroutines.*
+import kotlinhax.shadowroutines.flow.*
 
 //sampleStart
 fun simple(): Flow<String> = 
@@ -1282,7 +1282,7 @@ fun main() = runBlocking<Unit> {
 ```
 {kotlin-runnable="true" kotlin-min-compiler-version="1.3"}
 <!--- KNIT example-flow-27.kt -->
-> You can get the full code [here](https://github.com/Kotlin/kotlinx.coroutines/blob/master/kotlinx-coroutines-core/jvm/test/guide/example-flow-27.kt).
+> You can get the full code [here](https://github.com/Kotlin/kotlinhax.shadowroutines/blob/master/kotlinhax-shadowroutines-core/jvm/test/guide/example-flow-27.kt).
 >
 {style="note"}
 
@@ -1316,8 +1316,8 @@ and react to it in different ways depending on which exception was caught:
 For example, let us emit the text on catching an exception:
 
 ```kotlin
-import kotlinx.coroutines.*
-import kotlinx.coroutines.flow.*
+import kotlinhax.shadowroutines.*
+import kotlinhax.shadowroutines.flow.*
 
 fun simple(): Flow<String> = 
     flow {
@@ -1341,7 +1341,7 @@ fun main() = runBlocking<Unit> {
 ```
 {kotlin-runnable="true" kotlin-min-compiler-version="1.3"}
 <!--- KNIT example-flow-28.kt -->
-> You can get the full code [here](https://github.com/Kotlin/kotlinx.coroutines/blob/master/kotlinx-coroutines-core/jvm/test/guide/example-flow-28.kt).
+> You can get the full code [here](https://github.com/Kotlin/kotlinhax.shadowroutines/blob/master/kotlinhax-shadowroutines-core/jvm/test/guide/example-flow-28.kt).
 >
 {style="note"} 
  
@@ -1361,8 +1361,8 @@ The [catch] intermediate operator, honoring exception transparency, catches only
 If the block in `collect { ... }` (placed below `catch`) throws an exception then it escapes:  
 
 ```kotlin
-import kotlinx.coroutines.*
-import kotlinx.coroutines.flow.*
+import kotlinhax.shadowroutines.*
+import kotlinhax.shadowroutines.flow.*
 
 //sampleStart
 fun simple(): Flow<Int> = flow {
@@ -1384,7 +1384,7 @@ fun main() = runBlocking<Unit> {
 ```
 {kotlin-runnable="true" kotlin-min-compiler-version="1.3"}
 <!--- KNIT example-flow-29.kt -->
-> You can get the full code [here](https://github.com/Kotlin/kotlinx.coroutines/blob/master/kotlinx-coroutines-core/jvm/test/guide/example-flow-29.kt).
+> You can get the full code [here](https://github.com/Kotlin/kotlinhax.shadowroutines/blob/master/kotlinhax-shadowroutines-core/jvm/test/guide/example-flow-29.kt).
 >
 {style="note"}
  
@@ -1407,8 +1407,8 @@ of the [collect] operator into [onEach] and putting it before the `catch` operat
 be triggered by a call to `collect()` without parameters:
 
 ```kotlin
-import kotlinx.coroutines.*
-import kotlinx.coroutines.flow.*
+import kotlinhax.shadowroutines.*
+import kotlinhax.shadowroutines.flow.*
 
 fun simple(): Flow<Int> = flow {
     for (i in 1..3) {
@@ -1431,7 +1431,7 @@ fun main() = runBlocking<Unit> {
 ```
 {kotlin-runnable="true" kotlin-min-compiler-version="1.3"}
 <!--- KNIT example-flow-30.kt -->
-> You can get the full code [here](https://github.com/Kotlin/kotlinx.coroutines/blob/master/kotlinx-coroutines-core/jvm/test/guide/example-flow-30.kt).
+> You can get the full code [here](https://github.com/Kotlin/kotlinhax.shadowroutines/blob/master/kotlinhax-shadowroutines-core/jvm/test/guide/example-flow-30.kt).
 >
 {style="note"} 
  
@@ -1458,8 +1458,8 @@ In addition to `try`/`catch`, a collector can also use a `finally` block to exec
 upon `collect` completion.
 
 ```kotlin
-import kotlinx.coroutines.*
-import kotlinx.coroutines.flow.*
+import kotlinhax.shadowroutines.*
+import kotlinhax.shadowroutines.flow.*
 
 //sampleStart
 fun simple(): Flow<Int> = (1..3).asFlow()
@@ -1475,7 +1475,7 @@ fun main() = runBlocking<Unit> {
 ```
 {kotlin-runnable="true" kotlin-min-compiler-version="1.3"}
 <!--- KNIT example-flow-31.kt -->
-> You can get the full code [here](https://github.com/Kotlin/kotlinx.coroutines/blob/master/kotlinx-coroutines-core/jvm/test/guide/example-flow-31.kt).
+> You can get the full code [here](https://github.com/Kotlin/kotlinhax.shadowroutines/blob/master/kotlinhax-shadowroutines-core/jvm/test/guide/example-flow-31.kt).
 >
 {style="note"} 
 
@@ -1498,8 +1498,8 @@ when the flow has completely collected.
 The previous example can be rewritten using an [onCompletion] operator and produces the same output:
 
 ```kotlin
-import kotlinx.coroutines.*
-import kotlinx.coroutines.flow.*
+import kotlinhax.shadowroutines.*
+import kotlinhax.shadowroutines.flow.*
 
 fun simple(): Flow<Int> = (1..3).asFlow()
 
@@ -1513,7 +1513,7 @@ fun main() = runBlocking<Unit> {
 ```
 {kotlin-runnable="true" kotlin-min-compiler-version="1.3"}
 <!--- KNIT example-flow-32.kt -->
-> You can get the full code [here](https://github.com/Kotlin/kotlinx.coroutines/blob/master/kotlinx-coroutines-core/jvm/test/guide/example-flow-32.kt).
+> You can get the full code [here](https://github.com/Kotlin/kotlinhax.shadowroutines/blob/master/kotlinhax-shadowroutines-core/jvm/test/guide/example-flow-32.kt).
 >
 {style="note"} 
 
@@ -1529,8 +1529,8 @@ to determine whether the flow collection was completed normally or exceptionally
 example the `simple` flow throws an exception after emitting the number 1:
 
 ```kotlin
-import kotlinx.coroutines.*
-import kotlinx.coroutines.flow.*
+import kotlinhax.shadowroutines.*
+import kotlinhax.shadowroutines.flow.*
 
 //sampleStart
 fun simple(): Flow<Int> = flow {
@@ -1548,7 +1548,7 @@ fun main() = runBlocking<Unit> {
 ```
 {kotlin-runnable="true" kotlin-min-compiler-version="1.3"}
 <!--- KNIT example-flow-33.kt -->
-> You can get the full code [here](https://github.com/Kotlin/kotlinx.coroutines/blob/master/kotlinx-coroutines-core/jvm/test/guide/example-flow-33.kt).
+> You can get the full code [here](https://github.com/Kotlin/kotlinhax.shadowroutines/blob/master/kotlinhax-shadowroutines-core/jvm/test/guide/example-flow-33.kt).
 >
 {style="note"}
 
@@ -1572,8 +1572,8 @@ Another difference with [catch] operator is that [onCompletion] sees all excepti
 a `null` exception only on successful completion of the upstream flow (without cancellation or failure).
 
 ```kotlin
-import kotlinx.coroutines.*
-import kotlinx.coroutines.flow.*
+import kotlinhax.shadowroutines.*
+import kotlinhax.shadowroutines.flow.*
 
 //sampleStart
 fun simple(): Flow<Int> = (1..3).asFlow()
@@ -1590,7 +1590,7 @@ fun main() = runBlocking<Unit> {
 ```
 {kotlin-runnable="true" kotlin-min-compiler-version="1.3"}
 <!--- KNIT example-flow-34.kt -->
-> You can get the full code [here](https://github.com/Kotlin/kotlinx.coroutines/blob/master/kotlinx-coroutines-core/jvm/test/guide/example-flow-34.kt).
+> You can get the full code [here](https://github.com/Kotlin/kotlinhax.shadowroutines/blob/master/kotlinhax-shadowroutines-core/jvm/test/guide/example-flow-34.kt).
 >
 {style="note"}
 
@@ -1622,8 +1622,8 @@ Otherwise, just calling `onEach` has no effect.
 If we use the [collect] terminal operator after `onEach`, then the code after it will wait until the flow is collected:
 
 ```kotlin
-import kotlinx.coroutines.*
-import kotlinx.coroutines.flow.*
+import kotlinhax.shadowroutines.*
+import kotlinhax.shadowroutines.flow.*
 
 //sampleStart
 // Imitate a flow of events
@@ -1639,7 +1639,7 @@ fun main() = runBlocking<Unit> {
 ```
 {kotlin-runnable="true" kotlin-min-compiler-version="1.3"}
 <!--- KNIT example-flow-35.kt -->
-> You can get the full code [here](https://github.com/Kotlin/kotlinx.coroutines/blob/master/kotlinx-coroutines-core/jvm/test/guide/example-flow-35.kt).
+> You can get the full code [here](https://github.com/Kotlin/kotlinhax.shadowroutines/blob/master/kotlinhax-shadowroutines-core/jvm/test/guide/example-flow-35.kt).
 >
 {style="note"} 
   
@@ -1659,8 +1659,8 @@ launch a collection of the flow in a separate coroutine, so that execution of fu
 immediately continues:
 
 ```kotlin
-import kotlinx.coroutines.*
-import kotlinx.coroutines.flow.*
+import kotlinhax.shadowroutines.*
+import kotlinhax.shadowroutines.flow.*
 
 // Imitate a flow of events
 fun events(): Flow<Int> = (1..3).asFlow().onEach { delay(100) }
@@ -1676,7 +1676,7 @@ fun main() = runBlocking<Unit> {
 ```
 {kotlin-runnable="true" kotlin-min-compiler-version="1.3"}
 <!--- KNIT example-flow-36.kt -->
-> You can get the full code [here](https://github.com/Kotlin/kotlinx.coroutines/blob/master/kotlinx-coroutines-core/jvm/test/guide/example-flow-36.kt).
+> You can get the full code [here](https://github.com/Kotlin/kotlinhax.shadowroutines/blob/master/kotlinhax-shadowroutines-core/jvm/test/guide/example-flow-36.kt).
 >
 {style="note"} 
   
@@ -1711,8 +1711,8 @@ For convenience, the [flow][_flow] builder performs additional [ensureActive] ch
 It means that a busy loop emitting from a `flow { ... }` is cancellable:
 
 ```kotlin
-import kotlinx.coroutines.*
-import kotlinx.coroutines.flow.*
+import kotlinhax.shadowroutines.*
+import kotlinhax.shadowroutines.flow.*
 
 //sampleStart           
 fun foo(): Flow<Int> = flow { 
@@ -1732,7 +1732,7 @@ fun main() = runBlocking<Unit> {
 ```
 {kotlin-runnable="true" kotlin-min-compiler-version="1.3"}
 <!--- KNIT example-flow-37.kt -->
-> You can get the full code [here](https://github.com/Kotlin/kotlinx.coroutines/blob/master/kotlinx-coroutines-core/jvm/test/guide/example-flow-37.kt).
+> You can get the full code [here](https://github.com/Kotlin/kotlinhax.shadowroutines/blob/master/kotlinhax-shadowroutines-core/jvm/test/guide/example-flow-37.kt).
 >
 {style="note"}
 
@@ -1746,7 +1746,7 @@ Emitting 2
 Emitting 3
 3
 Emitting 4
-Exception in thread "main" kotlinx.coroutines.JobCancellationException: BlockingCoroutine was cancelled; job="coroutine#1":BlockingCoroutine{Cancelled}@6d7b4f4c
+Exception in thread "main" kotlinhax.shadowroutines.JobCancellationException: BlockingCoroutine was cancelled; job="coroutine#1":BlockingCoroutine{Cancelled}@6d7b4f4c
 ```
 
 <!--- TEST EXCEPTION -->
@@ -1756,8 +1756,8 @@ For example, if you use [IntRange.asFlow] extension to write the same busy loop 
 then there are no checks for cancellation:
 
 ```kotlin
-import kotlinx.coroutines.*
-import kotlinx.coroutines.flow.*
+import kotlinhax.shadowroutines.*
+import kotlinhax.shadowroutines.flow.*
 
 //sampleStart           
 fun main() = runBlocking<Unit> {
@@ -1770,7 +1770,7 @@ fun main() = runBlocking<Unit> {
 ```
 {kotlin-runnable="true" kotlin-min-compiler-version="1.3"}
 <!--- KNIT example-flow-38.kt -->
-> You can get the full code [here](https://github.com/Kotlin/kotlinx.coroutines/blob/master/kotlinx-coroutines-core/jvm/test/guide/example-flow-38.kt).
+> You can get the full code [here](https://github.com/Kotlin/kotlinhax.shadowroutines/blob/master/kotlinhax-shadowroutines-core/jvm/test/guide/example-flow-38.kt).
 >
 {style="note"}
 
@@ -1782,7 +1782,7 @@ All numbers from 1 to 5 are collected and cancellation gets detected only before
 3
 4
 5
-Exception in thread "main" kotlinx.coroutines.JobCancellationException: BlockingCoroutine was cancelled; job="coroutine#1":BlockingCoroutine{Cancelled}@3327bd23
+Exception in thread "main" kotlinhax.shadowroutines.JobCancellationException: BlockingCoroutine was cancelled; job="coroutine#1":BlockingCoroutine{Cancelled}@3327bd23
 ```
 
 <!--- TEST EXCEPTION -->
@@ -1794,8 +1794,8 @@ You can add `.onEach { currentCoroutineContext().ensureActive() }`, but there is
 [cancellable] operator provided to do that:
 
 ```kotlin
-import kotlinx.coroutines.*
-import kotlinx.coroutines.flow.*
+import kotlinhax.shadowroutines.*
+import kotlinhax.shadowroutines.flow.*
 
 //sampleStart           
 fun main() = runBlocking<Unit> {
@@ -1808,7 +1808,7 @@ fun main() = runBlocking<Unit> {
 ```
 {kotlin-runnable="true" kotlin-min-compiler-version="1.3"}
 <!--- KNIT example-flow-39.kt -->
-> You can get the full code [here](https://github.com/Kotlin/kotlinx.coroutines/blob/master/kotlinx-coroutines-core/jvm/test/guide/example-flow-39.kt).
+> You can get the full code [here](https://github.com/Kotlin/kotlinhax.shadowroutines/blob/master/kotlinhax-shadowroutines-core/jvm/test/guide/example-flow-39.kt).
 >
 {style="note"}
 
@@ -1818,7 +1818,7 @@ With the `cancellable` operator only the numbers from 1 to 3 are collected:
 1
 2
 3
-Exception in thread "main" kotlinx.coroutines.JobCancellationException: BlockingCoroutine was cancelled; job="coroutine#1":BlockingCoroutine{Cancelled}@5ec0a365
+Exception in thread "main" kotlinhax.shadowroutines.JobCancellationException: BlockingCoroutine was cancelled; job="coroutine#1":BlockingCoroutine{Cancelled}@5ec0a365
 ```
 
 <!--- TEST EXCEPTION -->
@@ -1832,7 +1832,7 @@ Indeed, its design was inspired by Reactive Streams and its various implementati
 be Kotlin and suspension friendly and respect structured concurrency. Achieving this goal would be impossible without reactive pioneers and their tremendous work. You can read the complete story in [Reactive Streams and Kotlin Flows](https://medium.com/@elizarov/reactive-streams-and-kotlin-flows-bfd12772cda4) article.
 
 While being different, conceptually, Flow *is* a reactive stream and it is possible to convert it to the reactive (spec and TCK compliant) Publisher and vice versa.
-Such converters are provided by `kotlinx.coroutines` out-of-the-box and can be found in corresponding reactive modules (`kotlinx-coroutines-reactive` for Reactive Streams, `kotlinx-coroutines-reactor` for Project Reactor and `kotlinx-coroutines-rx2`/`kotlinx-coroutines-rx3` for RxJava2/RxJava3).
+Such converters are provided by `kotlinhax.shadowroutines` out-of-the-box and can be found in corresponding reactive modules (`kotlinhax-shadowroutines-reactive` for Reactive Streams, `kotlinhax-shadowroutines-reactor` for Project Reactor and `kotlinhax-shadowroutines-rx2`/`kotlinhax-shadowroutines-rx3` for RxJava2/RxJava3).
 Integration modules include conversions from and to `Flow`, integration with Reactor's `Context` and suspension-friendly ways to work with various reactive entities.
  
 <!-- stdlib references -->
@@ -1846,57 +1846,57 @@ Integration modules include conversions from and to `Flow`, integration with Rea
 [Sequence.flatMap]: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.sequences/flat-map.html
 [exceptions]: https://kotlinlang.org/docs/reference/exceptions.html
 
-<!--- MODULE kotlinx-coroutines-core -->
-<!--- INDEX kotlinx.coroutines -->
+<!--- MODULE kotlinhax-shadowroutines-core -->
+<!--- INDEX kotlinhax.shadowroutines -->
 
-[delay]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/delay.html
-[withTimeoutOrNull]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/with-timeout-or-null.html
-[Dispatchers.Default]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-dispatchers/-default.html
-[Dispatchers.Main]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-dispatchers/-main.html
-[withContext]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/with-context.html
-[CoroutineDispatcher]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-coroutine-dispatcher/index.html
-[CoroutineScope]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-coroutine-scope/index.html
-[runBlocking]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/run-blocking.html
-[Job]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-job/index.html
-[Job.cancel]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/cancel.html
-[Job.join]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-job/join.html
-[ensureActive]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/ensure-active.html
-[CancellationException]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-cancellation-exception/index.html
+[delay]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines/delay.html
+[withTimeoutOrNull]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines/with-timeout-or-null.html
+[Dispatchers.Default]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines/-dispatchers/-default.html
+[Dispatchers.Main]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines/-dispatchers/-main.html
+[withContext]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines/with-context.html
+[CoroutineDispatcher]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines/-coroutine-dispatcher/index.html
+[CoroutineScope]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines/-coroutine-scope/index.html
+[runBlocking]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines/run-blocking.html
+[Job]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines/-job/index.html
+[Job.cancel]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines/cancel.html
+[Job.join]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines/-job/join.html
+[ensureActive]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines/ensure-active.html
+[CancellationException]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines/-cancellation-exception/index.html
 
-<!--- INDEX kotlinx.coroutines.flow -->
+<!--- INDEX kotlinhax.shadowroutines.flow -->
 
-[Flow]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.flow/-flow/index.html
-[_flow]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.flow/flow.html
-[FlowCollector.emit]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.flow/-flow-collector/emit.html
-[collect]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.flow/collect.html
-[flowOf]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.flow/flow-of.html
-[map]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.flow/map.html
-[filter]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.flow/filter.html
-[transform]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.flow/transform.html
-[take]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.flow/take.html
-[toList]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.flow/to-list.html
-[toSet]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.flow/to-set.html
-[first]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.flow/first.html
-[single]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.flow/single.html
-[reduce]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.flow/reduce.html
-[fold]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.flow/fold.html
-[flowOn]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.flow/flow-on.html
-[buffer]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.flow/buffer.html
-[conflate]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.flow/conflate.html
-[collectLatest]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.flow/collect-latest.html
-[zip]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.flow/zip.html
-[combine]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.flow/combine.html
-[onEach]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.flow/on-each.html
-[flatMapConcat]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.flow/flat-map-concat.html
-[flattenConcat]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.flow/flatten-concat.html
-[flatMapMerge]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.flow/flat-map-merge.html
-[flattenMerge]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.flow/flatten-merge.html
-[DEFAULT_CONCURRENCY]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.flow/-d-e-f-a-u-l-t_-c-o-n-c-u-r-r-e-n-c-y.html
-[flatMapLatest]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.flow/flat-map-latest.html
-[catch]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.flow/catch.html
-[onCompletion]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.flow/on-completion.html
-[launchIn]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.flow/launch-in.html
-[IntRange.asFlow]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.flow/as-flow.html
-[cancellable]: https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.flow/cancellable.html
+[Flow]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines.flow/-flow/index.html
+[_flow]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines.flow/flow.html
+[FlowCollector.emit]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines.flow/-flow-collector/emit.html
+[collect]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines.flow/collect.html
+[flowOf]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines.flow/flow-of.html
+[map]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines.flow/map.html
+[filter]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines.flow/filter.html
+[transform]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines.flow/transform.html
+[take]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines.flow/take.html
+[toList]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines.flow/to-list.html
+[toSet]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines.flow/to-set.html
+[first]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines.flow/first.html
+[single]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines.flow/single.html
+[reduce]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines.flow/reduce.html
+[fold]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines.flow/fold.html
+[flowOn]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines.flow/flow-on.html
+[buffer]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines.flow/buffer.html
+[conflate]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines.flow/conflate.html
+[collectLatest]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines.flow/collect-latest.html
+[zip]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines.flow/zip.html
+[combine]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines.flow/combine.html
+[onEach]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines.flow/on-each.html
+[flatMapConcat]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines.flow/flat-map-concat.html
+[flattenConcat]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines.flow/flatten-concat.html
+[flatMapMerge]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines.flow/flat-map-merge.html
+[flattenMerge]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines.flow/flatten-merge.html
+[DEFAULT_CONCURRENCY]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines.flow/-d-e-f-a-u-l-t_-c-o-n-c-u-r-r-e-n-c-y.html
+[flatMapLatest]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines.flow/flat-map-latest.html
+[catch]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines.flow/catch.html
+[onCompletion]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines.flow/on-completion.html
+[launchIn]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines.flow/launch-in.html
+[IntRange.asFlow]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines.flow/as-flow.html
+[cancellable]: https://kotlinlang.org/api/kotlinhax.shadowroutines/kotlinhax-shadowroutines-core/kotlinhax.shadowroutines.flow/cancellable.html
 
 <!--- END -->

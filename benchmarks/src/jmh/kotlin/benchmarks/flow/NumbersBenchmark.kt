@@ -3,8 +3,8 @@ package benchmarks.flow
 import benchmarks.flow.scrabble.flow
 import io.reactivex.*
 import io.reactivex.functions.*
-import kotlinx.coroutines.*
-import kotlinx.coroutines.flow.*
+import kotlinhax.shadowroutines.*
+import kotlinhax.shadowroutines.flow.*
 import org.openjdk.jmh.annotations.*
 import java.util.concurrent.TimeUnit
 import java.util.concurrent.Callable

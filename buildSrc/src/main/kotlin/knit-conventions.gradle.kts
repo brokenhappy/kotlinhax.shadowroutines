@@ -3,7 +3,7 @@ plugins {
 }
 
 knit {
-    siteRoot = "https://kotlinlang.org/api/kotlinx.coroutines"
+    siteRoot = "https://kotlinlang.org/api/kotlinhax.shadowroutines"
     moduleRoots = listOf(".", "integration", "reactive", "ui")
     moduleDocs = "build/dokka/htmlPartial"
     dokkaMultiModuleRoot = "build/dokka/htmlMultiModule/"

@@ -1,7 +1,7 @@
 package benchmarks.flow
 
-import kotlinx.coroutines.*
-import kotlinx.coroutines.flow.*
+import kotlinhax.shadowroutines.*
+import kotlinhax.shadowroutines.flow.*
 import org.openjdk.jmh.annotations.*
 import java.util.concurrent.*
 
@@ -31,7 +31,7 @@ open class FlatMapMergeBenchmark {
 
     @Benchmark
     fun flatMapSafe() = runBlocking {
-        kotlinx.coroutines.flow.flow {
+        kotlinhax.shadowroutines.flow.flow {
             repeat(iterations) { emit(it) }
         }.flatMapMerge { value ->
             flowOf(value)

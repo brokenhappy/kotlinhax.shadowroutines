@@ -1,9 +1,9 @@
 package benchmarks.scheduler.actors
 
 import benchmarks.akka.*
-import kotlinx.coroutines.*
-import kotlinx.coroutines.channels.*
-import kotlinx.coroutines.scheduling.*
+import kotlinhax.shadowroutines.*
+import kotlinhax.shadowroutines.channels.*
+import kotlinhax.shadowroutines.scheduling.*
 import org.openjdk.jmh.annotations.*
 import java.util.concurrent.*
 import kotlin.coroutines.*

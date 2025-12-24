@@ -1,6 +1,6 @@
-package kotlinx.coroutines.testing
+package kotlinhax.shadowroutines.testing
 
-import kotlinx.coroutines.*
+import kotlinhax.shadowroutines.*
 import java.lang.Runnable
 
 private const val WAIT_LOST_THREADS = 10_000L // 10s
